@@ -1,0 +1,127 @@
+      The Comfy Computer Language
+      \006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006
+
+Keywords
+\006\006\006\006\006\006\006\006
+The 'verbs' of the Comfy language are
+called 'keywords'. Keywords combine to
+do things. Here are all of the keywords,
+by category:
+
+%Numbers%, arithmetic and trigonometry -
+  %NEG%  %ABS%  %FLOOR%  %CEIL%  %ROUND%  %RANDOM%
+  %MAX%  %MIN%  %POW%  %ASIN%  %ASINR%  %ACOS%
+  %ACOSR%  %ATAN%  %ATANR%  %ATANTWO%  %ATANTWOR%
+  %SIN%  %SINR%  %COS%  %COSR%  %TAN%  %TANR%
+  %SQRT%  %LOGE%  %LOGTEN%
+
+%Bitwise% -
+  %SHL%  %LSHR%  %SHR%  %ROL%  %ROR%
+
+%Booleans% -
+  %EQ%  %NEQ%  %LTE%  %GTE%  %LT%  %GT%  %AND%  %OR%
+  %NOT%  %TRUE%  %FALSE%
+
+%Strings% -
+  %TOCHAR%  %TOCODE%  %TONUM%  %TOSTR%  %LEFT%
+  %RIGHT%  %FLIP%  %GETKEY%  %GETSTR%  %GETCHAR%
+  %CHARAT%  %MERGE%  %SPLIT%
+
+%Collections% -
+  %ARRAY% %DIM% %DIMS% %INSERT% %REMOVE%
+
+%Graphics% and character display -
+  %CLEAR%  %PRINTLN%  %PRINT%  %SAY%  %SELECT%
+  %FLIP%  %TAG%  %TURN%  %TURNR%  %FACE%  %FACER%
+  %WALK%  %MOVE%  %PENDOWN%  %PENUP%  %PENCOLOR%
+  %PENSPEED%  %FGCOLOR%  %BGCOLOR%  %RESIZE%
+  %CREMAP%  %PLOT%  %SHOW%  %HIDE%  %SHAKE%
+  %SCROLL%
+
+%Blocks% -
+  %BEGIN%  %END%  %DATA%  %HDATA%  %DECLARE%
+  %RECORD%  %LISTEN%  %CANCEL%
+
+%Flow% -
+  %RUN%  %QUIT%  %GOTO%  %GOSUB%  %RETURN%  %IF%
+  %FOR%  %WHILE%  %BREAK%  %CONTINUE%  %VWAIT%
+  %WAIT%  %SIGNAL%
+
+%Files% -
+  %SAVE%  %LOAD%  %FOLDER%  %OPEN%  %CLOSE%
+  %READ%  %WRITE%  %SEEK%  %DELETE%
+
+%System% -
+  %LIST%  %SYSCALL%  %RESET%  %GOODBYE%  %REM%
+  %TYPEOF%  %TITLE%  %FEEDBACK%  %PROOF%  %HELP%
+  %SET%
+
+Reserved (these keywords are reserved
+for future use and don't do anything) -
+  ASSERT  ASM  BEEP  BITMAP  CASE  COMFY
+  COPY  DEFAULT  DICTIONARY  DICT  ERROR
+  EXPORT  EVAL  FIRST  FLAG  FRIEND  FN
+  FUNCTION  ICON  INFO  EACH  JOIN  KEYS
+  LAST  LOGIN  LOGOUT  LINE  LINK  MAYBE
+  MODULE  MONITOR  NEXT  PALETTE  PARAM
+  POP  PROCEDURE  PROC  PUSH  PEEK  POKE
+  RENAME  RENUM  SHIFT  SOUND  SPMAP
+  START  STOP  SWITCH  TASK  TEST  TOP
+  TOUCH  TRACE  TROFF  TRON  UNSHIFT
+  VOLUME  WITH  YIELD  ZIP
+
+Variables
+\006\006\006\006\006\006\006\006\006
+If there was such a thing as 'nouns' in
+the Comfy language, they would be things
+like %variables%, %numbers% and %strings%.
+Go to those topics for more information.
+
+Built-ins
+\006\006\006\006\006\006\006\006\006
+Some %variables% are built-in records and
+provided by the VCE. Here are all the
+built-in records -
+
+Operators
+\006\006\006\006\006\006\006\006\006
+There are some symbols in Comfy that are
+convenient shorthand for primitive math
+and bitwise operations. Here are all of
+the operator symbols, with a topic for
+each:
+
+ +  %plus%
+ -  %minus%
+ *  %multiply%
+ /  %divide%
+ %%  %modulo%
+ =  %assign%
+ ,  %comma%
+ .  %dot%
+ |  %bitwise%-or
+ &  %bitwise%-and
+ ^  %bitwise%-xor
+ ~  %bitwise%-not
+ !  %boolean%-not   (can replace %NOT%)
+ -  %negate%        (can replace %NEG%)
+ () %parenthesis%
+ [] %subscript%
+ ;  %statement%-end
+
+Modes
+\006\006\006\006\006
+ \156 immediate mode - VCE mode where
+   actions take effect immediately.
+   The VCE is in this mode when you
+   first start your compy.
+
+ \156 program mode - mode that executes
+   (performs) numbered lines of your
+   program after %RUN% keyword is used.
+   When the VCE reaches the end of your
+   program and no more lines are
+   available to execute, or the %QUIT%
+   keyword is used in the program, the
+   VCE will automatically switch back to
+   immediate mode.
