@@ -96,9 +96,9 @@ each:
  *  %multiply%
  /  %divide%
  %%  %modulo%
- =  %assign%
  ,  %comma%
  .  %dot%
+ =  %assign%
  |  %bitwise%-or
  &  %bitwise%-and
  ^  %bitwise%-xor
