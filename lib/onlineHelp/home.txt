@@ -1,0 +1,66 @@
+         Welcome to ClubCompy
+         \006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006
+Congratulations! You now are the proud
+owner of a ClubCompy Virtual Computer
+Environment (VCE).
+
+With your VCE, you will learn to write
+computer programs, make and play games,
+solve real-world problems, and over
+time, understand how computers may be
+applied in every facet of your life.
+
+This help program will give you an
+overview of what your VCE is capable of.
+For full details, please purchase a copy
+of the ClubCompy Programmer's Reference
+Guide book when it becomes available.
+
+Okay, let's get started!
+
+First, learn how to control this %HELP%
+screen.  Press the down and up arrow
+buttons on your keyboard now: \uF105 \uF103
+
+When there is more to read on these help
+topics, you can slide the additional
+text into view using the arrow buttons
+on your keyboard. Other buttons that
+work are \uF10B\uF10C and \uF109\uF10A
+
+You have probably noticed by now that
+most things in ClubCompy use your
+keyboard for controls and not a touch
+screen or mouse. That's because computer
+keyboard skills are valuable for you in
+life and ClubCompy is focused on giving
+you good practice in keyboarding.
+
+This help program has many topics for
+you to read.  The names of these topics
+are highlighted with a different
+color: %\uE500 \uE503%
+
+If a topic word is interesting to you,
+type its highlighted letter keys on your
+keyboard in the box at the bottom of the
+screen and then press the \uF100\uF101\uF102 key to
+switch to that topic.
+
+If you want to go back to a topic you
+were looking at earlier, press the left
+arrow \uF106 button.
+
+You can exit help at any time by
+pressing the \uF107\uF108 key on your
+keyboard.
+
+Here are some introductory topics you
+can jump to now:
+
+ \156 %program% - what is programming?
+ \156 %comfy% - 'speak' your VCE's language
+ \156 %shell% - type in programs like a pro
+
+Welcome to ClubCompy, and thanks for
+being such a great user!

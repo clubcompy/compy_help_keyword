@@ -1,0 +1,156 @@
+REM ** Note to implementers: the Node.JS tool that builds the final Comfy program will insert line numbers for you
+REM ** Note to implementers: the Node.JS tool will provide a topic names array in 'tNames' and a matching array of string arrays in 'tContents'
+
+VWAIT false
+
+fg = 17
+bg = 225
+cBg = 127
+cFg = 75
+dFg = 0
+dGreyFg = 128
+dBg = 255
+tFg = 0
+tBg = 224
+tSel = 'home'
+
+fInv = '\uE500'         ; REM flips inverted cursor
+uInv = '\uE503'         ; REM unstashes inverted cursor
+eAlb = '\uE50A'         ; REM enables automatic line break
+dAlb = '\uE509'         ; REM disables automatic line break
+eAlb = '\uE50A'         ; REM enables automatic line break
+cUp = '\uE800'          ; REM simulates up arrow keypress
+cDn = '\uE801'          ; REM simulates down arrow keypress
+cScrEnd = '\uE809'      ; REM simulates scroll end keypress
+cPgDn = '\uE805'        ; REM simulates page down keypress
+sUp = '\uE80A'          ; REM simulates scroll up keypress
+sDn = '\uE80B'          ; REM simulates scroll down keypress
+pUp = '\uE804'          ; REM simulates page up keypress
+pDn = '\uE805'          ; REM simulates page down keypress
+
+WAIT SYSCALL 0x6000, 1  ; REM trap the esc key so that the help doesn't exit automatically when Esc is pressed
+WAIT SYSCALL 0x6001     ; REM stash cursor and create a new one so we don't corrupt the user's display
+SELECT 6
+MOVE Cursor, 0, 29
+
+CLEAR 6
+BGCOLOR Playfield[6], bg
+FGCOLOR Cursor, fg
+
+bye = false
+cTyped = ARRAY
+cPos = 0
+uArr = 0
+dArr = 0
+pgUp = 0
+pgDn = 0
+
+LISTEN Keyboard
+  IF (Keyboard.kcode EQ 27 AND Keyboard.evt EQ 1) DO bye = true
+  IF (Keyboard.kcode EQ 8 AND Keyboard.evt EQ 1) THEN
+    cPos = cPos - 1
+    IF cPos LT 0 DO cPos = 0
+  END
+  IF (Keyboard.kcode EQ 38 AND Keyboard.evt EQ 1) DO uArr = uArr + 1
+  IF (Keyboard.kcode EQ 40 AND Keyboard.evt EQ 1) DO dArr = dArr + 1
+  IF (Keyboard.kcode EQ 33 AND Keyboard.evt EQ 1) DO pgUp = pgUp + 1
+  IF (Keyboard.kcode EQ 34 AND Keyboard.evt EQ 1) DO pgDn = pgDn + 1
+  IF (Keyboard.kcode EQ 13 AND Keyboard.evt EQ 1 AND cPos GT 0) THEN
+    tSel = ''
+    FOR j = 0 UPTO cPos DO tSel = tSel + cTyped[j]
+    cPos = 0
+  END
+  IF (Keyboard.kchar NEQ '' AND cPos LT 19) THEN
+    cs = FLIP Keyboard.kchar, false
+    cc = TOCODE cs
+    IF (cc GTE 97 AND cc LTE 122) THEN
+      cTyped[cPos] = cs
+      cPos = cPos + 1
+    END
+  END
+END
+
+WHILE NOT bye
+  REM *** print the next help topic
+  IF tSel NEQ 0 THEN
+    PRINT cScrEnd
+    PRINT fInv
+    FOR i = Cursor.x UPTO 40 DO PRINT '-'
+    PRINT dAlb + 'Set topic: ' + tSel
+    FOR i = Cursor.x UPTO 40 DO PRINT ' '
+    PRINTLN uInv + eAlb
+    PRINTLN
+
+    FOR i = 0 UPTO LENGTH tNames
+      IF tNames[i] EQ tSel THEN
+        ctnt = tContents[i]
+        FOR j = 0 UPTO LENGTH ctnt
+          PRINT dAlb + ctnt[j]
+          FOR k = Cursor.x UPTO 39 DO PRINT ' '
+          PRINTLN
+          PRINT eAlb
+        END
+        PRINTLN
+        FOR j = 0 INCL LENGTH ctnt DO PRINT cUp
+        BREAK
+      END
+    END
+    IF i EQ LENGTH tNames DO PRINT 'Help topic "' + tSel + '" not found\n\n'
+    tSel = 0
+  END
+
+  REM ** move the screen around when users hit the control buttons
+  IF uArr GT 0 THEN
+    PRINT sDn
+    uArr = 0
+  END
+  IF dArr GT 0 THEN
+    PRINT sUp
+    dArr = 0
+  END
+  IF pgUp GT 0 THEN
+    PRINT pUp
+    pgUp = 0
+  END
+  IF pgDn GT 0 THEN
+    PRINT pDn
+    pgDn = 0
+  END
+
+
+  REM *** update the dock
+  WAIT SYSCALL 0x6001
+  SELECT 7
+  FOR i = 0 UPTO 40 DO TAG '\095', i, 28, 0, -1, false
+  TAG '\u00AF', 0, 29, dFg, dBg
+  FOR i = 0 UPTO cPos DO TAG cTyped[i], i + 1, 29, tFg, tBg, false
+  TAG ' ', cPos + 1, 29, tFg, tBg, cursor.blink
+  FOR i = cPos + 1 UPTO 20 DO TAG ' ', i + 1, 29, tFg, tBg, false
+  TAG ' ', 21, 29, dFg, dBg
+  TAG 'C', 22, 29, dFg, dBg
+  TAG 'o', 23, 29, dFg, dBg
+  TAG 'n', 24, 29, dFg, dBg
+  TAG 't', 25, 29, dFg, dBg
+  TAG 'r', 26, 29, dFg, dBg
+  TAG 'o', 27, 29, dFg, dBg
+  TAG 'l', 28, 29, dFg, dBg
+  TAG 's', 29, 29, dFg, dBg
+  TAG ':', 30, 29, dFg, dBg
+  TAG ' ', 31, 29, dFg, dBg
+  TAG '\uF103', 32, 29, dGreyFg, dBg
+  TAG '\uF105', 33, 29, dGreyFg, dBg
+  TAG '\uF106', 34, 29, dGreyFg, dBg
+  TAG '\uF104', 35, 29, dGreyFg, dBg
+  TAG '\uF107', 36, 29, dGreyFg, dBg
+  TAG '\uF108', 37, 29, dGreyFg, dBg
+  TAG ' ', 38, 29, dGreyFg, dBg
+  TAG ' ', 39, 29, dGreyFg, dBg
+  WAIT SYSCALL 0x6002
+  VWAIT
+END
+
+CLEAR 6, 7
+BGCOLOR playfield[6], -1
+WAIT SYSCALL 0x6002
+
+QUIT false

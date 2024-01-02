@@ -1,0 +1,17 @@
+{
+  "name": "compy_help_keyword",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "build": "node lib/index.js"
+  },
+  "keywords": [],
+  "author": "woldie",
+  "license": "AGPL",
+  "dependencies": {
+    "desm": "1.3.0",
+    "lodash.last": "3.0.0"
+  }
+}
