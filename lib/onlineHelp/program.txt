@@ -139,7 +139,7 @@ done with that line and you want it to
 add that line to the list of lines that
 is your program.
 
-If you type a line in wrong and it
+If you type in a line wrong and it
 gives you an error, no problem! Type
 that same line in again and see if you
 can get it to take without errors.
@@ -150,17 +150,17 @@ struggling with it.
 HINT: a few of the symbols in the
 program require you to hold down the
 \uF10D\uF10E key to make that symbol appear. For
-example, to make a + symbol a lot of
+example, to make a + symbol, many
 keyboards require you to hold down the
 \uF10D\uF10E key and then press the '='
 key. Let go of the \uF10D\uF10E key when
-you're done making "shifted" characters.
+you're done making 'shifted' characters.
 
 When you type %RUN% and press the
-\uF100\uF101\uF102 key for this program,
-your Compy will perform the instructions
-in the order of the numbers at the start
-of each line. Some of these instructions
+\uF100\uF101\uF102 key, your Compy will perform
+the instructions in this program in the
+order of the numbers at the start of
+each line. Some of these instructions
 ask you questions and then wait for you
 to type on the keyboard; type in your
 answers and press the \uF100\uF101\uF102 key.
