@@ -5,7 +5,8 @@ The VCE shell is, among other things, a
 text editor that lets you type-in
 programs. This topic talks about how to
 enter in programs and use its special
-key combos to manipulate the screen.
+key combos to manipulate words and lines
+on your screen.
 
 more coming soon ...
 
