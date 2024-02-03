@@ -10,10 +10,10 @@ solve real-world problems, and over
 time, understand how computers may be
 applied in every facet of your life.
 
-This help program will give you an
-overview of what your VCE is capable of.
-For full details, please purchase a copy
-of the ClubCompy Programmer's Reference
+This help program will give you only an
+overview of your VCE's capabilities. For
+full details, please purchase a copy of
+the ClubCompy Programmer's Reference
 Guide book when it becomes available.
 
 Okay, let's get started!

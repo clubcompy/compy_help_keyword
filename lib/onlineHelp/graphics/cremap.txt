@@ -1,0 +1,40 @@
+BEGIN CREMAP - remap character bitmaps
+               (block declaration)
+
+Grammar:
+ "BEGIN CREMAP" [ mode [ "," st_c ] ]
+    .
+    . 0-or-more "DATA" or "HDATA" lines
+    .
+ "END"
+
+Description:
+ - mode: <uint8> 0 = 8x8 pixel (default)
+                 1 = 16x16 pixel
+ - st_c: <uint16> 0 \029 65535 character
+   code remap starting point (default 0)
+ - DATA lines must consist of 1-or-more
+   <uint8> values or <array<uint8>>
+   values that are flattened in-place
+   to provide bitmaps, formatted
+   according to mode, that will redefine
+   on-screen characters starting with
+   character code st_c
+
+  ------------------------------------
+
+CREMAP - remap character bitmaps
+         (one-line declaration)
+
+Grammar:
+ "CREMAP" mode "," st_c "," bitmaps
+
+Description:
+ - mode: <uint8> 0 = 8x8 pixel
+                 1 = 16x16 pixel
+ - st_c: <uint16> 0 \029 65535 character
+   code remap starting point
+ - bitmaps: <array<uint8>> bitmaps,
+   formatted according to mode, that
+   will redefine on-screen characters
+   starting with character code st_c
