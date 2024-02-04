@@ -1,0 +1,4 @@
+FLOOR - Rounds down to nearest integer
+
+Grammar:
+  "FLOOR" num_value

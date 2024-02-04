@@ -1,0 +1,7 @@
+NEG - flips the sign of a number
+
+Grammar:
+  "NEG" num_value
+
+See also:
+  %negate%

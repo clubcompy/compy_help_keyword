@@ -28,7 +28,7 @@ sDn = '\uE80B'          ; REM simulates scroll down keypress
 pUp = '\uE804'          ; REM simulates page up keypress
 pDn = '\uE805'          ; REM simulates page down keypress
 
-WAIT SYSCALL 0x6000, 1  ; REM trap the esc key so that the help doesn't exit automatically when Esc is pressed
+WAIT SYSCALL 0x6000, 1  ; REM trap the esc key so that the help doesn't exit immediately when Esc is pressed
 WAIT SYSCALL 0x6001     ; REM stash cursor and create a new one so we don't corrupt the user's display
 SELECT 6
 MOVE Cursor, 0, 29
