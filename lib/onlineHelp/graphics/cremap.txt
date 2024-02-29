@@ -38,3 +38,10 @@ Description:
    formatted according to mode, that
    will redefine on-screen characters
    starting with character code st_c
+
+  ------------------------------------
+
+Notes:
+ - All active playfields share a single
+   character generator and set of
+   character bitmaps

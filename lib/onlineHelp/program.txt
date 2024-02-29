@@ -3,7 +3,7 @@
 ... and what are computers anyway?
 
 Would you believe the first computers
-were not machines at all!? They were
+were not machines at all? They were
 human beings who were renowned for their
 ability to perform long series of math
 or scientific calculations. The word
@@ -32,24 +32,25 @@ every instruction spelled out with
 absolute precision.
 
 Giving bad instructions to a computer
-(called 'bugs') usually leads to misery
-because the computer is never smart
-enough to recover on its own and then
-nothing works. As programmers, we must
-always strive to rid the world of
-useless pain and deliver zero bugs in
-our programs for our users.
+(called 'bugs') usually leads to misery.
+This is because computers are never
+smart enough to recover from human
+mistakes on their own. After hitting a
+bug, computers will often stop working.
+As programmers, we must always strive
+to rid our programs of bugs to maximize
+the joy our users feel.
 
 To simplify precise communication with
 computers, we humans have invented
 special languages we use to 'speak' with
 computers. These special-purpose
 languages are not ones you could speak
-to people. They are designed for the
-computer to easily comprehend and to aid
-humans in giving computers the exact
-information needed to get work done with
-fewer bugs.
+to people. They are languages designed
+for the computer to easily comprehend
+and to aid humans in giving computers
+the exact information they need to get
+work done and with fewer bugs.
 
 Your VCE has a custom, built-in computer
 language called %Comfy%. It was designed
@@ -63,7 +64,7 @@ Dartmouth College and then adapted for
 home computers by companies you might
 recognize, like Microsoft and Apple.
 
-Like BASIC, in %Comfy% you create
+Akin to BASIC, in %Comfy% you create
 programs by feeding in a list of
 instructions organized as numbered lines
 of text:
@@ -90,17 +91,17 @@ line #4 will display 'fleas'.
 We like to pretend computers are our
 busy workers who are on-the-go. So, we
 tell our VCE to perform our program
-using the word %RUN%. Important: when
-we type %RUN%, we do *not* give it a
-line number.
+instructions using the word %RUN%.
+Important: when we type %RUN%, we leave
+off the line number.
 
 Leaving off the line number is called
 "immediate mode" programming which says
 to your VCE, "Hey bub, don't store this
-line as part of a program, just go do
+line as part of me program, just go do
 what it says right away!" Many %Comfy%
 words can work in immediate mode, and a
-few words like %RUN% can only work in
+few words like %RUN% will only work in
 immediate mode.
 
 So, when we want our computers to get
@@ -109,10 +110,11 @@ then watch the fun! Run computer, run!
 Make my program go and do all the
 things on your program list! \216
 
-Every time you write a program at
-ClubCompy, type %RUN%, and the computer
-does what you expect it to do, YOU
-become a programmer! (How cool!)
+Do you know what happens when you write
+a program at ClubCompy, type %RUN%, and
+the computer does what you expected it
+to do? YOU become a programmer! How cool
+is that?
 
 Shall we try to make a program run right
 now? Okay! Grab a pencil and paper and
@@ -143,18 +145,18 @@ If you type in a line wrong and it
 gives you an error, no problem! Type
 that same line in again and see if you
 can get it to take without errors.
-Please ask for help from someone with
-typing experience if you are
-struggling with it.
+Ask for help from someone with typing
+experience if you are struggling with
+it.
 
 HINT: a few of the symbols in the
 program require you to hold down the
 \uF10D\uF10E key to make that symbol appear. For
 example, to make a + symbol, many
 keyboards require you to hold down the
-\uF10D\uF10E key and then press the '='
+\uF10D\uF10E key and then press the =
 key. Let go of the \uF10D\uF10E key when
-you're done making 'shifted' characters.
+you're done making 'shifted' symbols.
 
 When you type %RUN% and press the
 \uF100\uF101\uF102 key, your Compy will perform
@@ -170,24 +172,22 @@ write can be run as many times as you'd
 like! Just type %RUN%, and you can give
 your program different inputs every
 time. Can you make it say different
-things? The letters change colors at
-the end, how does that work? There are
-many mysteries like this that you will
-uncover and solve over time as you
+things? The letters change colors at the
+end, how does that work? There are many
+mysteries like this that you will
+discover and solve over time as you
 master the system.
 
 Big programs like games work the same
-way: write them one time and you and
-your friends can %RUN% them as many
-times as you'd like. It is very
+way - write them one time and %RUN% them
+as many times as you'd like. It is very
 satisfying to work hard writing useful
-programs and then share them with others
-to enjoy.
+programs to share with friends and
+family to enjoy.
 
-Hit \uF107\uF108 now to return to the
-Compy shell where you can type in your
-program.
+Hit \uF107\uF108 now to return to the Compy shell
+where you can type in your program.
 
-When you are ready to learn more,
-return to this %HELP% program and check
-out the %comfy% and %shell% topics.
+When you are ready to learn more, return
+to this %HELP% program and check out the
+%comfy% and %shell% topics.
