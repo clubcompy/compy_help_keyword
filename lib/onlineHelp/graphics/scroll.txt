@@ -1,0 +1,17 @@
+SCROLL - Playfield character scrolling
+
+Grammar:
+ "SCROLL" [ rec "," ] x "," y
+
+Description:
+ - rec: <record|Array<record>> Playfield
+   records to be SCROLL'd (default list
+   of all currently SELECT'd Playfields)
+ - x: <int32> number of characters to
+   scroll horizontally. Neg x scrolls
+   rec left. Pos x scrolls rec right
+ - y: <int32> number of characters to
+   scroll vertically. Neg y scrolls rec
+   up. Pos y scrolls rec down
+
+

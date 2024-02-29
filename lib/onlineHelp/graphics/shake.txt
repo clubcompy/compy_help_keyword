@@ -1,0 +1,20 @@
+SHAKE - pixel offset Playfield rendering
+
+Grammar:
+ "SHAKE" [ rec "," ] x "," y
+
+Description:
+ - rec: <record|Array<record>> Playfield
+   records to be SHAKE'd (default list
+   of all currently SELECT'd Playfields)
+ - x: <number> horizontal pixel offset
+   for rec. Can be any number GTE 0 and
+   LT 8
+ - y: <number> vertical pixel offset for
+   rec. Can be any number GTE 0 and LT 8
+
+Notes:
+ - in order that mode 1 hires character
+   map pixels on the compy display may
+   be offset, x and y accepts numbers
+   incremented by 0.5 (see %CREMAP% mode)

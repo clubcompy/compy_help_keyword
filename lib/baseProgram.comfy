@@ -13,6 +13,7 @@ dBg = 255
 tFg = 0
 tBg = 224
 tSel = 'home'
+hs = ARRAY
 
 fInv = '\uE500'         ; REM flips inverted cursor
 uInv = '\uE503'         ; REM unstashes inverted cursor
@@ -42,8 +43,15 @@ cTyped = ARRAY
 cPos = 0
 uArr = 0
 dArr = 0
+lArr = 0
 pgUp = 0
 pgDn = 0
+
+lu = 0
+ld = 0
+ll = 0
+lpu = 0
+lpd = 0
 
 LISTEN Keyboard
   IF (Keyboard.kcode EQ 27 AND Keyboard.evt EQ 1) DO bye = true
@@ -52,6 +60,7 @@ LISTEN Keyboard
     IF cPos LT 0 DO cPos = 0
   END
   IF (Keyboard.kcode EQ 38 AND Keyboard.evt EQ 1) DO uArr = uArr + 1
+  if (Keyboard.kcode EQ 37 AND Keyboard.evt EQ 1) DO lArr = lArr + 1
   IF (Keyboard.kcode EQ 40 AND Keyboard.evt EQ 1) DO dArr = dArr + 1
   IF (Keyboard.kcode EQ 33 AND Keyboard.evt EQ 1) DO pgUp = pgUp + 1
   IF (Keyboard.kcode EQ 34 AND Keyboard.evt EQ 1) DO pgDn = pgDn + 1
@@ -71,6 +80,38 @@ LISTEN Keyboard
 END
 
 WHILE NOT bye
+  REM ** move the screen around when users hit the control buttons
+  IF uArr GT 0 THEN
+    PRINT sDn
+    uArr = 0
+    lu = 1
+  END
+  IF dArr GT 0 THEN
+    PRINT sUp
+    dArr = 0
+    ld = 1
+  END
+  IF pgUp GT 0 THEN
+    PRINT pUp
+    pgUp = 0
+    lpu = 1
+  END
+  IF pgDn GT 0 THEN
+    PRINT pDn
+    pgDn = 0
+    lpd = 1
+  END
+
+  REM *** go back in history
+  IF lArr GT 0 THEN
+    IF LENGTH hs GT 1 THEN
+      REMOVE hs
+      tSel = REMOVE hs
+    END
+    lArr = 0
+    ll = 1
+  END
+
   REM *** print the next help topic
   IF tSel NEQ 0 THEN
     PRINT cScrEnd
@@ -84,39 +125,27 @@ WHILE NOT bye
     FOR i = 0 UPTO LENGTH tNames
       IF tNames[i] EQ tSel THEN
         ctnt = tContents[i]
+        lns = 0
         FOR j = 0 UPTO LENGTH ctnt
           PRINT dAlb + ctnt[j]
           FOR k = Cursor.x UPTO 39 DO PRINT ' '
           PRINTLN
           PRINT eAlb
+          lns = lns + 1
+        END
+        FOR k = j UPTO 30
+          PRINTLN
+          lns = lns + 1
         END
         PRINTLN
-        FOR j = 0 INCL LENGTH ctnt DO PRINT cUp
+        FOR j = 0 INCL lns DO PRINT cUp
+        INSERT hs, tSel
         BREAK
       END
     END
     IF i EQ LENGTH tNames DO PRINT 'Help topic "' + tSel + '" not found\n\n'
     tSel = 0
   END
-
-  REM ** move the screen around when users hit the control buttons
-  IF uArr GT 0 THEN
-    PRINT sDn
-    uArr = 0
-  END
-  IF dArr GT 0 THEN
-    PRINT sUp
-    dArr = 0
-  END
-  IF pgUp GT 0 THEN
-    PRINT pUp
-    pgUp = 0
-  END
-  IF pgDn GT 0 THEN
-    PRINT pDn
-    pgDn = 0
-  END
-
 
   REM *** update the dock
   WAIT SYSCALL 0x6001
@@ -127,25 +156,32 @@ WHILE NOT bye
   TAG ' ', cPos + 1, 29, tFg, tBg, cursor.blink
   FOR i = cPos + 1 UPTO 20 DO TAG ' ', i + 1, 29, tFg, tBg, false
   TAG ' ', 21, 29, dFg, dBg
-  TAG 'C', 22, 29, dFg, dBg
-  TAG 'o', 23, 29, dFg, dBg
-  TAG 'n', 24, 29, dFg, dBg
-  TAG 't', 25, 29, dFg, dBg
-  TAG 'r', 26, 29, dFg, dBg
-  TAG 'o', 27, 29, dFg, dBg
-  TAG 'l', 28, 29, dFg, dBg
-  TAG 's', 29, 29, dFg, dBg
-  TAG ':', 30, 29, dFg, dBg
-  TAG ' ', 31, 29, dFg, dBg
-  TAG '\uF103', 32, 29, dGreyFg, dBg
-  TAG '\uF105', 33, 29, dGreyFg, dBg
-  TAG '\uF106', 34, 29, dGreyFg, dBg
-  TAG '\uF104', 35, 29, dGreyFg, dBg
-  TAG '\uF107', 36, 29, dGreyFg, dBg
-  TAG '\uF108', 37, 29, dGreyFg, dBg
+  TAG 'K', 22, 29, dFg, dBg
+  TAG 'e', 23, 29, dFg, dBg
+  TAG 'y', 24, 29, dFg, dBg
+  TAG 's', 25, 29, dFg, dBg
+  TAG ':', 26, 29, dFg, dBg
+  TAG ' ', 27, 29, dFg, dBg
+  TAG '\uF103', 28, 29, dGreyFg, dBg, (lu GT 0)
+  TAG '\uF105', 29, 29, dGreyFg, dBg, (ld GT 0)
+  TAG '\uF106', 30, 29, dGreyFg, dBg, (ll GT 0)
+  TAG '\uF104', 31, 29, dGreyFg, dBg
+  TAG '\uF109', 32, 29, dGreyFg, dBg, (lpu GT 0)
+  TAG '\uF10A', 33, 29, dGreyFg, dBg, (lpu GT 0)
+  TAG '\uF10B', 34, 29, dGreyFg, dBg, (lpd GT 0)
+  TAG '\uF10C', 35, 29, dGreyFg, dBg, (lpd GT 0)
+  TAG '\uF107', 36, 29, dGreyFg, dBg, bye
+  TAG '\uF108', 37, 29, dGreyFg, dBg, bye
   TAG ' ', 38, 29, dGreyFg, dBg
   TAG ' ', 39, 29, dGreyFg, dBg
   WAIT SYSCALL 0x6002
+
+  lu = lu - 1
+  ld = ld - 1
+  ll = 0
+  lpu = lpu - 1
+  lpd = lpd - 1
+
   VWAIT
 END
 

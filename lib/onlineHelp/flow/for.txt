@@ -1,0 +1,49 @@
+FOR - loop over number range
+      (block declaration)
+
+Grammar:
+ "FOR" v "=" si r_kw su [ "STEP" st ]
+    .
+    . 0-or-more comfy statements/lines
+    .
+ "END"
+
+Description:
+ - v: <number> loop index variable name
+ - si: <number> initial value for v
+ - r_kw: keyword controlling range type
+  \156 "UPTO": loop range exclusive of su
+  \156 "INCL": loop range inclusive of su
+ - su: <number> final/outer bound for v
+ - st: <number> optional amount to
+       increment or decrement value for
+       each loop iteration (default 1)
+
+  ------------------------------------
+
+FOR-DO - loop over number range
+         (one-line declaration)
+
+Grammar:
+ "FOR" v "=" si r_kw su [ "STEP" st ]
+  "DO" stmt
+
+Description:
+ - v: <number> loop index variable name
+ - si: <number> initial value for v
+ - r_kw: keyword controlling range type
+  \156 "UPTO": loop range exclusive of su
+  \156 "INCL": loop range inclusive of su
+ - su: <number> final/outer bound for v
+ - st: <number> optional amount to
+       increment or decrement value for
+       each loop iteration (default 1)
+ - stmt: a comfy statement to be
+         executed each loop iteration
+
+  ------------------------------------
+
+Notes:
+ - all numbers must be real numbers
+ - v can count down iff si > su and
+   st < 0
