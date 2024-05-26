@@ -1,0 +1,7 @@
+ROUND - Rounds number to nearest integer
+
+Grammar:
+  "ROUND" num_value
+
+Evaluates to:
+  num_value rounded to the nearest integer

@@ -10,27 +10,27 @@ by category:
 
 %Numbers% -
   %NEG%      %ABS%      %FLOOR%    %CEIL%
-  %ROUND%    %MAX%      %MIN%      %POW%
-  %RANDOM%   %ASIN%     %ASINR%    %ACOS%
-  %ACOSR%    %ATAN%     %ATANR%    %ATANTWO%
-  %ATANTWOR% %SIN%      %SINR%     %COS%
-  %COSR%     %TAN%      %TANR%     %SQRT%
-  %LOGE%     %LOGTEN%
-
-%Bitwise% -
-  %SHL%      %LSHR%     %SHR%      %ROL%
-  %ROR%
-
-%Booleans% -
-  %EQ%       %NEQ%      %LTE%      %GTE%
-  %LT%       %GT%       %AND%      %OR%
-  %NOT%      %TRUE%     %FALSE%
+  %ROUND%    %TRUNC%    %MAX%      %MIN%
+  %POW%      %RANDOM%   %SIN%      %SINR%
+  %COS%      %COSR%     %TAN%      %TANR%
+  %ASIN%     %ASINR%    %ACOS%     %ACOSR%
+  %ATAN%     %ATANR%    %ATANTWO%  %ATANTWOR%
+  %SQRT%     %LOGE%     %LOGTEN%
 
 %Strings% -
   %TOCHAR%   %TOCODE%   %TONUM%    %TOSTR%
   %LEFT%     %RIGHT%    %FLIP%     %GETKEY%
   %GETSTR%   %GETCHAR%  %CHARAT%   %MERGE%
   %SPLIT%
+
+%Booleans% -
+  %EQ%       %NEQ%      %LTE%      %GTE%
+  %LT%       %GT%       %AND%      %OR%
+  %NOT%      %TRUE%     %FALSE%
+
+%Bitwise% -
+  %SHL%      %LSHR%     %SHR%      %ROL%
+  %ROR%
 
 %Collections% -
   %ARRAY%    %DIM%      %DIMS%     %INSERT%
@@ -66,8 +66,8 @@ by category:
   %PROOF%    %HELP%     %SET%
 
 Reserved for future use -
-  ASSERT   ASM      BEEP     BITMAP
-  CASE     COMFY    COPY     DICTIONARY
+  ASM      BEEP     BITMAP   CASE
+  CLAIM    COMFY    COPY     DICTIONARY
   DEFAULT  DICT     ERROR    EXPORT
   EVAL     FIRST    FLAG     FLAT
   FRIEND   FN       FUNCTION ICON
@@ -159,3 +159,12 @@ Modes
    keyword is used in the program, the
    VCE will automatically switch back to
    immediate mode.
+
+Other Comfy Rules
+\006\006\006\006\006\006\006\006\006\006\006\006
+
+Comfy is sometimes very flexible to how
+you enter in your programs and sometimes
+very strict. For example, keywords and
+variable names are "case insensitive",
+which means that Comfy   

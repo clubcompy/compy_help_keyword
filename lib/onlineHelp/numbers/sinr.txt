@@ -1,0 +1,9 @@
+SINR - Gives the sine of a number in
+radians
+
+Grammar:
+  "SINR" rad_angle
+
+Evaluates to:
+  The sine of rad_angle that is a
+  number between -1 and 1, inclusive

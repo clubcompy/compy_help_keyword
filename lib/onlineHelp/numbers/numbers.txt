@@ -1,5 +1,29 @@
             About numbers
             \006\006\006\006\006\006\006\006\006\006\006\006\006
 
-TBD - Discussion of working with numbers
-in the Comfy language.
+The Comfy language has symbols for
+performing operations with numbers:
+
+ +  %plus%
+ -  %minus%
+ *  %multiply%
+ /  %divide%
+ %%  %modulo%
+ =  %assign%
+ |  %bitwise% or
+ &  %bitwise% and
+ ^  %bitwise% xor
+ ~  %bitwise% not
+ -  negate        (same as %NEG%)
+ () %parenthesis%
+
+The Comfy language has keywords whose
+job is to work with numbers:
+
+  %NEG%      %ABS%      %FLOOR%    %CEIL%
+  %ROUND%    %TRUNC%    %MAX%      %MIN%
+  %POW%      %RANDOM%   %SIN%      %SINR%
+  %COS%      %COSR%     %TAN%      %TANR%
+  %ASIN%     %ASINR%    %ACOS%     %ACOSR%
+  %ATAN%     %ATANR%    %ATANTWO%  %ATANTWOR%
+  %SQRT%     %LOGE%     %LOGTEN%

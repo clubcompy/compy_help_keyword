@@ -1,0 +1,9 @@
+TANR - Gives the tangent of a number in
+radians
+
+Grammar:
+  "TANR" rad_angle
+
+Evaluates to:
+  The tangent of rad_angle that is a
+  number between -1 and 1, inclusive

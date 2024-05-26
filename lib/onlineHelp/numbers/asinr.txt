@@ -1,0 +1,10 @@
+ASINR - Gives the arcsine in radians of
+a number
+
+Grammar:
+  "ASINR" number
+
+Evaluates to:
+  Where number is between -1 and 1,
+  inclusive, ASINR returns an angle
+  between -\227/2 and \227/2

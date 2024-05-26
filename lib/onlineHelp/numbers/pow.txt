@@ -1,0 +1,7 @@
+POW - Raise number to a power
+
+Grammar:
+  "POW" num_value "," num_power
+
+Evaluates to:
+  num_value raised to num_power

@@ -1,0 +1,9 @@
+SIN - Gives the sine of a number in
+degrees
+
+Grammar:
+  "SIN" deg_angle
+
+Evaluates to:
+  The sine of deg_angle that is a
+  number between -1 and 1, inclusive

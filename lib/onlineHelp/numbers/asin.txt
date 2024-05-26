@@ -1,0 +1,10 @@
+ASIN - Gives the arcsine in degrees of
+a number
+
+Grammar:
+  "ASIN" number
+
+Evaluates to:
+  Where number is between -1 and 1,
+  inclusive, ASIN returns an angle
+  between -90 and 90 degrees

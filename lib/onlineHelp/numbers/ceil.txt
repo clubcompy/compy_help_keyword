@@ -1,0 +1,9 @@
+CEIL - Rounds up to nearest integer
+
+Grammar:
+  "CEIL" num_value
+
+Evaluates to:
+  number rounded to smallest integer
+  greater-than or equal to num_value
+

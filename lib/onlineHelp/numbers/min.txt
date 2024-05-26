@@ -1,0 +1,8 @@
+MIN - Pick the lesser of two numbers
+
+Grammar:
+  "MIN" left_num "," right_num
+
+Evaluates to:
+  if left_num LT right_num, left_num
+  otherwise right_num

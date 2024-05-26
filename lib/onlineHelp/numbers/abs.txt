@@ -2,3 +2,6 @@ ABS - Makes the sign positive
 
 Grammar:
   "ABS" num_value
+
+Evaluates to:
+  positive num_value

@@ -13,6 +13,7 @@ dBg = 255
 tFg = 0
 tBg = 224
 tSel = 'home'
+IF LENGTH jumpTo GT 0 DO tSel = jumpTo
 hs = ARRAY
 
 fInv = '\uE500'         ; REM flips inverted cursor

@@ -1,0 +1,7 @@
+RANDOM - Generate a random number
+
+Grammar:
+  "RANDOM"
+
+Evaluates to:
+  A random number GTE 0 and LT 1

@@ -1,0 +1,9 @@
+COSR - Gives the cosine of a number in
+radians
+
+Grammar:
+  "COSR" rad_angle
+
+Evaluates to:
+  The cosine of rad_angle that is a
+  number between -1 and 1, inclusive
