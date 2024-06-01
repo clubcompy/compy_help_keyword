@@ -1,0 +1,10 @@
+SQRT - Square root
+
+Grammar:
+ "SQRT" value
+
+Arguments:
+ - value: <number>
+
+Evaluates to:
+ <number> square root of value

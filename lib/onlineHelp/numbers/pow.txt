@@ -1,7 +1,11 @@
 POW - Raise number to a power
 
 Grammar:
-  "POW" num_value "," num_power
+ "POW" value "," power
+
+Arguments:
+ - value: <number>
+ - power: <number>
 
 Evaluates to:
-  num_value raised to num_power
+ <number> value raised to power

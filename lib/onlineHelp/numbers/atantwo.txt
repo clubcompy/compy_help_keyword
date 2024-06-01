@@ -1,0 +1,17 @@
+ATANTWO - Gives the counterclockwise
+angle in degrees between the positive
+x-axis and the ray (0, 0) \029 (x, y)
+
+Grammar:
+ "ATANTWO" y "," x
+
+Arguments:
+ - y: <number> y-coordinate of ray
+   endpoint
+ - x: <number> x-coordinate of ray
+   endpoint
+
+Evaluates to:
+ <number> angle between 0 and 180 when
+ y is positive, and 0 and -180 when y
+ is negative

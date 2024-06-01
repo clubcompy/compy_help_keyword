@@ -26,4 +26,4 @@ job is to work with numbers:
   %COS%      %COSR%     %TAN%      %TANR%
   %ASIN%     %ASINR%    %ACOS%     %ACOSR%
   %ATAN%     %ATANR%    %ATANTWO%  %ATANTWOR%
-  %SQRT%     %LOGE%     %LOGTEN%
+  %SQRT%     %LOGE%     %LOGTEN%   %LOGTWO%

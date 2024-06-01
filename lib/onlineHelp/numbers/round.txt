@@ -1,7 +1,10 @@
-ROUND - Rounds number to nearest integer
+ROUND - Round number to nearest integer
 
 Grammar:
-  "ROUND" num_value
+ "ROUND" value
+
+Arguments:
+ - value: <number>
 
 Evaluates to:
-  num_value rounded to the nearest integer
+ value rounded to the nearest integer

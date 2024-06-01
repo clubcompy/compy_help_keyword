@@ -1,8 +1,12 @@
 MAX - Pick the greater of two numbers
 
 Grammar:
-  "MAX" left_num "," right_num
+ "MAX" left "," right
+
+Arguments:
+ - left: <number>
+ - right: <number>
 
 Evaluates to:
-  if left_num GT right_num, left_num
-  otherwise right_num
+ <number> when left GTE right, left
+ otherwise right

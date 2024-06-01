@@ -1,0 +1,13 @@
+ACOSR - arccosine in radians
+
+Grammar:
+ "ACOSR" value
+
+Arguments:
+ - value: <number> between -1 and 1
+   inclusive
+
+Evaluates to:
+ <number> inverse cosine of value
+ giving an angle in radians between
+ \227 and 0

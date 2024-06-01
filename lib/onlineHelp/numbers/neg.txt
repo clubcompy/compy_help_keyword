@@ -1,7 +1,14 @@
-NEG - flips the sign of a number
+NEG - flip the sign
 
 Grammar:
-  "NEG" num_value
+ "NEG" value
 
-See also:
-  %negate%
+Arguments:
+ - value: <number>
+
+Evaluates to:
+ <number> when value is positive,
+ negative value otherwise positive
+
+Same as:
+ %negate%

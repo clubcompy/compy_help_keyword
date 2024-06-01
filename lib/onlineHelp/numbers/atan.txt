@@ -1,0 +1,12 @@
+ATAN - arctangent in degrees
+
+Grammar:
+ "ATAN" value
+
+Arguments:
+ - value: <number>
+
+Evaluates to:
+ <number> the inverse tangent for value
+ giving an angle between -90 and 90
+ degrees

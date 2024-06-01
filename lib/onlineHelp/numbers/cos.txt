@@ -1,9 +1,11 @@
-COS - Gives the cosine of a number in
-degrees
+COS - cosine of angle in degrees
 
 Grammar:
-  "COS" deg_angle
+ "COS" angle
+
+Arguments:
+ - angle: <number> in degrees
 
 Evaluates to:
-  The cosine of deg_angle that is a
-  number between -1 and 1, inclusive
+ <number> cosine of angle between -1
+ and 1 inclusive

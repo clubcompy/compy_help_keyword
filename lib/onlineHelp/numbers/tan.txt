@@ -1,9 +1,11 @@
-TAN - Gives the tangent of a number in
-degrees
+TAN - tangent of angle in degrees
 
 Grammar:
-  "TAN" deg_angle
+ "TAN" angle
+
+Arguments:
+ - angle: <number> in degrees
 
 Evaluates to:
-  The tangent of deg_angle that is a
-  number between -1 and 1, inclusive
+ <number> tangent of angle between -1
+ and 1 inclusive

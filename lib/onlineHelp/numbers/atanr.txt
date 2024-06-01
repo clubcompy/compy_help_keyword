@@ -1,0 +1,12 @@
+ATANR - arctangent in radians
+
+Grammar:
+ "ATANR" value
+
+Arguments:
+ - value: <number>
+
+Evaluates to:
+ <number> the inverse tangent for value
+ giving an angle in radians between
+ -\227/2 and \227/2

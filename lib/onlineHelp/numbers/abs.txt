@@ -1,7 +1,10 @@
-ABS - Makes the sign positive
+ABS - make the sign positive
 
 Grammar:
-  "ABS" num_value
+ "ABS" value
+
+Arguments:
+ - value: <number>
 
 Evaluates to:
-  positive num_value
+ <number> positive (absolute) value

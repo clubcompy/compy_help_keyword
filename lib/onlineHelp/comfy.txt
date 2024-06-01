@@ -15,7 +15,7 @@ by category:
   %COS%      %COSR%     %TAN%      %TANR%
   %ASIN%     %ASINR%    %ACOS%     %ACOSR%
   %ATAN%     %ATANR%    %ATANTWO%  %ATANTWOR%
-  %SQRT%     %LOGE%     %LOGTEN%
+  %SQRT%     %LOGE%     %LOGTEN%   %LOGTWO%
 
 %Strings% -
   %TOCHAR%   %TOCODE%   %TONUM%    %TOSTR%
@@ -24,8 +24,8 @@ by category:
   %SPLIT%
 
 %Booleans% -
-  %EQ%       %NEQ%      %LTE%      %GTE%
-  %LT%       %GT%       %AND%      %OR%
+  %EQ%       %NEQ%      %LT%       %LTE%
+  %GT%       %GTE%      %AND%      %OR%
   %NOT%      %TRUE%     %FALSE%
 
 %Bitwise% -
@@ -167,4 +167,4 @@ Comfy is sometimes very flexible to how
 you enter in your programs and sometimes
 very strict. For example, keywords and
 variable names are "case insensitive",
-which means that Comfy   
+which means that Comfy

@@ -1,0 +1,10 @@
+LOGTEN - Base 10 logarithm
+
+Grammar:
+ "LOGTEN" value
+
+Arguments:
+ - value: <number>
+
+Evaluates to:
+ <number> base 10 logarithm of value

@@ -1,17 +1,12 @@
 TRUNC - Removes fractional digits
 
 Grammar:
-  "TRUNC" num_value
+ "TRUNC" value
+
+Arguments:
+ - value: <number>
 
 Evaluates to:
-  num_value with fractional part removed
+ <number> value with fractional part
+ removed as integer
 
-Notes:
- - Where FLOOR performs a "round down"
-   operation on num_value, TRUNC merely
-   returns the whole number part of
-   num_value
- - When num_value is positive, FLOOR and
-   TRUNC behave the same, but when
-   num_value is negative, they produce
-   different results

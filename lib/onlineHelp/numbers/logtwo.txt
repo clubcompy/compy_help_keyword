@@ -1,0 +1,10 @@
+LOGTWO - Base 2 logarithm
+
+Grammar:
+ "LOGTWO" value
+
+Arguments:
+ - value: <number>
+
+Evaluates to:
+ <number> base 2 logarithm of value

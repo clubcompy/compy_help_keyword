@@ -1,9 +1,11 @@
-SIN - Gives the sine of a number in
-degrees
+SIN - sine of angle in degrees
 
 Grammar:
-  "SIN" deg_angle
+ "SIN" angle
+
+Arguments:
+ - angle: <number> in degrees
 
 Evaluates to:
-  The sine of deg_angle that is a
-  number between -1 and 1, inclusive
+ <number> sine of angle between -1
+ and 1 inclusive

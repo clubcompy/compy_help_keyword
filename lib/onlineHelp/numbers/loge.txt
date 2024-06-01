@@ -1,0 +1,11 @@
+LOGE - Natural logarithm
+
+Grammar:
+ "LOGE" value
+
+Arguments:
+ - value: <number>
+
+Evaluates to:
+ <number> natural logarithm (base
+ Math.E) of value

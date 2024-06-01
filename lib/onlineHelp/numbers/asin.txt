@@ -1,10 +1,12 @@
-ASIN - Gives the arcsine in degrees of
-a number
+ASIN - arcsine in degrees
 
 Grammar:
-  "ASIN" number
+ "ASIN" value
+
+Arguments:
+ - value: <number> between -1 and 1
+   inclusive
 
 Evaluates to:
-  Where number is between -1 and 1,
-  inclusive, ASIN returns an angle
-  between -90 and 90 degrees
+ <number> inverse sine of value giving
+ an angle between -90 and 90 degrees

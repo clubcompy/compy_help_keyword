@@ -1,9 +1,11 @@
-SINR - Gives the sine of a number in
-radians
+SINR - sine of angle in radians
 
 Grammar:
-  "SINR" rad_angle
+ "SINR" angle
+
+Arguments:
+ - angle: <number> in radians
 
 Evaluates to:
-  The sine of rad_angle that is a
-  number between -1 and 1, inclusive
+ <number> sine of angle between -1
+ and 1 inclusive

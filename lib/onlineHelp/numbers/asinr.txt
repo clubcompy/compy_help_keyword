@@ -2,9 +2,13 @@ ASINR - Gives the arcsine in radians of
 a number
 
 Grammar:
-  "ASINR" number
+ "ASINR" value
+
+Arguments:
+ - value: <number> between -1 and 1
+   inclusive
 
 Evaluates to:
-  Where number is between -1 and 1,
-  inclusive, ASINR returns an angle
-  between -\227/2 and \227/2
+ <number> inverse sine of value giving
+ an angle in radians between -\227/2 and
+ \227/2

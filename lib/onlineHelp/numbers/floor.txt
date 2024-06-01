@@ -1,8 +1,11 @@
 FLOOR - Rounds down to nearest integer
 
 Grammar:
-  "FLOOR" num_value
+ "FLOOR" value
+
+Arguments:
+ - value: <number>
 
 Evaluates to:
-  number rounded to largest integer
-  lesser-than or equal to num_value
+ <number> rounded to largest integer
+ lesser-than or equal to value

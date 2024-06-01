@@ -1,0 +1,13 @@
+ACOS - arccosine in degrees
+
+Grammar:
+ "ACOS" value
+
+Arguments:
+ - value: <number> between -1 and 1
+   inclusive
+
+Evaluates to:
+ <number> inverse cosine of value
+ giving an angle between 180 and 0
+ degrees
