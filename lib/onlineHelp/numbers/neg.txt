@@ -1,4 +1,4 @@
-NEG - flip the sign
+NEG - flip the numeric sign
 
 Grammar:
  "NEG" value

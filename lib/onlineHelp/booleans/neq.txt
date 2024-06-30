@@ -1,0 +1,14 @@
+NEQ - inequality comparison
+
+Grammar:
+ left "NEQ" right
+
+Arguments:
+ - left: <*>
+ - right: <*>
+
+Evaluates to:
+ <boolean> true when left is not the
+ same type as right or left has a
+ different value than right, otherwise
+ false

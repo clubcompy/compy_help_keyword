@@ -1,0 +1,51 @@
+NOT - boolean not
+
+Grammar:
+ "NOT" value
+
+Arguments:
+ - value: <*>
+
+Evaluates to:
+ <boolean|number> see notes
+
+Notes:
+ - NOT evaluation rules:
+
+       value      \179     NOT value
+ \196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+       true       \179  <boolean> false
+       false      \179  <boolean> true
+         1        \179    <number> 0
+         0        \179    <number> 1
+      Math.nan    \179  <boolean> true
+  empty <string>  \179  <boolean> true
+   empty <array>  \179  <boolean> true
+   anything else  \179  <boolean> false
+
+  ------------------------------------
+
+! (boolean not)
+
+Grammar:
+ "!" value
+
+Arguments:
+ - value: <*>
+
+Evaluates to:
+ <boolean|number> see notes
+
+Notes:
+ - boolean not evaluation rules:
+
+       value      \179     NOT value
+ \196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+       true       \179  <boolean> false
+       false      \179  <boolean> true
+         1        \179    <number> 0
+         0        \179    <number> 1
+      Math.nan    \179  <boolean> true
+  empty <string>  \179  <boolean> true
+   empty <array>  \179  <boolean> true
+   anything else  \179  <boolean> false

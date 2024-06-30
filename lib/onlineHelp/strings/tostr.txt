@@ -1,0 +1,10 @@
+TOSTR - Convert to string
+
+Grammar:
+ "TOSTR" value
+
+Arguments:
+ - value: <*> any comfy value
+
+Evaluates to:
+ <string> stringified form of value

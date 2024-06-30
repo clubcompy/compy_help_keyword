@@ -1,0 +1,19 @@
+- (negate) - flip the numeric sign
+
+Grammar:
+ "-" value
+
+Arguments:
+ - value: <number|boolean>
+
+Evaluates to:
+ <number> when value is positive
+ negative value, otherwise positive
+
+Notes:
+ - If value is a boolean, it will be
+   converted to a number before negate.
+   true will be 1. false will be 0
+
+Same as:
+ %NEG%

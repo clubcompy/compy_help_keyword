@@ -1,0 +1,7 @@
+TRUE - boolean true
+
+Grammar:
+ "TRUE"
+
+Evaluates to:
+ <boolean> true

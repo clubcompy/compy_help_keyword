@@ -1,0 +1,26 @@
+           About Built-Ins
+           \006\006\006\006\006\006\006\006\006\006\006\006\006\006\006
+
+The Comfy language provides built-in
+%variables% that are either records or
+arrays of records that are always
+available to you and tell you about the
+state of VCE subsystems. Here are all of
+the built-ins in the Comfy language:
+
+  %Border%   %Clock%    %Cursor%   %Display%
+  %Joystick% %Keyboard% %Math%     %Mouse%
+  %Turtle%   %Playfield%
+
+  There are a built-ins reserved for future
+  use that do not do anything yet. Those
+  reserved built-in's are:
+
+  Sprite   Voice    Device   Touch
+  Award
+
+Notes:
+ - Built-ins are special variables that
+   may only be modified by the VCE.
+   It is an error to modify built-ins
+   using the assignment operator "=".

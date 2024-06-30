@@ -1,0 +1,17 @@
+%% (modulo) - numeric modulo
+
+Grammar:
+ left "%%" right
+
+Arguments:
+ - left: <number|boolean>
+ - right: <number|boolean>
+
+Evaluates to:
+ <number> remainder of left modulo right
+
+Notes:
+ - If left or right are a boolean, it
+   will be converted to a number before
+   the modulo. true will be 1. false
+   will be 0

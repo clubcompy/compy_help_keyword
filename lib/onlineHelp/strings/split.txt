@@ -1,0 +1,24 @@
+SPLIT - break a string into an array of
+string tokens wherever individual
+characters in a delimiter string match
+
+Grammar:
+ "SPLIT" value [ "," delim [ "," tok ] ]
+
+Arguments:
+ - value: <string|*> value to be
+   stringified before split
+ - delim: <string> delimiter characters
+   to split value by (default empty
+   string '')
+ - tok: <boolean> should delim tokens
+   encountered be included in the
+   evaluated array? (default false)
+
+Evaluates to:
+ <array<string>> array of string tokens
+ split out of the stringified value by
+ matching a character in delim. If tok
+ is true, any character in delim that
+ matches will be included as tokens
+ where splits occur

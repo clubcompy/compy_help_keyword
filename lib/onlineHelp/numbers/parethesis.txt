@@ -1,0 +1,16 @@
+() (parenthesis) - operator precedence
+
+Grammar:
+ "(" value ")"
+
+Arguments:
+ - value: <comfy expression|*>
+
+Notes:
+ Parentheses are used to dictate the
+ order operations are performed in
+ expressions. Comfy expressions
+ enclosed within parentheses are
+ evaluated before those outside them
+ regardless of the standard operator
+ precedence.

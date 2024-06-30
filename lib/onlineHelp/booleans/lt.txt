@@ -1,0 +1,12 @@
+LT - less-than comparison
+
+Grammar:
+ left "LT" right
+
+Arguments:
+ - left: <*>
+ - right: <*>
+
+Evaluates to:
+ <boolean> true when left is less than
+ right, otherwise false

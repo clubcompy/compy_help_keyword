@@ -1,0 +1,42 @@
+= (assign) - variable assignment
+
+Grammar:
+ lvalue "=" rvalue
+
+Arguments:
+ - lvalue: <symbol|record field|
+   array subscript> variable assignee
+ - rvalue: <comfy expression> evaluates
+   to a comfy value to be assigned to
+   lvalue
+
+Evaluates to:
+ <*> evaluated rvalue assigned to lvalue
+
+Side effects:
+ - lvalue is dereferenced and rvalue is
+   assigned to lvalue according to rules
+   described in notes below
+ - If lvalue was a symbol that did not
+   yet exist, after assignment completes
+   the variable will exist for that
+   symbol
+
+Notes:
+ - Comfy variables can store complex
+   values like arrays or records. When
+   you assign the same complex value to
+   multiple variables, the value is not
+   copied. Instead, the variables share
+   a 'pointer' to the value, making the
+   process faster.
+ - Comfy variables can hold simple
+   values like numbers, booleans, or
+   strings. Simple values are copied
+   each time they are assigned to a
+   variable. Copying the value is faster
+   and more convenient than using
+   pointers for simple values.
+
+See also:
+ %SET%

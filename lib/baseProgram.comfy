@@ -13,8 +13,8 @@ dBg = 255
 tFg = 0
 tBg = 224
 tSel = 'home'
-IF LENGTH jumpTo GT 0 DO tSel = jumpTo
 hs = ARRAY
+ps = ARRAY
 
 fInv = '\uE500'         ; REM flips inverted cursor
 uInv = '\uE503'         ; REM unstashes inverted cursor
@@ -45,12 +45,14 @@ cPos = 0
 uArr = 0
 dArr = 0
 lArr = 0
+rArr = 0
 pgUp = 0
 pgDn = 0
 
 lu = 0
 ld = 0
 ll = 0
+lr = 0
 lpu = 0
 lpd = 0
 
@@ -61,7 +63,8 @@ LISTEN Keyboard
     IF cPos LT 0 DO cPos = 0
   END
   IF (Keyboard.kcode EQ 38 AND Keyboard.evt EQ 1) DO uArr = uArr + 1
-  if (Keyboard.kcode EQ 37 AND Keyboard.evt EQ 1) DO lArr = lArr + 1
+  IF (Keyboard.kcode EQ 37 AND Keyboard.evt EQ 1) DO lArr = lArr + 1
+  IF (Keyboard.kcode EQ 39 AND Keyboard.evt EQ 1) DO rArr = rArr + 1
   IF (Keyboard.kcode EQ 40 AND Keyboard.evt EQ 1) DO dArr = dArr + 1
   IF (Keyboard.kcode EQ 33 AND Keyboard.evt EQ 1) DO pgUp = pgUp + 1
   IF (Keyboard.kcode EQ 34 AND Keyboard.evt EQ 1) DO pgDn = pgDn + 1
@@ -69,6 +72,7 @@ LISTEN Keyboard
     tSel = ''
     FOR j = 0 UPTO cPos DO tSel = tSel + cTyped[j]
     cPos = 0
+    IF LENGTH tSel DO ps = ARRAY
   END
   IF (Keyboard.kchar NEQ '' AND cPos LT 19) THEN
     cs = FLIP Keyboard.kchar, false
@@ -106,15 +110,24 @@ WHILE NOT bye
   REM *** go back in history
   IF lArr GT 0 THEN
     IF LENGTH hs GT 1 THEN
-      REMOVE hs
+      INSERT ps, REMOVE hs
       tSel = REMOVE hs
     END
     lArr = 0
     ll = 1
   END
 
-  REM *** print the next help topic
-  IF tSel NEQ 0 THEN
+  REM *** go forward in history
+  IF rArr GT 0 THEN
+    IF LENGTH ps GT 0 THEN
+      tSel = REMOVE ps
+    END
+    rArr = 0
+    lr = 1
+  END
+
+  REM *** print the next help topic if tSel is set
+  IF tSel THEN
     PRINT cScrEnd
     PRINT fInv
     FOR i = Cursor.x UPTO 40 DO PRINT '-'
@@ -145,7 +158,7 @@ WHILE NOT bye
       END
     END
     IF i EQ LENGTH tNames DO PRINT 'Help topic "' + tSel + '" not found\n\n'
-    tSel = 0
+    tSel = ''
   END
 
   REM *** update the dock
@@ -166,7 +179,7 @@ WHILE NOT bye
   TAG '\uF103', 28, 29, dGreyFg, dBg, (lu GT 0)
   TAG '\uF105', 29, 29, dGreyFg, dBg, (ld GT 0)
   TAG '\uF106', 30, 29, dGreyFg, dBg, (ll GT 0)
-  TAG '\uF104', 31, 29, dGreyFg, dBg
+  TAG '\uF104', 31, 29, dGreyFg, dBg, (lr GT 0)
   TAG '\uF109', 32, 29, dGreyFg, dBg, (lpu GT 0)
   TAG '\uF10A', 33, 29, dGreyFg, dBg, (lpu GT 0)
   TAG '\uF10B', 34, 29, dGreyFg, dBg, (lpd GT 0)
@@ -180,8 +193,15 @@ WHILE NOT bye
   lu = lu - 1
   ld = ld - 1
   ll = 0
+  lr = 0
   lpu = lpu - 1
   lpd = lpd - 1
+
+  REM ** Did the user start HELP and request a keyword?  Select it
+  IF jumpTo THEN
+    tSel = jumpTo
+    jumpTo = ''
+  END
 
   VWAIT
 END

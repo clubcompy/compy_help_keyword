@@ -1,0 +1,16 @@
+JOIN - Merge array of strings with
+separator
+
+Grammar:
+ "JOIN" values [ "," separator ]
+
+Arguments:
+ - values: <Array<string|*>> values to
+   be stringified and merged
+ - separator: <string> separator string
+   to be merged between values (default
+   comma ',')
+
+Evaluates to:
+ <string> containing stringified values
+ interleaved with separator

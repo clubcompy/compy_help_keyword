@@ -1,0 +1,33 @@
+FLIP - Change the case of characters in
+a string
+
+Grammar:
+ "FLIP" value [ "," toupper ]
+
+Arguments:
+ - value: <string> string to flip
+ - toupper: <boolean> should value
+   be forced all upper- or lowercase?
+
+Evaluates to:
+ <string> with Kid-SCII characters a-z
+ swapped with corresponding A-Z
+ characters
+
+Notes:
+ - When toupper is truthy, evaluated
+   value is made all uppercase
+ - When toupper is falsy, evaluated
+   value is made all lowercase
+ - When toupper is omitted and value is
+   - all lowercase: evaluated value is
+     made all uppercase
+   - all uppercase: evaluated value is
+     made all lowercase
+   - a mix of lowercase and uppercase:
+     evaluated value is made all
+     uppercase
+ - Kid-SCII characters other than a-z
+   and A-Z are not evaluated by FLIP and
+   will be copied unchanged to the
+   evaluated string

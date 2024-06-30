@@ -1,0 +1,22 @@
+/ (divide) - numeric division
+
+Grammar:
+ left "/" right
+
+Arguments:
+ - left: <number>
+ - right: <number>
+
+Evaluates to:
+ <number> quotient of the left divided
+ by right
+
+Notes:
+ - If left or right are a boolean, it
+   will be converted to a number before
+   the divide. true will be 1. false
+   will be 0
+
+Synonyms:
+ - "\247" division sign, commonly seen
+   on mobile device virtual keyboards

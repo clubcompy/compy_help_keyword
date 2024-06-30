@@ -1,0 +1,61 @@
++ (plus) - numeric addition
+
+Grammar:
+ left "+" right
+
+Arguments:
+ - left: <number|boolean>
+ - right: <number|boolean>
+
+Evaluates to:
+ <number> sum of right added to left
+
+Notes:
+ - If left or right are a boolean, it
+   will be converted to a number before
+   the plus. true will be 1. false will
+   be 0
+
+  ------------------------------------
+
++ (plus) - string concatenation
+
+Grammar:
+ left "+" right
+
+Arguments:
+ - left: <string|*>
+ - right: <string|*>
+
+Evaluates to:
+ <string> concatenation of left and
+ right strings or their stringified
+ forms
+
+Notes:
+ - left, right, or both must be a string
+   for the plus operator to evaluate as
+   a string concatenation
+
+Similar to:
+ %MERGE%
+
+  ------------------------------------
+
++ (plus) - array concatenation
+
+Grammar:
+ left "+" right
+
+Arguments:
+ - left: <array>
+ - right: <array>
+
+Evaluates to:
+ <array> concatenation of left and
+ right into a new array
+
+Notes:
+ - both left and right must be an array
+   for the plus operator to evaluate as
+   an array concatenation

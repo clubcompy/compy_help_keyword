@@ -1,0 +1,12 @@
+GT - greater-than comparison
+
+Grammar:
+ left "GT" right
+
+Arguments:
+ - left: <*>
+ - right: <*>
+
+Evaluates to:
+ <boolean> true when left is greater
+ than right, otherwise false

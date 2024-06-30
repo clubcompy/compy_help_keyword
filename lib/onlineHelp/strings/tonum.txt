@@ -1,0 +1,14 @@
+TONUM - Parse string containing
+a stringified number to a number
+
+Grammar:
+ "TONUM" value
+
+Arguments:
+ - value: <string> containing a
+   stringified number
+
+Evaluates to:
+ <number> parsed form of value or
+ Math.nan if value could not be
+ parsed to a number

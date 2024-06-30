@@ -1,0 +1,16 @@
+RIGHT - Copy a string from rightmost
+count characters in a string
+
+Grammar:
+ "RIGHT" value "," count
+
+Arguments:
+ - value: <string> source to copy
+   from
+ - count: <number> characters to
+   copy GTE 0
+
+Evaluates to:
+ <string> copied rightmost characters
+ from value with length
+ MIN LENGTH value, count

@@ -1,0 +1,23 @@
+LENGTH - Count number items in an array
+
+Grammar:
+ "LENGTH" arr
+
+Arguments:
+ - arr: <array>
+
+Evaluates to:
+ <number> GTE 0 item count in arr
+
+  ------------------------------------
+
+LENGTH - Count characters in a string
+
+Grammar:
+ "LENGTH" str
+
+Arguments:
+ - str: <string>
+
+Evaluates to:
+ <number> GTE 0 character count in str

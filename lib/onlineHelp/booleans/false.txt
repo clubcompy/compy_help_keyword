@@ -1,0 +1,7 @@
+FALSE - boolean false
+
+Grammar:
+ "FALSE"
+
+Evaluates to:
+ <boolean> false

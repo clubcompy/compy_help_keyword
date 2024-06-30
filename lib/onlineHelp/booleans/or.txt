@@ -1,0 +1,34 @@
+OR - boolean or
+
+Grammar:
+ left "OR" right
+
+Arguments:
+ - left: <*>
+ - right: <*>
+
+Evaluates to:
+ <boolean> see OR evaluation rules in
+ notes below
+
+Notes:
+ - If left or right are not a boolean,
+   it will convert to a boolean before
+   being OR'd:
+
+       before     \179      after
+ \196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+    <number> 0    \179  <boolean> false
+      Math.nan    \179  <boolean> false
+  empty <string>  \179  <boolean> false
+   empty <array>  \179  <boolean> false
+   anything else  \179  <boolean> true
+
+ - OR evaluation rules:
+
+   left  \179  right  \179  left OR right
+ \196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+  false  \179  false  \179     false
+  false  \179  true   \179      true
+   true  \179  false  \179      true
+   true  \179  true   \179      true

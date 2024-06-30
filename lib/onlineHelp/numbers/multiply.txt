@@ -1,0 +1,23 @@
+* (multiply) - numeric multiplication
+
+Grammar:
+ left "*" right
+
+Arguments:
+ - left: <number|boolean>
+ - right: <number|boolean>
+
+Evaluates to:
+ <number> product of left multiplied by
+ right
+
+Notes:
+ - If left or right are a boolean, it
+   will be converted to a number before
+   the multiply. true will be 1. false
+   will be 0
+
+Synonyms:
+ - "\215" multiplication sign, commonly
+   seen on mobile device virtual
+   keyboards

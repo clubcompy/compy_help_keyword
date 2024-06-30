@@ -1,0 +1,16 @@
+LEFT - Copy a string from leftmost
+count characters in a string
+
+Grammar:
+ "LEFT" value "," count
+
+Arguments:
+ - value: <string> source to copy
+   from
+ - count: <number> characters to
+   copy GTE 0
+
+Evaluates to:
+ <string> copied leftmost characters
+ from value with length
+ MIN LENGTH value, count

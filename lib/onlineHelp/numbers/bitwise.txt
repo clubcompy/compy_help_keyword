@@ -1,0 +1,113 @@
+& (bitwise and)
+
+Grammar:
+ left "&" right
+
+Arguments:
+ - left: <number|boolean>
+ - right: <number|boolean>
+
+Evaluates to:
+ <int32> each bit of left is
+ bitwise AND'ed with each bit of right
+
+Notes:
+ - Bitwise AND left/right bit combos:
+
+   left  \179  right  \179  left AND right
+ \196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+    0    \179    0    \179        0
+    0    \179    1    \179        0
+    1    \179    0    \179        0
+    1    \179    1    \179        1
+
+ - If left or right are a boolean, it
+   will convert to a number before being
+   AND'd. true will be 1. false will be
+   0
+
+  ------------------------------------
+
+| (bitwise or)
+
+Grammar:
+ left "|" right
+
+Arguments:
+ - left: <number|boolean>
+ - right: <number|boolean>
+
+Evaluates to:
+ <int32> each bit of left is
+ bitwise OR'ed with each bit of right
+
+Notes:
+ - Bitwise OR left/right bit combos:
+
+   left  \179  right  \179  left OR right
+ \196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+     0   \179    0    \179       0
+     0   \179    1    \179       1
+     1   \179    0    \179       1
+     1   \179    1    \179       1
+
+ - If left or right are a boolean, it
+   will convert to a number before being
+   OR'd. true will be 1. false will be 0
+
+  ------------------------------------
+
+^ (bitwise XOR) - exclusive-or
+
+Grammar:
+ left "^" right
+
+Arguments:
+ - left: <number|boolean>
+ - right: <number|boolean>
+
+Evaluates to:
+ <int32> each bit of left is
+ bitwise XOR'ed with each bit of right
+
+Notes:
+ - Bitwise XOR left/right bit combos:
+
+   left  \179  right  \179  left XOR right
+ \196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+    0    \179    0    \179        0
+    0    \179    1    \179        1
+    1    \179    0    \179        1
+    1    \179    1    \179        0
+
+ - If left or right are a boolean, it
+   will convert to a number before being
+   XOR'd. true will be 1. false will be
+   0
+
+  ------------------------------------
+
+~ (bitwise not)
+
+Grammar:
+ "~" value
+
+Arguments:
+ - value: <number|boolean>
+
+Evaluates to:
+ <int32> each bit of value is bitwise
+ NOT'ed
+
+Notes:
+ - Bitwise NOT values:
+
+   value  \179  NOT value
+ \196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196
+     0    \179      1
+     1    \179      0
+
+ - If value is a boolean, it will
+   convert to a number before being
+   NOT'd. true will be 1. false will be
+   0

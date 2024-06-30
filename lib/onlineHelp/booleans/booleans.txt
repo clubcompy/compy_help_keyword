@@ -1,0 +1,21 @@
+             About Booleans
+             \006\006\006\006\006\006\006\006\006\006\006\006\006\006
+
+Boolean variables in the Comfy language
+can have values of true or false.
+Booleans can hold "yes" (true) and "no"
+(false) decisions in programs.
+
+The Comfy language has symbols for
+performing operations with booleans:
+
+ =  %assign%
+ !  boolean %not%
+ () %parenthesis%
+
+The Comfy language has keywords whose
+primary purpose is to work with booleans:
+
+  %EQ%       %NEQ%      %LT%       %LTE%
+  %GT%       %GTE%      %AND%      %OR%
+  %NOT%      %TRUE%     %FALSE%

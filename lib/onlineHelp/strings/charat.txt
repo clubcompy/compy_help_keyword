@@ -1,0 +1,13 @@
+CHARAT - Get character at index
+
+Grammar:
+ "CHARAT" str "," index
+
+Arguments:
+ - str: <string>
+ - index: <number> character position to
+   read from str, must be GTE 0 and LT
+   LENGTH str
+
+Evaluates to:
+ <string> character at index in str

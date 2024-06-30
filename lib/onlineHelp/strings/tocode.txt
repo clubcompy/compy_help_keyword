@@ -1,0 +1,13 @@
+TOCODE - Convert Kid-SCII character
+string to number code
+
+Grammar:
+ "TOCODE" value
+
+Arguments:
+ - value: <string> containing 1-or-more
+   characters
+
+Evaluates to:
+ <number> Kid-SCII character code for
+ the 0-th character in the string

@@ -1,0 +1,13 @@
+GTE - greater-than-or-equal comparison
+
+Grammar:
+ left "GTE" right
+
+Arguments:
+ - left: <*>
+ - right: <*>
+
+Evaluates to:
+ <boolean> true when left is greater
+ than right or has the same value as
+ right, otherwise false

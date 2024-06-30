@@ -1,0 +1,85 @@
+            About Keywords
+            \006\006\006\006\006\006\006\006\006\006\006\006\006\006
+
+The 'verbs' of the Comfy language are
+called 'keywords'. Some keywords combine
+to do things. Here are all of the
+keywords, by category:
+
+%Numbers% -
+  %NEG%      %ABS%      %FLOOR%    %CEIL%
+  %ROUND%    %TRUNC%    %MAX%      %MIN%
+  %POW%      %RANDOM%   %SIN%      %SINR%
+  %COS%      %COSR%     %TAN%      %TANR%
+  %ASIN%     %ASINR%    %ACOS%     %ACOSR%
+  %ATAN%     %ATANR%    %ATANTWO%  %ATANTWOR%
+  %SQRT%     %LOGE%     %LOGTEN%   %LOGTWO%
+
+%Strings% -
+  %TOCHAR%   %TOCODE%   %TONUM%    %TOSTR%
+  %TOBOOL%   %LEFT%     %RIGHT%    %FLIP%
+  %GETCHAR%  %GETKEY%   %GETSTR%   %CHARAT%
+  %MERGE%    %SPLIT%    %JOIN%     %LENGTH%
+
+%Booleans% -
+  %EQ%       %NEQ%      %LT%       %LTE%
+  %GT%       %GTE%      %AND%      %OR%
+  %NOT%      %TRUE%     %FALSE%
+
+%Bitwise% -
+  %SHL%      %LSHR%     %SHR%      %ROL%
+  %ROR%
+
+%Collections% -
+  %ARRAY%    %DIM%      %DIMS%     %INSERT%
+  %REMOVE%   %LENGTH%
+
+%Graphics% -
+  %CLEAR%    %PRINTLN%  %PRINT%    %SAY%
+  %SELECT%   %FLIP%     %TAG%      %TURN%
+  %TURNR%    %FACE%     %FACER%    %WALK%
+  %MOVE%     %PENDOWN%  %PENUP%    %PENCOLOR%
+  %PENSPEED% %FGCOLOR%  %BGCOLOR%  %RESIZE%
+  %CREMAP%   %PLOT%     %SHOW%     %HIDE%
+  %SHAKE%    %SCROLL%
+
+%Blocks% -
+  %BEGIN%    %END%      %DATA%     %HDATA%
+  %DECLARE%  %RECORD%   %LISTEN%   %CANCEL%
+
+%Flow% -
+  %RUN%      %QUIT%     %GOTO%     %GOSUB%
+  %RETURN%   %IF%       %FOR%      %WHILE%
+  %BREAK%    %CONTINUE% %VWAIT%    %WAIT%
+  %SIGNAL%
+
+%Files% -
+  %SAVE%     %LOAD%     %FOLDER%   %OPEN%
+  %CLOSE%    %READ%     %WRITE%    %SEEK%
+  %DELETE%
+
+%Misc% -
+  %ADVICE%   %GOODBYE%  %HELP%     %LIST%
+  %PROOF%    %REM%      %RESET%    %SET%
+  %SYSCALL%  %TITLE%    %TYPEOF%
+
+There are keywords reserved for future
+use that do not do anything yet. Those
+reserved keywords are:
+
+  ASM      BEEP     BITMAP   CASE
+  CLAIM    COMFY    COPY     DICTIONARY
+  DICT     DEFAULT  ERROR    EXPORT
+  EVAL     FIRST    FLAG     FLAT
+  FRIEND   FN       FUNCTION ICON
+  INFO     EACH     KEYS     LAST
+  LOGIN    LOGOUT   LINE     LINK
+  MAYBE    MODULE   MONITOR  NEXT
+  PALETTE  PARAM    POP      PUSH
+  PEEK     POKE     PROC     PROCEDURE
+  RENAME   RENUM    SHIFT    SLICE
+  SOUND    SORT     SPMAP    START
+  STOP     SWITCH   TASK     TEST
+  TOP      TOUCH    TRACE    TROFF
+  TRON     UNIQ     UNSHIFT  UNZIP
+  VOLUME   WITH     YIELD    ZIP

@@ -1,0 +1,23 @@
+GETCHAR - Read a keypress from the
+keyboard as a string
+
+Grammar:
+ "GETCHAR"
+
+Evaluates to:
+ <string> containing a Kid-SCII
+ character matching the pressed keyboard
+ key
+
+Notes:
+ - The current Comfy running task will
+   pause at GETCHAR until the user
+   presses a keyboard key.  Other tasks
+   like LISTEN tasks will continue to
+   run
+ - GETCHAR is only allowed in the main
+   Comfy task and not in LISTEN or other
+   secondary tasks
+ - Only keyboard keys that are
+   associated with a PRINT-able Kid-SCII
+   character will flow out of GETCHAR

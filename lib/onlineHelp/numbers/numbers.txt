@@ -1,4 +1,4 @@
-            About numbers
+            About Numbers
             \006\006\006\006\006\006\006\006\006\006\006\006\006
 
 The Comfy language has symbols for
@@ -14,11 +14,11 @@ performing operations with numbers:
  &  %bitwise% and
  ^  %bitwise% xor
  ~  %bitwise% not
- -  negate        (same as %NEG%)
+ -  %negate%
  () %parenthesis%
 
 The Comfy language has keywords whose
-job is to work with numbers:
+primary purpose is to work with numbers:
 
   %NEG%      %ABS%      %FLOOR%    %CEIL%
   %ROUND%    %TRUNC%    %MAX%      %MIN%

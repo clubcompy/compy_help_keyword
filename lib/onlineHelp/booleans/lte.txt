@@ -1,0 +1,13 @@
+LTE - less-than-or-equal comparison
+
+Grammar:
+ left "LTE" right
+
+Arguments:
+ - left: <*>
+ - right: <*>
+
+Evaluates to:
+ <boolean> true when left is less than
+ right or has the same value as right,
+ otherwise false

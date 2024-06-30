@@ -1,0 +1,24 @@
+TOBOOL - Convert to boolean
+
+Grammar:
+ "TOBOOL" value
+
+Arguments:
+ - value: <*> any comfy value
+
+Evaluates to:
+ <boolean|number> see notes
+
+Notes:
+ - TOBOOL evaluation rules:
+
+       value      \179   TOBOOL value
+ \196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+       true       \179  <boolean> true
+       false      \179  <boolean> false
+         1        \179    <number> 1
+         0        \179    <number> 0
+      Math.nan    \179  <boolean> false
+  empty <string>  \179  <boolean> false
+   empty <array>  \179  <boolean> false
+   anything else  \179  <boolean> true

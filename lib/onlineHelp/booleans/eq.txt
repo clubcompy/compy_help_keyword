@@ -1,0 +1,13 @@
+EQ - exact equality comparison
+
+Grammar:
+ left "EQ" right
+
+Arguments:
+ - left: <*>
+ - right: <*>
+
+Evaluates to:
+ <boolean> true when left is the same
+ type as right and left has the same
+ value as right, otherwise false

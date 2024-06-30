@@ -1,0 +1,13 @@
+TOCHAR - Convert code to Kid-SCII
+character string
+
+Grammar:
+ "TOCHAR" value
+
+Arguments:
+ - value: <number> code between 0 and
+   65565 inclusive
+
+Evaluates to:
+ <string> string of length 1 containing
+ character with code of value

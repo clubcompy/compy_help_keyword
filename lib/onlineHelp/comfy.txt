@@ -1,7 +1,7 @@
       The Comfy Computer Language
       \006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006
 
-Keywords
+%Keywords%
 \006\006\006\006\006\006\006\006
 The 'verbs' of the Comfy language are
 called 'keywords'. Keywords combine to
@@ -19,9 +19,9 @@ by category:
 
 %Strings% -
   %TOCHAR%   %TOCODE%   %TONUM%    %TOSTR%
-  %LEFT%     %RIGHT%    %FLIP%     %GETKEY%
-  %GETSTR%   %GETCHAR%  %CHARAT%   %MERGE%
-  %SPLIT%
+  %TOBOOL%   %LEFT%     %RIGHT%    %FLIP%
+  %GETCHAR%  %GETKEY%   %GETSTR%   %CHARAT%
+  %MERGE%    %SPLIT%    %JOIN%     %LENGTH%
 
 %Booleans% -
   %EQ%       %NEQ%      %LT%       %LTE%
@@ -34,10 +34,10 @@ by category:
 
 %Collections% -
   %ARRAY%    %DIM%      %DIMS%     %INSERT%
-  %REMOVE%
+  %REMOVE%   %LENGTH%
 
 %Graphics% -
-  %CLEAR%    %PRINTLN%  %PRINT%    %SAY%
+  %CLEAR%    %PRINT%    %PRINTLN%  %SAY%
   %SELECT%   %FLIP%     %TAG%      %TURN%
   %TURNR%    %FACE%     %FACER%    %WALK%
   %MOVE%     %PENDOWN%  %PENUP%    %PENCOLOR%
@@ -62,65 +62,38 @@ by category:
 
 %Misc% -
   %LIST%     %SYSCALL%  %RESET%    %GOODBYE%
-  %REM%      %TYPEOF%   %TITLE%    %FEEDBACK%
+  %REM%      %TYPEOF%   %TITLE%    %ADVICE%
   %PROOF%    %HELP%     %SET%
 
-Reserved for future use -
-  ASM      BEEP     BITMAP   CASE
-  CLAIM    COMFY    COPY     DICTIONARY
-  DEFAULT  DICT     ERROR    EXPORT
-  EVAL     FIRST    FLAG     FLAT
-  FRIEND   FN       FUNCTION ICON
-  INFO     EACH     JOIN     KEYS
-  LAST     LOGIN    LOGOUT   LINE
-  LINK     MAYBE    MODULE   MONITOR
-  NEXT     PALETTE  PARAM    POP
-  PROC     PUSH     PEEK     PROCEDURE
-  POKE     RENAME   RENUM    SHIFT
-  SLICE    SOUND    SORT     SPMAP
-  START    STOP     SWITCH   TASK
-  TEST     TOP      TOUCH    TRACE
-  TROFF    TRON     UNIQ     UNSHIFT
-  UNZIP    VOLUME   WITH     YIELD
-  ZIP
-
-Things
-\006\006\006\006\006\006
+Nouns
+\006\006\006\006\006
 'Nouns' in the Comfy language are
 things like %variables%, %numbers%, %strings%,
 %booleans% and %record%s. Go to those topics
 for more information.
 
-Built-ins
-\006\006\006\006\006\006\006\006\006
-The Comfy language provides some
-built-in %variables% that are either
-records or arrays of records that are
-always available to you and tell you
-about the state of VCE subsystems. Here
-are all of the built-ins in the Comfy
-language:
+%BuiltIns%
+\006\006\006\006\006\006\006\006
+The Comfy language provides built-in
+%variables% that are either records or
+arrays of records that are always
+available to you and tell you about the
+state of VCE subsystems. Here are all of
+the built-ins in the Comfy language:
 
   %Border%   %Clock%    %Cursor%   %Display%
   %Joystick% %Keyboard% %Math%     %Mouse%
   %Turtle%   %Playfield%
 
-There are a few built-ins reserved for
-future use that do not do anything yet.
-Those reserved built-in's are:
-
-  %Sprite%   %Voice%    %Device%   %Touch%
-  %Award%
-
 Operators and Punctuation
 \006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006
-Special symbols in Comfy act much like
-special symbols in natural languages
-like English. The symbols that perform
-work are called operators. Symbols that
-are used to group things are the Comfy
-language's punctuation. Here are all the
-special symbols in the Comfy language:
+Special symbols in Comfy behave
+similarly to symbols in natural
+languages like English. Working symbols
+are called operators, while grouping
+symbols are called punctuation. Here are
+all the special symbols in the Comfy
+language:
 
 Operators -
  +  %plus%
@@ -134,8 +107,8 @@ Operators -
  &  %bitwise% and
  ^  %bitwise% xor
  ~  %bitwise% not
- !  boolean not   (same as %NOT%)
- -  negate        (same as %NEG%)
+ !  boolean %not%
+ -  %negate%
 
 Punctuation -
  ,  %separator%
@@ -161,10 +134,16 @@ Modes
    immediate mode.
 
 Other Comfy Rules
-\006\006\006\006\006\006\006\006\006\006\006\006
+\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006
 
-Comfy is sometimes very flexible to how
-you enter in your programs and sometimes
-very strict. For example, keywords and
-variable names are "case insensitive",
-which means that Comfy
+- Keywords and variable names are "case
+  insensitive"; Comfy ignores whether
+  the letters are UPPERCASE or lowercase
+
+    RUN
+    Run
+    run
+
+  are all interpreted the same way as
+  the %RUN% keyword.
+

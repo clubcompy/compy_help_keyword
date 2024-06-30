@@ -1,0 +1,17 @@
+MERGE - Concatenate two items as strings
+
+Grammar:
+ "MERGE" left "," right
+
+Arguments:
+ - left: <string|*> left string or
+   value to be stringified
+ - right: <string|*> right string or
+   value to be stringified
+
+Evaluates to:
+ <string> stringified left concatenated
+ with stringified right
+
+Similar to:
+ + (%plus% - string concatenation)
