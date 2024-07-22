@@ -1,0 +1,11 @@
+TURNR - Offset facing angle (turn) by
+radians
+
+Grammar:
+ "TURNR" [ rec "," ] delta
+
+Arguments:
+ - rec: <record> that can be TURNR'd.
+   Default is the Turtle record
+ - delta: <number> (in radians) to turn
+   rec relative to its current angle

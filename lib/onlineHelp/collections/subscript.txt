@@ -1,0 +1,38 @@
+[] (subscript) - item at index
+
+Grammar:
+ arr "[" index "]"
+
+Arguments:
+ - arr: <array>
+ - index: <number|boolean> item index in
+   arr GTE 0. See notes for allowed
+   limits
+
+Evaluates to:
+ <*> item in arr at index
+
+Notes:
+ - If index is a boolean, it will be
+   converted to a number before the
+   subscript. true will be 1. false will
+   be 0
+ - Array indexes are "zero-based", which
+   means they begin counting items from
+   the number 0. If you want to access
+   the first item in an array use index
+   0, second item use index 1, and so on
+ - When an array subscript is the last
+   expression on the left side of a
+   variable assignment (=), index may be
+   LTE LENGTH arr. Assignment to an
+   array at LENGTH arr appends a new
+   value to the end of arr
+   similar to INSERT's append behavior
+ - When the array subscript is not used
+   as the last expression on the left
+   side of a variable assignment (=),
+   index may be LT LENGTH arr
+
+See also:
+%INSERT%

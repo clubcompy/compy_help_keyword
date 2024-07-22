@@ -1,3 +1,34 @@
+         About Bitwise Keywords
+         \006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006
+
+Integer (whole) numbers in the Comfy
+Language are 32-bit, signed numbers.
+
+The bits in these numbers can be shifted
+and rotated by powers of two to the left
+and right. These are called "bitwise"
+manipulations.
+
+These are the Comfy language keywords
+for bitwise manipulations of numbers:
+
+  %SHL%      %LSHR%     %SHR%      %ROL%
+  %ROR%
+
+The Comfy language has operators for
+performing other bitwise operations
+with numbers
+
+ |  %bitwise% or
+ &  %bitwise% and
+ ^  %bitwise% xor
+ ~  %bitwise% not
+
+The following sections document the
+grammars for these symbols:
+
+  ------------------------------------
+
 & (bitwise and)
 
 Grammar:
@@ -21,10 +52,10 @@ Notes:
     1    \179    0    \179        0
     1    \179    1    \179        1
 
- - If left or right are a boolean, it
-   will convert to a number before being
-   AND'd. true will be 1. false will be
-   0
+ - If left or right are a boolean,
+   they will be converted to a number
+   before being bitwise AND'd. true will
+   be 1. false will be 0
 
   ------------------------------------
 
@@ -39,7 +70,7 @@ Arguments:
 
 Evaluates to:
  <int32> each bit of left is
- bitwise OR'ed with each bit of right
+ bitwise OR'd with each bit of right
 
 Notes:
  - Bitwise OR left/right bit combos:
@@ -51,9 +82,10 @@ Notes:
      1   \179    0    \179       1
      1   \179    1    \179       1
 
- - If left or right are a boolean, it
-   will convert to a number before being
-   OR'd. true will be 1. false will be 0
+ - If left or right are a boolean,
+   they will be converted to a number
+   before being bitwise OR'd. true will
+   be 1. false will be 0
 
   ------------------------------------
 
@@ -68,7 +100,7 @@ Arguments:
 
 Evaluates to:
  <int32> each bit of left is
- bitwise XOR'ed with each bit of right
+ bitwise XOR'd with each bit of right
 
 Notes:
  - Bitwise XOR left/right bit combos:
@@ -80,10 +112,10 @@ Notes:
     1    \179    0    \179        1
     1    \179    1    \179        0
 
- - If left or right are a boolean, it
-   will convert to a number before being
-   XOR'd. true will be 1. false will be
-   0
+ - If left or right are a boolean,
+   they will be converted to a number
+   before being bitwise XOR'd. true will
+   be 1. false will be 0
 
   ------------------------------------
 
@@ -97,7 +129,7 @@ Arguments:
 
 Evaluates to:
  <int32> each bit of value is bitwise
- NOT'ed
+ NOT'd
 
 Notes:
  - Bitwise NOT values:
@@ -107,7 +139,7 @@ Notes:
      0    \179      1
      1    \179      0
 
- - If value is a boolean, it will
-   convert to a number before being
-   NOT'd. true will be 1. false will be
-   0
+ - If value is a boolean, it will be
+   converted to a number before being
+   bitwise NOT'd. true will be 1. false
+   will be 0

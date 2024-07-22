@@ -31,3 +31,54 @@ Notes:
    and A-Z are not evaluated by FLIP and
    will be copied unchanged to the
    evaluated string
+
+  ------------------------------------
+
+FLIP - Flip the Cursor record's invert
+flag
+
+Grammar:
+ "FLIP" cursor [ "," force ]
+
+Arguments:
+ - cursor: <record> the Cursor record
+ - force: <boolean|number> see notes,
+   default -1
+
+Notes:
+ - force's values cause the following
+   changes to Cursor.inv:
+
+       force      \179 Cursor.inv change
+ \196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+         0        \179       false
+         1        \179       true
+       false      \179       false
+       true       \179       true
+        -1        \179  NOT Cursor.inv
+
+  ------------------------------------
+
+FLIP - Flip a Char record's invert flag
+
+Grammar:
+ "FLIP" char [ "," force ]
+
+Arguments:
+ - char: <record> a Char record
+ - force: <boolean|number> see notes,
+   default -1
+
+Notes:
+ - A playfield's Char records can be
+   found in the Playfield.chr arrays
+ - force's values cause the following
+   changes to Char.inv:
+
+       force      \179  Char.inv change
+ \196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+         0        \179       false
+         1        \179       true
+       false      \179       false
+       true       \179       true
+        -1        \179   NOT Char.inv

@@ -1,0 +1,22 @@
+SHR - Shift bits right, propagating the
+sign bit
+
+Grammar:
+ "SHR" value "," offset
+
+Arguments:
+ - value: <number> value to shift right
+ - offset: <number> count of bits to
+   shift right by, must be GTE 0
+
+Evaluates to:
+ <int32> value shifted right by offset
+ bits
+
+Notes:
+ - If value's sign bit was 1, offset
+   number of 1 bits will shifted in from
+   the left of value
+ - If value's sign bit was 0, offset
+   number of 0 bits will shifted in from
+   the left of value

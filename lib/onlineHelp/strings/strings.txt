@@ -9,13 +9,6 @@ possible character codes. Strings are
 useful for representing written words in
 the computer.
 
-The Comfy language has symbols for
-performing operations with strings:
-
- +  %plus%
- =  %assign%
- () %parenthesis%
-
 The Comfy language has keywords whose
 purpose is to work with strings:
 
@@ -23,3 +16,10 @@ purpose is to work with strings:
   %TOBOOL%   %LEFT%     %RIGHT%    %FLIP%
   %GETCHAR%  %GETKEY%   %GETSTR%   %CHARAT%
   %MERGE%    %SPLIT%    %JOIN%     %LENGTH%
+
+The Comfy language has symbols for
+performing operations with strings:
+
+ +  %plus%
+ =  %assign%
+ () %parenthesis%

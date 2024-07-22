@@ -1,0 +1,30 @@
+ARRAY - create an array filled with
+the same item
+
+Grammar:
+ "ARRAY" [ len [ "," fill_with ] ]
+
+Arguments:
+ - len: <number> initial size of new
+   array, default 0
+ - fill_with: <*> intitial contents of
+   each item in array, default 0
+
+Evaluates to:
+ <array> containing len quantity of
+ fill_with items
+
+  ------------------------------------
+
+[] (array literal) - create array
+pre-populated with specified items
+
+Grammar:
+ "[" items "]"
+
+Arguments:
+ - items: <*> 0-or-more Comfy language
+   values separated by commas ","
+
+Evaluates to:
+ <array> containing items

@@ -1,12 +1,35 @@
-      VCE Shell
-      \006\006\006\006\006\006\006\006\006
+               VCE Shell
+               \006\006\006\006\006\006\006\006\006
 
-The VCE shell is, among other things, a
-text editor that lets you type-in
-programs. This topic talks about how to
-enter in programs and use its special
-key combos to manipulate words and lines
-on your screen.
+The VCE shell is a text editor that lets
+you type-in programs. This topic talks
+about how to enter in programs and use
+the shell's special key combos to
+manipulate the Display as part of.
 
-more coming soon ...
+Scrollback Buffer
+\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006
+The shell keeps track of lines it has
+PRINT'ed to on the Display. New lines
+can be PRINT'ed to the line below the
+Cursor's position, and when the Cursor
+reaches the bottom of the Display, it
+will scroll all lines of the Display up
+by 1 line. Lines that scroll off the top
+of the Display are not lost. They are
+recorded into an internal data structure
+called the 'scrollback buffer'
 
+Using keyboard controls and Kid-SCII
+escape sequences, the Display can be
+be scrolled up and down to scroll saved
+lines from the scrollback buffer onto
+the Display. This help program uses the
+scrollback buffer in this way to show
+large documents
+
+The scrollback buffer stores a maximum
+of approximately 5000 lines. Once that
+limit is reached, the topmost lines will
+be deleted from the scrollback buffer
+until 5000 or fewer lines are left

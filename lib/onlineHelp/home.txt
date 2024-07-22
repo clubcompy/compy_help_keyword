@@ -56,7 +56,7 @@ pressing the \uF107\uF108 key on your
 keyboard.
 
 Here are some introductory topics you
-can jump to now:
+can switch to now:
 
  \156 %program% - what is programming?
  \156 %comfy% - 'speak' your VCE's language

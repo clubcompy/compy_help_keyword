@@ -1,0 +1,13 @@
+SHL - Shift bits left
+
+Grammar:
+ "SHL" value "," offset
+
+Arguments:
+ - value: <number> value to shift left
+ - offset: <number> count of bits to
+   shift left by, must be GTE 0
+
+Evaluates to:
+ <int32> value shifted left by offset
+ bits

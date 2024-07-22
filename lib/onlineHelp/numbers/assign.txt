@@ -5,7 +5,7 @@ Grammar:
 
 Arguments:
  - lvalue: <symbol|record field|
-   array subscript> variable assignee
+   subscript> variable assignee
  - rvalue: <comfy expression> evaluates
    to a comfy value to be assigned to
    lvalue

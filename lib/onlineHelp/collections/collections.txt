@@ -1,0 +1,20 @@
+            About Collections
+            \006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006
+
+The Comfy language supports grouping
+multiple items together into a single
+variable. Arrays are an ordered
+collection of items.
+
+The Comfy language has keywords whose
+primary purpose is to work with
+collections:
+
+  %ARRAY%    %DIM%      %DIMS%     %INSERT%
+  %REMOVE%   %LENGTH%
+
+The Comfy language has symbols for
+performing operations with collections:
+
+ =  %assign%
+ [] %subscript%

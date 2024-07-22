@@ -1,0 +1,24 @@
+INSERT - insert/add item to array
+
+Grammar:
+ "INSERT" arr "," item [ "," index ]
+
+Arguments:
+ - arr: <array>
+ - item: <*> any Compy language value to
+   be inserted into arr
+ - index: <number> index into arr where
+   item should be inserted. Must be
+   GTE 0 and LTE LENGTH arr. defaults to
+   LENGTH arr, the end of the array
+
+Notes:
+ - If index LT LENGTH arr, item will be
+   INSERT'd at index and all other items
+   that follow will have their indexes
+   incremented by 1
+ - If index EQ LENGTH arr, item will be
+   appended to the end of arr
+ - After item is successfully INSERT'd
+   into arr, LENGTH arr will be
+   incremented by 1

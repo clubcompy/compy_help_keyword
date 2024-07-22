@@ -1,0 +1,35 @@
+SELECT - activate and target one-or-more
+Playfields for graphics operations
+
+Grammar:
+ "SELECT" target
+
+Arguments:
+ - target: <record|number|array<record>>
+   a Playfield record, playfield record
+   ID number, or an Array of one-or-more
+   Playfield records to be SELECT'd
+
+Notes:
+ - Graphics keywords will draw to
+   whatever the currently SELECT'd
+   Playfields are
+ - In the Display record, the sel field
+   indicates which Playfields are
+   currently SELECT'd. Whenever sel
+   changes, the scrollback buffer is
+   cleared. See the 'scrollback buffer'
+   section of the %shell% help topic
+ - Some keywords have arguments that
+   allow the current SELECT'ions to be
+   temporarily overridden
+ - There are 8 Playfields, and each is
+   'attached' to the Display when they
+   are first SELECT'ed
+ - Every attached Playfield uses many
+   system resources. At VCE power-on,
+   only Playfield 0 is attached to the
+   Display
+ - The only way to detach Playfields
+   from the Display is by doing a full
+   CLEAR or RESET

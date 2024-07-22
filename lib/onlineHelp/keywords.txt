@@ -67,19 +67,20 @@ There are keywords reserved for future
 use that do not do anything yet. Those
 reserved keywords are:
 
-  ASM      BEEP     BITMAP   CASE
-  CLAIM    COMFY    COPY     DICTIONARY
-  DICT     DEFAULT  ERROR    EXPORT
-  EVAL     FIRST    FLAG     FLAT
-  FRIEND   FN       FUNCTION ICON
-  INFO     EACH     KEYS     LAST
-  LOGIN    LOGOUT   LINE     LINK
-  MAYBE    MODULE   MONITOR  NEXT
-  PALETTE  PARAM    POP      PUSH
-  PEEK     POKE     PROC     PROCEDURE
-  RENAME   RENUM    SHIFT    SLICE
-  SOUND    SORT     SPMAP    START
-  STOP     SWITCH   TASK     TEST
-  TOP      TOUCH    TRACE    TROFF
-  TRON     UNIQ     UNSHIFT  UNZIP
-  VOLUME   WITH     YIELD    ZIP
+  ASM      ARG      ARGUMENT BEEP
+  BITMAP   CASE     CLAIM    COMFY
+  COPY     DEFAULT  DICT     DICTIONARY
+  ERROR    EVAL     EXPORT   FIRST
+  FLAG     FLAT     FRIEND   FN
+  FUNCTION ICON     INFO     EACH
+  KEYS     LAST     LOGIN    LOGOUT
+  LINE     LINK     MAYBE    MODULE
+  MONITOR  NEXT     PALETTE  PEEK
+  POP      POKE     PROC     PROCEDURE
+  PUSH     RENAME   RENUM    SHIFT
+  SLICE    SOUND    SORT     SPMAP
+  START    STOP     SWITCH   TASK
+  TEST     TOP      TOUCH    TRACE
+  TROFF    TRON     UNIQ     UNSHIFT
+  UNZIP    VOLUME   WITH     YIELD
+  ZIP

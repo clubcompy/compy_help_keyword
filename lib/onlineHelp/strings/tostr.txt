@@ -1,4 +1,27 @@
-TOSTR - Convert to string
+TOSTR - Format number as string
+
+Grammar:
+ "TOSTR" value [ "," radix [ "," plc ] ]
+
+Arguments:
+ - value: <number>
+ - radix: <number> 2 \029 36, default 10
+   specifies the base to use when
+   stringifying value
+ - plc: <number> specifies the number of
+   digits to appear after the decimal
+   point, padding with zeroes if needed.
+   If not specified, the decimal places
+   will be stringified as-is. If zero,
+   then no decimal places will appear.
+   plc is only valid when radix is 10.
+
+Evaluates to:
+ <string> stringified form of value
+
+  ------------------------------------
+
+TOSTR - Convert anything to string
 
 Grammar:
  "TOSTR" value

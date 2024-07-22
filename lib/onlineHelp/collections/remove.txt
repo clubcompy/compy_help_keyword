@@ -1,0 +1,24 @@
+REMOVE - remove item from array
+
+Grammar:
+ "REMOVE" arr [ "," index ]
+
+Arguments:
+ - arr: <array>
+ - index: <number> index into arr where
+   item should be remove. Must be
+   GTE 0 and LT LENGTH arr. defaults to
+   LENGTH arr - 1, the last item in the
+   array
+
+Evaluates to:
+ <*> item removed from arr
+
+Notes:
+ - If index LT LENGTH arr - 1, item will
+   be REMOVE'd at index and all other
+   items that follow will have their
+   indexes decremented by 1
+ - After item is successfully REMOVE'd
+   from arr, LENGTH arr will be
+   decremented by 1

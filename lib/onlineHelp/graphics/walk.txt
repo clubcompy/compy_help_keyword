@@ -1,0 +1,18 @@
+WALK - Walk in the facing direction
+
+Grammar:
+ "WALK" [ rec "," ] units
+
+Arguments:
+ - rec: <record> that can be WALK'ed.
+   Default is the Turtle record
+ - units: <number> of units to walk in
+   rec's coordinate system (see notes)
+
+Notes:
+ - Records that can be WALK'ed:
+   - Turtle: pixels of the VCE display
+     are the units, and the origin of
+     its coordinate system is located
+     in the center of the display
+

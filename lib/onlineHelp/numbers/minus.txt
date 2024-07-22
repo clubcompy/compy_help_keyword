@@ -1,7 +1,7 @@
-+ (minus) - numeric subtraction
+- (minus) - numeric subtraction
 
 Grammar:
- left "+" right
+ left "-" right
 
 Arguments:
  - left: <number|boolean>

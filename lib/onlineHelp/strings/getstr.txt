@@ -5,30 +5,32 @@ Grammar:
  "GETSTR" [ maxc | ( rec "," maxc ) ]
 
 Arguments:
+ - rec: <record> can read characters
+   starting from its current position.
+   defaults to Cursor record
  - maxc: <number> maximum number of
    characters allowed in evaluated
-   string (default 0, no maximum)
- - rec: <record> can read characters
-   starting from its current position
-   (default Cursor record)
+   string, GTE 0. default 0
 
 Evaluates to:
- <string> Kid-SCII characters read
- from rec, up to maxc length when maxc
- GT 0
+ <string> Kid-SCII characters read from
+ rec, up to maxc length when maxc GT 0
 
 Notes:
+ - When maxc is 0, GETSTR will not place
+   any limit on number of characters it
+   will read from rec
  - How GETSTR behaves depends on the
    type of rec:
-   - Cursor (default): will read
-     PRINT-able characters typed on the
-     keyboard from the Cursor's start
-     position up to maxc characters
-     typed and the Enter key is pressed
-   - File: will read up to maxc
-     characters from the File's current
-     position or the end-of-file,
-     whichever comes first
+   - Cursor (default): reads PRINT-able
+     characters typed on the keyboard
+     from the Cursor's start position up
+     to maxc characters typed and the
+     Enter key is pressed
+   - File: reads up to maxc characters
+     from the File's current position or
+     the end-of-file, whichever comes
+     first
  - The current Comfy running task will
    pause at GETSTR until it completes
    evaluation. Other tasks like LISTEN

@@ -1,0 +1,31 @@
+TAG - Draw a character
+
+Grammar:
+ "TAG" c [ "," x [ "," y [ "," f [ "," b
+ [ "," i [ "," g ] ] ] ] ] ]
+
+Arguments:
+ - c: <number> character code
+ - x: <number> x pos, default Cursor.x
+ - y: <number> y pos, default Cursor.y
+ - f: <number> foreground color, default
+   playfield.chr[y][x].fgc; can
+   be any color code number GTE 0 and
+   LT 256
+ - b: <number> background color, default
+   playfield.chr[y][x].bgc; can be any
+   color code number GTE 0 and LT 256,
+   or -1 for transparent
+ - i: <boolean> invert flag,  default
+   playfield.chr[y][x].inv
+ - g: <boolean> ghost flag,  default
+   playfield.chr[y][x].gho
+
+Notes:
+ - TAG will draw characters to all
+   SELECT'd Playfield.chr[y][x]
+ - Changes made to Playfield characters
+   with TAG are NOT recorded in the VCE
+   shell's scrollback buffer. See the
+   'scrollback buffer' section of the
+   %shell% topic

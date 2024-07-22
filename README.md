@@ -1,11 +1,11 @@
 # Compy HELP Keyword
 
-This tool generates a Comfy Language program that is installed at https://clubcompy.com/compy and
+This project generates a Comfy language program that is installed at https://clubcompy.com/compy and
 executed when the HELP keyword is used.
 
 ## Open Source
 
-Pull requests gladly accepted as long as you assign all copyrights to Woldrich, Inc. to all commits
+Pull requests gladly accepted as long as you assign all copyrights to Woldrich, Inc. for all commits
 you ask to be pulled.
 
 ## Feedback

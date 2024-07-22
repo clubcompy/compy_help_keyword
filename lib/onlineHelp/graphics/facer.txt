@@ -1,0 +1,10 @@
+FACER - Set facing angle in radians
+
+Grammar:
+ "FACER" [ rec "," ] delta
+
+Arguments:
+ - rec: <record> that can be FACER'd.
+   Default is the Turtle record
+ - delta: <number> in radians to set
+   rec's current angle to

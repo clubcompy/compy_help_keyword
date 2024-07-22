@@ -14,4 +14,7 @@ Description:
    scroll vertically. Neg y scrolls rec
    up. Pos y scrolls rec down
 
-
+Notes:
+ - Using SCROLL clears the scrollback
+   buffer. See the 'scrollback buffer'
+   section of the %shell% help topic

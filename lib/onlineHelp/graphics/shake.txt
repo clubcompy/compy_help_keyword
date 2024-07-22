@@ -5,8 +5,9 @@ Grammar:
 
 Description:
  - rec: <record|Array<record>> Playfield
-   records to be SHAKE'd (default list
-   of all currently SELECT'd Playfields)
+   records to be SHAKE'd. Defaults to
+   the list of all currently SELECT'd
+   Playfields indicated by Display.sel
  - x: <number> horizontal pixel offset
    for rec. Can be any number GTE 0 and
    LT 8
@@ -15,6 +16,6 @@ Description:
 
 Notes:
  - in order that mode 1 hires character
-   map pixels on the compy display may
-   be offset, x and y accepts numbers
-   incremented by 0.5 (see %CREMAP% mode)
+   map (see %CREMAP% mode) pixels on the
+   compy display may be SHAKE'n, x and y
+   may be numbers with a multiple of 0.5

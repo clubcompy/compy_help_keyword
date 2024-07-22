@@ -1,14 +1,45 @@
 TONUM - Parse string containing
-a stringified number to a number
+a stringified number
 
 Grammar:
- "TONUM" value
+ "TONUM" value [ "," radix ]
 
 Arguments:
  - value: <string> containing a
    stringified number
+ - radix: <number> 2 \029 36, default 10
+   specifies the base to use when
+   parsing value
 
 Evaluates to:
  <number> parsed form of value or
  Math.nan if value could not be
  parsed to a number
+
+  ------------------------------------
+
+TONUM - Convert boolean to number
+
+Grammar:
+ "TONUM" value
+
+Arguments:
+ - value: <boolean>
+
+Evaluates to:
+ <number> 1 when value is true, 0 when
+ value is false
+
+
+  ------------------------------------
+
+TONUM - Convert number to itself
+
+Grammar:
+ "TONUM" value
+
+Arguments:
+ - value: <number>
+
+Evaluates to:
+ <number> same as value

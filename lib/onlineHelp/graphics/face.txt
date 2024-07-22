@@ -1,0 +1,10 @@
+FACE - Set facing angle in degrees
+
+Grammar:
+ "FACE" [ rec "," ] delta
+
+Arguments:
+ - rec: <record> that can be FACE'd.
+   Default is the Turtle record
+ - delta: <number> in degrees to set
+   rec's current angle to

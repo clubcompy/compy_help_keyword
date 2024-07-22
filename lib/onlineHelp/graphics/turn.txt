@@ -1,0 +1,11 @@
+TURN - Offset facing angle (turn) by
+degrees
+
+Grammar:
+ "TURN" [ rec "," ] delta
+
+Arguments:
+ - rec: <record> that can be TURN'd.
+   Default is the Turtle record
+ - delta: <number> (in degrees) to turn
+   rec relative to its current angle

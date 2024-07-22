@@ -1,0 +1,53 @@
+CLEAR - VCE display full clear
+
+Grammar:
+ "CLEAR"
+
+Notes:
+ - This operation is time-consuming
+ - VCE display and all its records
+   (Cursor, Playfield array, Turtle,
+   and Border) are reset to power-on
+   state
+ - The shell's scrollback buffer is
+   cleared. See the 'scrollback buffer'
+   section of the %shell% help topic
+
+  ------------------------------------
+
+CLEAR - quick clear parts of VCE display
+
+Grammar:
+ "CLEAR" rec1 [ "," rec2 ... "," recn ]
+
+Arguments:
+ - rec1-n: <record|number|array<record>>
+   one-or-more display-related records
+   that need to be quick cleared. See
+   notes below on usage
+
+Notes:
+ - Number rec1-n are converted to a
+   Playfield record matching a Playfield
+   ID. Allowed values are 0-7
+ - Array rec1-n are flattened and their
+   records are processed in-place
+ - Quick clearing display records
+   will perform a partial reset of their
+   part of the VCE display:
+   - Playfield: visible characters are
+     cleared of their codes and colors,
+     and its background color is reset
+     to its power-on color
+   - Cursor: Foreground/background
+     colors clear to power-on colors,
+     and flags and stashes are cleared.
+     Cursor position is NOT cleared
+   - Display: clear counters and timers.
+     Active playfields, SELECT'ions and
+     stashes are NOT cleared
+   - Turtle: turtle surface is cleared,
+     and rotation/position are reset to
+     power-on states
+   - Border: Border color, width and
+     height are reset to power-on states

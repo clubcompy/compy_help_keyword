@@ -1,0 +1,19 @@
+ROR - Rotate low byte (8 bits) right
+
+Grammar:
+ "ROR" value "," offset
+
+Arguments:
+ - value: <number> value to rotate right
+ - offset: <number> count of bits to
+   rotate right by
+
+Evaluates to:
+ <int32> value with low 8 bits rotated
+ right by offset bits. The high 24 bits
+ should be the same as value's.
+
+Notes:
+ - As bits rotate off the right edge
+   of the low byte, they rotate onto its
+   left edge

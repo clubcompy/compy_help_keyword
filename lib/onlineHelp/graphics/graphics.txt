@@ -1,1 +1,52 @@
-TBD
+             About Graphics
+             \006\006\006\006\006\006\006\006\006\006\006\006\006\006
+
+Your VCE has a color graphics system.
+Graphics are anything you can see on the
+computer screen. The main features of
+the VCE graphics system are -
+
+ - Color depth: the VCE's display is
+   made of a grid of colored dots called
+   pixels. Each pixel can have one of
+   256 colors, with some limitations
+ - Playfields: the VCE's display
+   consists of 8 independent, stacked
+   pixel planes organized as a 40x30
+   grid of character graphics powered by
+   our all-new PRP-99\u2122 chipset
+ - Characters: displayed with a
+   foreground color and a background
+   color and with one of 65536 possible
+   character codes
+ - Character maps: the 1-bit pixel data
+   tied to a character code. When a
+   character map changes, all characters
+   on all playfields displaying that map
+   will be redrawn
+ - Turtle graphics: vector-based render
+   plane using a BeamVectra 1000\u2122 CRT
+   deflection package. The turtle
+   graphics plane is sandwiched
+   in-between the fourth and fifth
+   character graphics playfields to
+   enable novel hybrid raster-vector
+   user experiences
+
+The Comfy language has these keywords
+for working with graphics:
+
+  %CLEAR%    %PRINT%    %PRINTLN%  %SAY%
+  %SELECT%   %FLIP%     %TAG%      %TURN%
+  %TURNR%    %FACE%     %FACER%    %WALK%
+  %MOVE%     %PENDOWN%  %PENUP%    %PENCOLOR%
+  %PENSPEED% %FGCOLOR%  %BGCOLOR%  %RESIZE%
+  %CREMAP%   %PLOT%     %SHOW%     %HIDE%
+  %SHAKE%    %SCROLL%
+
+The Comfy language has these built-in
+records for working with graphics
+subsystems:
+
+  %Border%   %Cursor%   %Display%  %Turtle%
+  %Playfield%

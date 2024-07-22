@@ -1,0 +1,24 @@
+LSHR - Logical shift bits right
+
+Grammar:
+ "LSHR" value "," offset
+
+Arguments:
+ - value: <number> value to shift right
+ - offset: <number> count of bits to
+   shift right by, must be GTE 0
+
+Evaluates to:
+ <int32> value shifted right by offset
+ bits
+
+Notes:
+ - offset number of 0 bits will shifted
+   in from the left of value regardless
+   of what value's sign bit was
+
+   This behavior differs from the "sign
+   propagating" SHR keyword as a logical
+   shift left of a negative value will
+   evaluate to a positive int32 whenever
+   offset is GT 0

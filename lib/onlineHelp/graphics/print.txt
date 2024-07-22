@@ -1,0 +1,45 @@
+PRINT - display a value as a string on
+selected Playfield(s)
+
+Grammar:
+ "PRINT" [ value ]
+
+Arguments:
+ - value: <*> value to stringify and
+   display on the selected Playfields
+   at the Cursor's current color/
+   position. default value is the empty
+   string
+
+Similar to:
+%SAY%
+
+  ------------------------------------
+
+PRINT - send a stringified value to be
+printed to the target record(s)
+
+Grammar:
+ "PRINT" rec "," value
+
+Arguments:
+ - rec: <record|array<record>>
+   one-or-more records that can be
+   PRINT'd to
+ - value: <*> value to stringify to
+   be PRINT'd to rec
+
+Notes:
+ - PRINT behaves differently depending
+   on the type of PRINT'able record(s)
+   found in rec:
+   - Playfield: Temporarily SELECT's
+     the Playfield by itself, value
+     displayed at the current Cursor's
+     color/position
+   - FileHandle: writes value as a
+     string to the current position
+     according to the open file mode
+
+Similar to:
+%SAY%

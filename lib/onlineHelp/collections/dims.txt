@@ -1,0 +1,18 @@
+DIMS - create a multi-dimensional array
+filled with empty strings
+
+Grammar:
+ "DIMS" "(" len_1 [ ... "," len_n ] ")"
+
+Arguments:
+ - len_1 - len_n: <numbers> 1 or more
+   array lengths, where each len number
+   indicates one dimension's size in
+   the evaluated multi-dimensional array
+
+Evaluates to:
+ <array> of len_1 size, containing first
+ dimension of multi-dimensional array
+
+See also:
+ %DIM%

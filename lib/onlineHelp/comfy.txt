@@ -4,9 +4,10 @@
 %Keywords%
 \006\006\006\006\006\006\006\006
 The 'verbs' of the Comfy language are
-called 'keywords'. Keywords combine to
-do things. Here are all of the keywords,
-by category:
+called 'keywords'. Keywords do work in
+the computer. The ALL UPPERCASE words
+below are the Comfy keywords, listed by
+category:
 
 %Numbers% -
   %NEG%      %ABS%      %FLOOR%    %CEIL%
@@ -137,7 +138,7 @@ Other Comfy Rules
 \006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006
 
 - Keywords and variable names are "case
-  insensitive"; Comfy ignores whether
+  insensitive" -- Comfy ignores whether
   the letters are UPPERCASE or lowercase
 
     RUN
