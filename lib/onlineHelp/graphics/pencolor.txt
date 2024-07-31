@@ -1,0 +1,17 @@
+PENCOLOR - change pen line drawing color
+
+Grammar:
+ "PENCOLOR" [ rec "," ] color
+
+Arguments:
+ - rec: <record> that has a drawing pen.
+   Default is the Turtle record
+ - color: <number> a Comfy color code,
+   GTE 0 and LTE 255
+
+Notes:
+ - Affected rec.pc will be set with
+   color
+
+Synonyms:
+ - "PENC"

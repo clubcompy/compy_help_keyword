@@ -1,0 +1,20 @@
+PENSPEED - Set the maximum line draw
+length per display frame
+
+Grammar:
+ "PENSPEED" [ rec "," ] ppf
+
+Arguments:
+ - rec: <record> that has a drawing pen.
+   Default is the Turtle record
+ - ppf: <number> maximum number of
+   pixels per frame the pen will move
+   over the drawing surface
+
+Notes:
+ - PENSPEED automatically changes to:
+   - Math.INFINITY when a program is RUN
+   - 4 at power-on and at program QUIT
+
+Synonyms:
+ - "PENS"

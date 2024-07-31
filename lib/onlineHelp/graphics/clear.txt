@@ -47,7 +47,7 @@ Notes:
      Active playfields, SELECT'ions and
      stashes are NOT cleared
    - Turtle: turtle surface is cleared,
-     and rotation/position are reset to
-     power-on states
+     but the turtle's other states (vis,
+     pen, dir) are left unchanged
    - Border: Border color, width and
      height are reset to power-on states

@@ -1,0 +1,20 @@
+              About Blocks
+              \006\006\006\006\006\006\006\006\006\006\006\006
+
+Comfy statements are usually a single
+line of text, with keywords or operators
+telling the VCE how to interpret the
+line
+
+Some Comfy statements are complex enough
+to benefit from being split across
+multiple program lines. Statements
+spanning multiple lines where keywords
+and operators are grouped together are
+known as a 'block'
+
+These are the Comfy language keywords
+that help to create multi-line blocks:
+
+  %BEGIN%    %END%      %DATA%     %HDATA%
+  %DECLARE%  %RECORD%   %LISTEN%   %CANCEL%

@@ -1,0 +1,16 @@
+DATA - one or more values
+
+Grammar:
+ "DATA" v_1 [ "," v_2 [ ... "," v_n ] ]
+
+Arguments:
+ - v_1 ... v_n: <*> one or more values
+
+Notes:
+ - DATA usually gets its own line and
+   line number
+ - DATA supplies a sequence of values to
+   keywords like ARRAY and CREMAP
+ - Some keywords may place constraints
+   on DATA's values. (e.g. CREMAP only
+   accepts numbers GTE 0 and LTE 256)

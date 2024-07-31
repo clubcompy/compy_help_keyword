@@ -1,0 +1,16 @@
+END - finish a block
+
+Notes:
+ - END marks the end of any block
+ - The "see also" section below lists
+   keywords that can open blocks that
+   are finished with an END statement
+
+See also:
+ - %BEGIN% %ARRAY%
+ - %BEGIN% %CREMAP%
+ - %IF% (followed by THEN, ELSE or ELSEIF)
+ - %FOR%
+ - %WHILE%
+ - %LISTEN%
+ - %DECLARE% %RECORD%

@@ -33,3 +33,6 @@ Notes:
  - The only way to detach Playfields
    from the Display is by doing a full
    CLEAR or RESET
+
+Synonyms:
+ - "SELC"

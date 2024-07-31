@@ -5,8 +5,9 @@ Grammar:
 
 Description:
  - rec: <record|Array<record>> Playfield
-   records to be SCROLL'd (default list
-   of all currently SELECT'd Playfields)
+   records to be SCROLL'd. Defaults to
+   the list of all currently SELECT'd
+   Playfields indicated by Display.sel
  - x: <int32> number of characters to
    scroll horizontally. Neg x scrolls
    rec left. Pos x scrolls rec right
@@ -18,3 +19,6 @@ Notes:
  - Using SCROLL clears the scrollback
    buffer. See the 'scrollback buffer'
    section of the %shell% help topic
+
+Synonyms:
+ - "SCRL"

@@ -11,3 +11,6 @@ Arguments:
 Evaluates to:
  <number> Kid-SCII character code for
  the 0-th character in the string
+
+Synonyms:
+ - "TOCO"

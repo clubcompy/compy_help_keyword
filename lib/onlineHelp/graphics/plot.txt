@@ -1,0 +1,36 @@
+PLOT - rectangular fill
+
+Grammar:
+ "PLOT" [ col "," ] x "," y "," w "," h
+
+Arguments:
+ - col: <number> a Comfy color code,
+   GTE 0 and LTE 255, or -1 which
+   indicates transparency. Defaults to
+   Cursor.fgc
+ - x: <number> pixel x coordinate of
+   top-left corner, GTE 0 and LT
+   Display.w
+ - y: <number> pixel y coordinate of
+   top-left corner, GTE 0 and LT
+   Display.h
+ - w: <number> rectangle width
+ - h: <number> rectangle height
+
+Notes:
+ - PLOT will paint a rectangle with the
+   col Comfy color code, or will erase
+   existing pixels if col is -1
+ - PLOT will fill a rectangle on all
+   Playfields selected in Display.sel
+ - When filling a Comfy color code, PLOT
+   overwrites the Char.fgc for all
+   characters found in Playfield.chr
+   that lie beneath the rectangular area
+   to generate the color. Changes made
+   to Playfield.chr with PLOT are NOT
+   recorded in the scrollback buffer
+
+See also:
+ - 'scrollback buffer' section of the
+   %shell% topic

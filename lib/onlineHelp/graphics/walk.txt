@@ -10,9 +10,13 @@ Arguments:
    rec's coordinate system (see notes)
 
 Notes:
+ - Affected rec.x and rec.y will be set
  - Records that can be WALK'ed:
    - Turtle: pixels of the VCE display
-     are the units, and the origin of
-     its coordinate system is located
-     in the center of the display
+     are its units, and the origin (0,0)
+     of its coordinate system is located
+     in the center of the display.
+     Turtle.spd controls how many
+     pixels it will walk across the
+     screen for every frame drawn
 

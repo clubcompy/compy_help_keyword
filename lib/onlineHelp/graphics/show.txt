@@ -1,0 +1,22 @@
+SHOW - Control visibility
+
+Grammar:
+ "SHOW" rec [ "," flg ]
+
+Arguments:
+ - rec: <record|array<record>> records
+   to show or hide
+ - flg: <boolean|number> see notes,
+   default true
+
+Notes:
+ - flg's values cause the following
+   changes to rec.vis:
+
+        flg       \179   rec.vis change
+ \196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+         0        \179       false
+         1        \179       true
+       false      \179       false
+       true       \179       true
+        -1        \179    NOT rec.vis

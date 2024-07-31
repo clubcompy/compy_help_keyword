@@ -2,36 +2,37 @@
              \006\006\006\006\006\006\006\006\006\006\006\006\006\006
 
 Your VCE has a color graphics system.
-Graphics are anything you can see on the
+Graphics are anything visible on the
 computer screen. The main features of
 the VCE graphics system are -
 
  - Color depth: the VCE's display is
-   made of a grid of colored dots called
-   pixels. Each pixel can have one of
-   256 colors, with some limitations
- - Playfields: the VCE's display
-   consists of 8 independent, stacked
-   pixel planes organized as a 40x30
-   grid of character graphics powered by
-   our all-new PRP-99\u2122 chipset
- - Characters: displayed with a
-   foreground color and a background
-   color and with one of 65536 possible
-   character codes
- - Character maps: the 1-bit pixel data
-   tied to a character code. When a
+   made of a 2D grid of colored dots
+   called pixels. Each pixel can have
+   one of 256 colors with limitations
+ - Playfields: the VCE's display is
+   powered by the new PRP-99\u2122 virtual
+   chipset. It consists of 8 stacked
+   planes of pixels, each rendered using
+   a 2D grid of graphical characters
+ - Characters: each character on a
+   playfield is displayed with a
+   foreground color, a background
+   color, and one of 65536 possible
+   Kid-SCII character codes. Each
+   character code gets its own bitmap
+ - Character bitmaps: 1-bit pixel data
+   tied to each character code. When a
    character map changes, all characters
-   on all playfields displaying that map
-   will be redrawn
+   on all playfields displaying that
+   bitmap's character code will redraw
  - Turtle graphics: vector-based render
    plane using a BeamVectra 1000\u2122 CRT
-   deflection package. The turtle
-   graphics plane is sandwiched
-   in-between the fourth and fifth
-   character graphics playfields to
-   enable novel hybrid raster-vector
-   user experiences
+   virtual deflection system. The turtle
+   graphics plane is sandwiched between
+   the fourth and fifth character
+   graphics playfields enabling novel
+   hybrid raster/vector user experiences
 
 The Comfy language has these keywords
 for working with graphics:

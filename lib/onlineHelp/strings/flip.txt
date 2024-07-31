@@ -1,3 +1,38 @@
+FLIP - Flip the record's invert flag
+
+Grammar:
+ "FLIP" rec [ "," force ]
+
+Arguments:
+ - rec: <record|array<record>> that have
+   an invert flag
+ - force: <boolean|number> see notes,
+   default -1
+
+Notes:
+ - Records that can be FLIP'ped:
+   - Cursor
+   - Char, found in Playfield.chr arrays
+     - Changes made to Char with FLIP
+       are NOT recorded in the VCE
+       shell's scrollback buffer
+ - force's values cause the following
+   changes to rec.inv:
+
+       force      \179  rec.inv change
+ \196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+         0        \179       false
+         1        \179       true
+       false      \179       false
+       true       \179       true
+        -1        \179   NOT rec.inv
+
+See also:
+ - 'scrollback buffer' section of the
+   %shell% topic
+
+  ------------------------------------
+
 FLIP - Change the case of characters in
 a string
 
@@ -10,9 +45,8 @@ Arguments:
    be forced all upper- or lowercase?
 
 Evaluates to:
- <string> with Kid-SCII characters a-z
- swapped with corresponding A-Z
- characters
+ <string> value with characters altered
+ according to notes below
 
 Notes:
  - When toupper is truthy, evaluated
@@ -27,58 +61,8 @@ Notes:
    - a mix of lowercase and uppercase:
      evaluated value is made all
      uppercase
- - Kid-SCII characters other than a-z
-   and A-Z are not evaluated by FLIP and
-   will be copied unchanged to the
-   evaluated string
-
-  ------------------------------------
-
-FLIP - Flip the Cursor record's invert
-flag
-
-Grammar:
- "FLIP" cursor [ "," force ]
-
-Arguments:
- - cursor: <record> the Cursor record
- - force: <boolean|number> see notes,
-   default -1
-
-Notes:
- - force's values cause the following
-   changes to Cursor.inv:
-
-       force      \179 Cursor.inv change
- \196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
-         0        \179       false
-         1        \179       true
-       false      \179       false
-       true       \179       true
-        -1        \179  NOT Cursor.inv
-
-  ------------------------------------
-
-FLIP - Flip a Char record's invert flag
-
-Grammar:
- "FLIP" char [ "," force ]
-
-Arguments:
- - char: <record> a Char record
- - force: <boolean|number> see notes,
-   default -1
-
-Notes:
- - A playfield's Char records can be
-   found in the Playfield.chr arrays
- - force's values cause the following
-   changes to Char.inv:
-
-       force      \179  Char.inv change
- \196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
-         0        \179       false
-         1        \179       true
-       false      \179       false
-       true       \179       true
-        -1        \179   NOT Char.inv
+ - Only Kid-SCII characters a-z and A-Z,
+   the basic latin alphabet characters,
+   are evaluated by FLIP. All other
+   Kid-SCII characters will be copied
+   unchanged to the evaluated string

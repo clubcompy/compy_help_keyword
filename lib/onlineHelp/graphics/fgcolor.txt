@@ -1,0 +1,29 @@
+FGCOLOR - Set foreground color
+
+Grammar:
+ "FGCOLOR" [ rec "," ] color
+
+Arguments:
+ - rec: <record|array<record>> that have
+   foreground colors. Default is the
+   Cursor record
+ - color: <number> a Comfy color code,
+   GTE 0 and LTE 255
+
+Notes:
+ - All affected rec.fgc will be set with
+   color
+ - Records usable with FGCOLOR:
+   - Cursor
+   - Border
+   - Char, found in Playfield.chr arrays
+     - Changes made to a Char with
+       FGCOLOR are NOT recorded in the
+       VCE shell's scrollback buffer
+
+See also:
+ - 'scrollback buffer' section of the
+   %shell% topic
+
+Synonyms:
+ - "FGCL"

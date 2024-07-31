@@ -1,0 +1,20 @@
+RESIZE - Change width and height
+
+Grammar:
+ "RESIZE" rec "," width "," height
+
+Arguments:
+ - rec: <record|array<record>> that have
+   a width and height that can change
+ - width: <number> new width for rec.
+   Can be GTE 0
+ - height: <number> new height for rec.
+   Can be GTE 0
+
+Notes:
+ - Records that can RESIZE:
+   - Border, width and height may be
+     GTE 0 and LTE 8
+
+Synonyms:
+ - "RESZ"

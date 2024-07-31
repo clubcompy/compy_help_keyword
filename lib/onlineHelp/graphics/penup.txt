@@ -1,0 +1,11 @@
+PENUP - Pick pen up off drawing surface
+
+Grammar:
+ "PENUP" [ rec ]
+
+Arguments:
+ - <record> that has a drawing pen.
+   Default is the Turtle record
+
+Synonyms:
+ - "PENU"

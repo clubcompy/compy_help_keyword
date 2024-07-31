@@ -1,0 +1,20 @@
+HDATA - read hexadecimal 8-bit unsigned
+        integer values from a string
+
+Grammar:
+ "HDATA" str
+
+Arguments:
+ - str: <string> string containing pairs
+   of hexadecimal digits (0-9 and a-f)
+
+Notes:
+ - Each digit pair in str is read high
+   nibble first, followed by low nibble
+ - A nibble (alt: nybble) refers to 4
+   bits of a byte. A byte is an 8-bit,
+   unsigned integer: GTE 0 and LTE 255
+ - Spaces found in str are ignored
+ - If an odd number of digits is present
+   in str, the last pair will be auto-
+   completed with a 0 low nibble

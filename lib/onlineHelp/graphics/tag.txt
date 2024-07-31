@@ -24,8 +24,10 @@ Arguments:
 Notes:
  - TAG will draw characters to all
    SELECT'd Playfield.chr[y][x]
- - Changes made to Playfield characters
-   with TAG are NOT recorded in the VCE
-   shell's scrollback buffer. See the
-   'scrollback buffer' section of the
+ - Changes made to Playfield.chr with
+   TAG are NOT recorded in the VCE
+   shell's scrollback buffer
+
+See also:
+ - 'scrollback buffer' section of the
    %shell% topic

@@ -1,0 +1,26 @@
+PENDOWN - Put pen down on drawing
+surface
+
+Grammar:
+ "PENDOWN" [ rec [ "," flg ] ] | [ flg ]
+
+Arguments:
+ - rec: <record> that has a drawing pen.
+   Default is the Turtle record
+ - flg: <boolean|number> see notes,
+   default true
+
+Notes:
+ - flg's values cause the following
+   changes to rec.pen:
+
+        flg       \179   rec.pen change
+ \196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+         0        \179       false
+         1        \179       true
+       false      \179       false
+       true       \179       true
+        -1        \179    NOT rec.pen
+
+Synonyms:
+ - "PEND"

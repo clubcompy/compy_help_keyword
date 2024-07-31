@@ -22,3 +22,6 @@ Notes:
   empty <string>  \179  <boolean> false
    empty <array>  \179  <boolean> false
    anything else  \179  <boolean> true
+
+Synonyms:
+ - "TOBO"

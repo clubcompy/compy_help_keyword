@@ -1,0 +1,12 @@
+HIDE - make invisible
+
+Grammar:
+ "HIDE" rec
+
+Arguments:
+ - rec: <record|array<record>> records
+   to hide
+
+Notes:
+ - Same as SHOW with false for flg
+   argument

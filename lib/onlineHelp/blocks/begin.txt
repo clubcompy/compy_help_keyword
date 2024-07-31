@@ -1,0 +1,14 @@
+BEGIN - start a data block
+
+Notes:
+ - BEGIN is used alongside other
+   keywords to start a block for data
+   entry that spans multiple program
+   lines containing DATA, HDATA and
+   PALETTE keywords
+ - The "see also" section below lists
+   keywords that work with BEGIN
+
+See also:
+ - %ARRAY%
+ - %CREMAP%
