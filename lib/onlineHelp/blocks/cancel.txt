@@ -1,0 +1,15 @@
+CANCEL - cancel a LISTEN'er by its
+listener_key
+
+Grammar:
+ "CANCEL" key
+
+Arguments:
+ - key: <listener_key> a valid key
+
+Notes:
+ - before being CANCEL'd, a listener_key
+   will display a unique ID for the
+   LISTEN'er internal task when PRINT'd
+ - after being CANCEL'd, a listener_key
+   will display \174defunct\175 when PRINT'd

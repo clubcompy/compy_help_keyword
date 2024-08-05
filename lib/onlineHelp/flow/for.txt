@@ -8,7 +8,7 @@ Grammar:
     .
  "END"
 
-Description:
+Arguments:
  - v: <number> loop index variable name
  - si: <number> initial value for v
  - r_kw: keyword controlling range type
@@ -28,7 +28,7 @@ Grammar:
  "FOR" v "=" si r_kw su [ "STEP" st ]
   "DO" stmt
 
-Description:
+Arguments:
  - v: <number> loop index variable name
  - si: <number> initial value for v
  - r_kw: keyword controlling range type

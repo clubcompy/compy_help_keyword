@@ -3,7 +3,7 @@ SHAKE - set playfield pixel offset
 Grammar:
  "SHAKE" [ rec "," ] x "," y
 
-Description:
+Arguments:
  - rec: <record|array<record>> Playfield
    records to be SHAKE'd. Defaults to
    the list of all currently SELECT'd

@@ -1,0 +1,8 @@
+DECLARE
+
+Notes:
+ - DECLARE only appears with the RECORD
+   keyword
+
+See also:
+ - %RECORD%

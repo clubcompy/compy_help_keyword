@@ -1,0 +1,24 @@
+SIGNAL - notify LISTEN'ers
+
+Grammar:
+ "SIGNAL" rec
+
+Arguments:
+ - rec: <record> to notify
+
+Notes:
+ - SIGNAL can only be used in a running
+   program
+ - It is an error to SIGNAL any built-in
+   record. Use SIGNAL on records created
+   with DECLARE RECORD
+ - rec will have its LISTEN'ers notified
+   ASAP and not immediately. Any pending
+   SIGNAL's against rec will be lost if
+   the program ends before the VCE has a
+   chance to run rec's LISTEN'ers
+
+See also:
+ - %LISTEN%
+ - %RECORD%
+ - %builtins%

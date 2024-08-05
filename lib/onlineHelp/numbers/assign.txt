@@ -14,13 +14,13 @@ Evaluates to:
  <*> evaluated rvalue assigned to lvalue
 
 Side effects:
- - lvalue is dereferenced and rvalue is
-   assigned to lvalue according to rules
-   described in notes below
  - If lvalue was a symbol that did not
    yet exist, after assignment completes
    the variable will exist for that
    symbol
+ - lvalue is dereferenced and rvalue is
+   assigned to lvalue according to rules
+   described in notes below
 
 Notes:
  - Comfy variables can store complex
@@ -37,6 +37,11 @@ Notes:
    variable. Copying the value is faster
    and more convenient than using
    pointers for simple values.
+ - If rvalue is a record_def, a new
+   record containing a copy of the
+   record_def's fields will be created
+   and that new record will be assigned
+   to the lvalue
 
 See also:
  %SET%

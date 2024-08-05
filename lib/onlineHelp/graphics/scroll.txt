@@ -3,7 +3,7 @@ SCROLL - Playfield character scrolling
 Grammar:
  "SCROLL" [ rec "," ] x "," y
 
-Description:
+Arguments:
  - rec: <record|Array<record>> Playfield
    records to be SCROLL'd. Defaults to
    the list of all currently SELECT'd

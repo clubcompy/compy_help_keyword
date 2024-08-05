@@ -1,0 +1,27 @@
+DECLARE RECORD - define a new type of
+record, known as a record_def
+
+Grammar:
+ "DECLARE" "RECORD" sym
+    .
+    . variable assignment lines
+    .
+ "END"
+
+Arguments:
+ - sym: <symbol> designating the global
+   name of the record_def
+
+Notes:
+ - A record_def is a set of field names
+   with default values declared on the
+   variable assignment lines
+ - record_def's are used as templates
+   for the creation of new records
+ - The assignment operator can be used
+   to create new records based on a
+   record_def. See that topic for more
+   information
+
+See also:
+ - %assign%

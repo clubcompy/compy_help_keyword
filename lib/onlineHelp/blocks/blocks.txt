@@ -13,8 +13,8 @@ spanning multiple lines where keywords
 and operators are grouped together are
 known as a 'block'
 
-These are the Comfy language keywords
-that help to create multi-line blocks:
+These are some of the Comfy language
+keywords that help with managing blocks:
 
   %BEGIN%    %END%      %DATA%     %HDATA%
   %DECLARE%  %RECORD%   %LISTEN%   %CANCEL%

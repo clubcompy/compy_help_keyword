@@ -1,0 +1,37 @@
+LISTEN - react to signalled records
+
+Grammar:
+ "LISTEN" rec
+    .
+    . 0-or-more comfy statements/lines
+    .
+ "END"
+
+Arguments:
+ - rec: <record> a record to listen to
+
+Evaluates to:
+ <listener_key> identifies the listener
+
+Notes:
+ - LISTEN'ers to records will have their
+   code blocks run on each SIGNAL to rec
+ - VCE will clone rec at the time it is
+   SIGNAL'led. Inside the LISTEN block,
+   this clone of rec appears as a
+   snapshot from the past that may
+   differ from the current time's rec
+ - All records in the Comfy language can
+   be SIGNAL'led and LISTEN'ed
+   - Only the VCE system may SIGNAL
+     built-in records (e.g. Cursor)
+   - Only the user's Comfy code may
+     SIGNAL user-created records
+ - Pass the listener_key to CANCEL to
+   stop the LISTEN block from being
+   triggered by SIGNAL's
+
+See also:
+ - %SIGNAL%
+ - %CANCEL%
+ - %builtins%

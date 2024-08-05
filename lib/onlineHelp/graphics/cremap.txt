@@ -8,7 +8,7 @@ Grammar:
     .
  "END"
 
-Description:
+Arguments:
  - mode: <uint8> 0 = 8x8 pixel (default)
                  1 = 16x16 pixel
  - st_c: <uint16> 0 \029 65535 character
@@ -29,7 +29,7 @@ CREMAP - remap character bitmaps
 Grammar:
  "CREMAP" mode "," st_c "," bitmaps
 
-Description:
+Arguments:
  - mode: <uint8> 0 = 8x8 pixel
                  1 = 16x16 pixel
  - st_c: <uint16> 0 \029 65535 character
