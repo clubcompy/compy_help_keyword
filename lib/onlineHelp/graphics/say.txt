@@ -33,13 +33,13 @@ Notes:
  - SAY behaves differently depending
    on the type of SAY'able record(s)
    found in rec:
-   - Playfield: Temporarily SELECT's
-     the Playfield by itself, value
-     displayed at the current Cursor's
-     color/position
-   - FileHandle: writes value as a
-     string to the current position
-     according to the open file mode
+  \156 Playfield: Temporarily SELECT's
+    the Playfield by itself, value
+    displayed at the current Cursor's
+    color/position
+  \156 FileHandle: writes value as a
+    string to the current position
+    according to the open file mode
 
 Similar to:
 %PRINT%

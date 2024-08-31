@@ -1,5 +1,5 @@
 BEGIN CREMAP - remap character bitmaps
-               (block declaration)
+(block declaration)
 
 Grammar:
  "BEGIN CREMAP" [ mode [ "," st_c ] ]
@@ -23,8 +23,8 @@ Arguments:
 
   ------------------------------------
 
-CREMAP - remap character bitmaps
-         (one-line declaration)
+CREMAP - remap character bitmaps (one-
+line declaration)
 
 Grammar:
  "CREMAP" mode "," st_c "," bitmaps

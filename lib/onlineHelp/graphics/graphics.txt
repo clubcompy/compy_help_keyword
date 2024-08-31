@@ -1,6 +1,5 @@
              About Graphics
-             \006\006\006\006\006\006\006\006\006\006\006\006\006\006
-
+             \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
 Your VCE has a color graphics system.
 Graphics are anything visible on the
 computer screen. The main features of

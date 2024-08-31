@@ -1,6 +1,5 @@
            About Built-Ins
-           \006\006\006\006\006\006\006\006\006\006\006\006\006\006\006
-
+           \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
 The Comfy language provides built-in
 %variables% that are either records or
 arrays of records that are always

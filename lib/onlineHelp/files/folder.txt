@@ -1,0 +1,120 @@
+LIST FOLDER - get a folder listing
+
+Grammar:
+ "LIST" "FOLDER" [ folderName ]
+
+Arguments:
+ - folderName: <string> name of folder
+   to get listing. Default is the logged
+   in user's current working folder
+
+Evaluates to:
+ <record<$FolderListing>> see record
+ definition below
+
+Notes:
+ - If LIST FOLDER is not assigned to a
+   variable, a fancy folder listing
+   will be displayed after the folder
+   contents have been scanned
+ - If LIST FOLDER is assigned to a
+   variable, its record can be used in
+   programs. Use WAIT on the record to
+   wait for the task to complete
+
+Record<$FolderListing> definition:
+ - Signals when: LIST FOLDER completes
+
+  field \179        description
+ \196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+   fldr \179 <string> folder name
+  bfree \179 <number> drive bytes free
+  child \179 <array<record<$FolderChild>>>
+        \179 file/folder children of fldr
+ status \179 <number> result code (see
+        \179 codes)
+
+Record<$FolderChild> definition:
+ - Signals when: never
+
+   field  \179        description
+ \196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+   name   \179 <string> child name
+   flgs   \179 <number> fs node flags (see
+          \179 codes)
+   size   \179 <number> file size (bytes)
+  modtime \179 <number> last modified
+          \179 timestamp (in epoch time)
+
+See also:
+ - %codes%
+
+  ------------------------------------
+
+FOLDER - Get/set current working folder
+
+Grammar:
+ "FOLDER" [ fldr ]
+
+Arguments:
+ - fldr: <string> name of folder to set
+   as the new current working folder for
+   the user's session
+
+   When omitted, the current working
+   folder will not change
+
+Evaluates to:
+ <record<$FolderResults>> FOLDER keyword
+ status report. See record definition
+ below
+
+Notes:
+ - When keywords like SAVE and LOAD are
+   given a filename argument, the
+   current working folder is the
+   location on the file system where the
+   file is accessed
+
+Record<$FolderStatus> definition:
+ - Signals when: FOLDER completes
+
+   field  \179        description
+ \196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+    cwf   \179 <string> current working
+          \179 folder
+   prev   \179 <string> previous current
+          \179 working folder
+  status  \179 <number> result code (see
+          \179 codes)
+
+See also:
+ - %codes%
+
+  ------------------------------------
+
+WRITE FOLDER - create folder
+
+Grammar:
+ "WRITE" "FOLDER" fldr
+
+Argument:
+ - fldr: <string> name of folder to
+   create
+
+Evaluates to:
+ <record<$Status>> See record definition
+ below
+
+Record<$Status> definition:
+ - Signals when: WRITE FOLDER completes
+
+   field  \179        description
+ \196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+   name   \179 <string> if success, newly
+          \179 created folder path
+  status  \179 <number> result code (see
+          \179 codes)
+
+See also:
+ - %codes%

@@ -1,8 +1,7 @@
       The Comfy Computer Language
-      \006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006
-
+      \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
 %Keywords%
-\006\006\006\006\006\006\006\006
+\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
 The 'verbs' of the Comfy language are
 called 'keywords'. Keywords do work in
 the computer. The ALL UPPERCASE words
@@ -67,14 +66,14 @@ category:
   %PROOF%    %HELP%     %SET%
 
 Nouns
-\006\006\006\006\006
+\u203E\u203E\u203E\u203E\u203E
 'Nouns' in the Comfy language are
 things like %variables%, %numbers%, %strings%,
 %booleans% and %record%s. Go to those topics
 for more information.
 
 %BuiltIns%
-\006\006\006\006\006\006\006\006
+\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
 The Comfy language provides built-in
 %variables% that are either records or
 arrays of records that are always
@@ -87,7 +86,7 @@ the built-ins in the Comfy language:
   %Turtle%   %Playfield%
 
 Operators and Punctuation
-\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006
+\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
 Special symbols in Comfy behave
 similarly to symbols in natural
 languages like English. Working symbols
@@ -118,7 +117,7 @@ Punctuation -
  ;  %statement% end
 
 Modes
-\006\006\006\006\006
+\u203E\u203E\u203E\u203E\u203E
  - immediate mode - VCE mode where
    actions take effect immediately.
    The VCE is in this mode when you
@@ -135,8 +134,7 @@ Modes
    immediate mode.
 
 Other Comfy Rules
-\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006
-
+\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
 - Keywords and variable names are "case
   insensitive" -- Comfy ignores whether
   the letters are UPPERCASE or lowercase

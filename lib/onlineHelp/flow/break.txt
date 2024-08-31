@@ -1,0 +1,18 @@
+BREAK - unconditional GOTO end of loop
+
+Grammar:
+ "BREAK" [ levels ]
+
+Arguments:
+ - levels: <number> of nested loops to
+   BREAK out of, must be GTE 1.
+   Default 1
+
+Notes:
+ - BREAK may only be used inside FOR or
+   WHILE loop blocks
+ - BREAK will GOTO the levels-nth END
+   statement that follows that
+   corresponds with FOR and WHILE loops
+   and then proceed out of that loop to
+   the next statement that follows END

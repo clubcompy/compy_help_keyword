@@ -1,0 +1,24 @@
+QUIT - forcibly end a program
+
+Grammar:
+ "QUIT" [ mesg ]
+
+Arguments:
+ - mesg: <boolean|*> see notes below,
+   defaults to false
+
+Notes:
+ - QUIT ends the running program and
+   returns control to the VCE shell
+ - QUIT cannot be used outside of a
+   running program
+ - mesg controls if QUIT will display
+   a message after the program ends.
+   QUIT's line number will be printed
+   before the message
+
+       mesg       \179  what is printed
+ \196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+  <boolean> true  \179      nothing
+  <boolean> false \179   standard mesg
+   anything else  \179     TOSTR form

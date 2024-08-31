@@ -1,0 +1,21 @@
+GOSUB - unconditional jump to subroutine
+
+Grammar:
+ "GOSUB" line
+
+Arguments:
+ - line: <number> program line number
+
+Notes:
+ - line is treated as the start of a
+   program 'subroutine', which is a
+   block of code
+ - subroutines finish with a RETURN
+   line. RETURN unconditionally jumps
+   back to the line GOSUB was on
+
+Synonyms:
+ - "CALL"
+
+See Also:
+ - %RETURN%

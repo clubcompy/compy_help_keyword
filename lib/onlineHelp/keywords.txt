@@ -1,6 +1,5 @@
             About Keywords
-            \006\006\006\006\006\006\006\006\006\006\006\006\006\006
-
+            \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
 The 'verbs' of the Comfy language are
 called 'keywords'. Some keywords combine
 to do things. Here are all of the
@@ -73,14 +72,14 @@ reserved keywords are:
   ERROR    EVAL     EXPORT   FIRST
   FLAG     FLAT     FRIEND   FN
   FUNCTION ICON     INFO     EACH
-  KEYS     LAST     LOGIN    LOGOUT
-  LINE     LINK     MAYBE    MODULE
-  MONITOR  NEXT     PALETTE  PEEK
-  POP      POKE     PROC     PROCEDURE
-  PUSH     RENAME   RENUM    SHIFT
-  SLICE    SOUND    SORT     SPMAP
-  START    STOP     SWITCH   TASK
-  TEST     TOP      TOUCH    TRACE
-  TROFF    TRON     UNIQ     UNSHIFT
-  UNZIP    VOLUME   WITH     YIELD
-  ZIP
+  KEYS     LABEL    LAST     LOGIN
+  LOGOUT   LINE     LINK     MAYBE
+  MODULE   MONITOR  NEXT     PALETTE
+  PEEK     POP      POKE     PROCEDURE
+  PROC     PUSH     RENAME   RENUM
+  SHIFT    SLICE    SOUND    SORT
+  SPMAP    START    STOP     SWITCH
+  TASK     TEST     TOP      TOUCH
+  TRACE    TROFF    TRON     UNIQ
+  UNSHIFT  UNZIP    VOLUME   WITH
+  YIELD    ZIP

@@ -1,0 +1,70 @@
+               About Files
+               \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
+Most computers have an off-switch, and
+when you power these computers down, any
+data that was in their memories will be
+lost. Electricity has to constantly flow
+into computers so they can remember or
+compute anything
+
+A convenient way to make programs and
+data survive a loss of electrical power
+is to save them to 'permanent storage'
+
+Permanent storage is a little slower
+than your computer's memory, but it has
+the advantage of not needing electricity
+to keep your data safe while the power
+is out
+
+In the case of the VCE, we use web
+browsers' 'local storage' system as our
+permanent storage. Local storage writes
+onto the physical computer's HDD or SSD
+
+VCE's permanent storage is organize in
+terms of 'files', 'folders', and the
+'drives' in our 'file system'
+
+A file system works like a virtual
+office filing cabinet. The cabinet has
+drawers that contain files and folders.
+Each drawer in the virtual cabinet
+represents a storage device, called a
+'drive'. Drives store files and folders
+as vast numbers of bytes
+
+Files are a sequence of characters or
+bytes that can represent programs, data
+files, documents, or any other bit of
+data that users want to save into
+permanent storage
+
+Folders are containers for files and
+other folders. Every file must live in
+a folder
+
+Files and folders have names that can
+be used to address them when doing file
+system operations
+
+Every drive has a built-in 'root folder'
+where files and folders can go
+
+Every drive has a number identifier. The
+drive for 'local storage' is always
+drive #0
+
+So that every ClubCompy user has a place
+to save their files, a folder named
+after their screen name is created on
+drive #0. This folder becomes the
+default folder the user sees after login
+
+The Comfy language has keywords whose
+primary purpose is to work with files,
+folders and the file system:
+
+  %SAVE%     %LOAD%     %FOLDER%   %OPEN%
+  %CLOSE%    %READ%     %WRITE%    %SEEK%
+  %DELETE%

@@ -1,6 +1,5 @@
             About Numbers
-            \006\006\006\006\006\006\006\006\006\006\006\006\006
-
+            \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
 The Comfy language has symbols for
 performing operations with numbers:
 

@@ -1,0 +1,7 @@
+GOTO - unconditional jump to line
+
+Grammar:
+ "GOTO" line
+
+Arguments:
+ - line: <number> program line number

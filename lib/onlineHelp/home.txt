@@ -1,5 +1,5 @@
          Welcome to ClubCompy
-         \006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006
+         \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
 Congratulations! You now are the proud
 owner of a ClubCompy Virtual Computer
 Environment (VCE).

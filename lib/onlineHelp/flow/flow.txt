@@ -1,1 +1,46 @@
-TBD
+           About Program Flow
+           \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
+Comfy programs are organized as a list
+of numbered lines of instructions. When
+the RUN keyword is used, the VCE will
+perform the numbered lines in order
+from lowest number to highest. The
+line numbers provide a natural ordering
+to the 'flow' of a program's lines
+
+There are many reasons programmers might
+want to jump around between lines in
+their programs. For example, a program
+might have to make a decision about
+something. Usually the outcome of that
+decision will be to jump to different
+lines depending on the decision: 'yes'
+goes to one line, 'no' goes to a
+different line. There are Comfy keywords
+that can be used for decision-making
+
+Or, perhaps a programmer wants to repeat
+a set of lines. There are Comfy keywords
+for that as well
+
+There are even keywords for waiting
+that pause on the current line until
+things happen
+
+Comfy offers many strange and useful
+options for program flow control. If
+you're lucky, you'll get to encounter
+and use them all! But, be mindful when
+you do flow control; bugs love to sneak
+into those parts of your code
+
+The Comfy language has keywords whose
+purpose is to provide flow control:
+
+  %RUN%      %QUIT%     %GOTO%     %GOSUB%
+  %RETURN%   %IF%       %FOR%      %WHILE%
+  %BREAK%    %CONTINUE% %VWAIT%    %WAIT%
+  %SIGNAL%
+
+See also:
+ - %program%

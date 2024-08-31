@@ -15,14 +15,14 @@ Notes:
  - All affected rec.bgc will be set with
    color
  - Records usable with BGCOLOR:
-   - Cursor
-   - Playfield records
-     - Playfield[0] is not allowed to
-       have transparency for BGCOLOR
-   - Char, found in Playfield.chr arrays
-     - Changes made to a Char with
-       BGCOLOR are NOT recorded in the
-       VCE shell's scrollback buffer
+  \156 Cursor
+  \156 Playfield records
+   - Playfield[0] is not allowed to have
+     transparency for BGCOLOR
+  \156 Char, found in Playfield.chr arrays
+   - Changes made to a Char with BGCOLOR
+     are NOT recorded in the VCE shell's
+     scrollback buffer
 
 See also:
  - 'scrollback buffer' section of the

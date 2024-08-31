@@ -1,0 +1,62 @@
+READ - read from handle
+
+Grammar:
+ "READ" hd "," ar [ "," lm [ "," st ] ]
+
+Arguments:
+ - hd: <record<*Handle>> any handle-
+   type record (eg. $FileHandle)
+ - ar: <array> output array that
+   receives items that will be read from
+   handle hd
+ - lm: <number> limit of number of items
+   to read; must be GTE 1. Default 1
+ - st: <number> start index in output
+   array ar where items that were read
+   are placed. Default 0
+
+Evaluates To:
+ <record<$Status>> See record definition
+ below
+
+Notes:
+ - READ's behavior changes depending on
+   what type of Handle record hd is:
+  \156 $FileRecord
+   - reading items moves a file pointer
+     which keeps track of what part of
+     the file will be read from next.
+     Use SEEK with hd to move or get the
+     current file pointer
+   - if file is text, each 'item' that
+     READ places in ar will consist of
+     a string of 16-bit little-endian
+     Kid-SCII characters that ends in a
+     new line (0x0a, not included) or
+     the end-of-file and has a maximum
+     4096 character count
+   - if file is binary, each 'item' that
+     READ places in ar will be the next
+     record, array, or other built-in
+     type stored in the file
+
+Record<$Status> definition:
+ - Signals when: READ completes
+
+   field  \179        description
+ \196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+   name   \179 <string> empty, unused
+  status  \179 <number> zero indicates no
+          \179 items were read (end-of-file
+          \179 for $FileHandles.) Positive
+          \179 value indicates count of
+          \179 items read successfully;
+          \179 will be LTE item limit lm.
+          \179 Negative value indicates
+          \179 error result code (see
+          \179 codes)
+
+See also:
+ - %codes%
+ - %SEEK%
+ - %OPEN%

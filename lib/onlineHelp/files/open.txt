@@ -1,0 +1,91 @@
+OPEN FILE - open file handle
+
+Grammar:
+ "OPEN" "FILE" fname [ "," mode ]
+
+Argument:
+ - fname: <string> filename of file to
+   open
+ - mode: <string> optional, contains one
+   of the allowed OPEN FILE modes (see
+   table below) followed by optional
+   allowed file creation flags (see
+   table below.) Default mode is 'r'
+
+Evaluates to:
+ <record<$FileHandle>> See record
+ definition below
+
+Record<$FileHandle> definition:
+ - Signals when: OPEN FILE and CLOSE
+   keywords complete successfully
+
+   field \179        description
+ \196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+    id   \179 <number> file handle ID
+  status \179 <number> result code (see
+         \179 codes)
+    fld  \179 <string> folder that OPEN'ed
+         \179 FILE is in
+   name  \179 <string> filename of OPEN'ed
+         \179 FILE
+   bits  \179 <number> Handle disposition
+         \179 bit flags (see codes)
+    evt  \179 <number> input event code
+         \179 (see codes)
+
+Allowed OPEN FILE mode strings:
+ - Choose one of the following strings
+   for the mode argument:
+
+  mode \179          description
+ \196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+   'r' \179 Open file for reading only.
+       \179 File pointer is positioned at
+       \179 the start of file
+  'r+' \179 Open existing file for read
+       \179 and write. File pointer is
+       \179 positioned at start of file
+   'w' \179 Open file for write. If the
+       \179 file exists, erase its
+       \179 contents. Otherwise, create
+       \179 file. File pointer is
+       \179 positioned at start of file
+  'w+' \179 Open file for read and write.
+       \179 If the file already exists,
+       \179 erase its contents. Otherwise,
+       \179 create file. File pointer is
+       \179 positioned at the beginning of
+       \179 the file
+   'a' \179 Open file for write. If the
+       \179 file does not already exist,
+       \179 create it. File pointer is
+       \179 positioned at end of file
+  'a+' \179 Open file for read and write.
+       \179 If the file does not already
+       \179 exist, create it. File pointer
+       \179 is positioned at the end of
+       \179 the file
+
+Allowed file creation flags:
+ - File creation flags are optional
+   suffixes on OPEN FILE mode (eg. 'w+x'
+   or 'ab')
+ - File creation flags may be combined
+   (eg. 'wbx' or 'a+bx')
+
+  flag \179        description
+ \196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+   'b' \179 Newly created file is a binary
+       \179 data file. When omitted, then
+       \179 the newly created file is
+       \179 saved as a text file where
+       \179 each character is represented
+       \179 as an unsigned, little endian,
+       \179 16-bit value
+   'x' \179 The file is executable. If
+       \179 omitted, then the file is not
+       \179 executable
+
+See also:
+ - %codes%

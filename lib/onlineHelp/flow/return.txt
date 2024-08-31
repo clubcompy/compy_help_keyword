@@ -1,0 +1,9 @@
+RETURN - unconditionally jump back to
+GOSUB line
+
+Grammar:
+ "RETURN"
+
+Notes:
+ - RETURN can only be used in a program
+   after GOSUB is used

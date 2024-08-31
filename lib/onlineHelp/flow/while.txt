@@ -1,0 +1,22 @@
+WHILE - conditional loop
+
+Grammar:
+ "WHILE" isTrue
+    .
+    . 0-or-more Comfy lines
+    .
+ "END"
+
+Arguments:
+ - isTrue: <boolean> decides whether
+   block of Comfy lines get executed.
+   See notes
+
+Notes:
+ - Works like a repeating IF
+ - When isTrue is truthy, the Comfy
+   lines are executed; upon reaching
+   the END line, GOTO to the
+   WHILE line (a.k.a. 'looping')
+ - When isTrue is falsy, GOTO the END
+   line and leave the WHILE loop

@@ -1,6 +1,5 @@
              About Booleans
-             \006\006\006\006\006\006\006\006\006\006\006\006\006\006
-
+             \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
 Boolean variables in the Comfy language
 can have values of true or false.
 Booleans can hold "yes" (true) and "no"

@@ -1,35 +1,72 @@
                VCE Shell
-               \006\006\006\006\006\006\006\006\006
-
+               \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
 The VCE shell is a text editor that lets
 you type-in programs. This topic talks
 about how to enter in programs and use
 the shell's special key combos to
-manipulate the Display as part of.
+manipulate the Cursor and how it moves
+around the Display
+
+Cursor
+\u203E\u203E\u203E\u203E\u203E\u203E
+The flashing block on your VCE Display
+is called the Cursor. When you press
+keys on the keyboard, the cursor will
+either move, print a symbol, or both
+
+There are keyboard keys and key combos
+you can use to control what the Cursor
+does:
+
+
+
+Prompt
+\u203E\u203E\u203E\u203E\u203E\u203E
+When the VCE is done doing a job, is not
+running a program, and wants to announce
+that it is ready to take new type-in
+instructions from the user, the shell
+will display a 'prompt'. Here is an
+example of a shell prompt:
+
+\uEB40\uE9BD
+woldie \175 In folder: '0:/woldie' \175
+
+\uEAFE\uE8FE
+The prompt shows the logged-in user to
+clubcompy.com and what folder on the
+Compy File System (FS) they are looking
+at
 
 Scrollback Buffer
-\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006
+\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
 The shell keeps track of lines it has
-PRINT'ed to on the Display. New lines
-can be PRINT'ed to the line below the
-Cursor's position, and when the Cursor
-reaches the bottom of the Display, it
-will scroll all lines of the Display up
-by 1 line. Lines that scroll off the top
-of the Display are not lost. They are
-recorded into an internal data structure
-called the 'scrollback buffer'
+PRINT'ed to the Display. New lines can
+be PRINT'ed one line below the Cursor's
+position, and when the Cursor reaches
+the bottom of the Display, it will
+scroll all lines of the Display up by
+one line. This all happens automatically
+as part of the way PRINT works
 
-Using keyboard controls and Kid-SCII
-escape sequences, the Display can be
-be scrolled up and down to scroll saved
-lines from the scrollback buffer onto
-the Display. This help program uses the
-scrollback buffer in this way to show
-large documents
+Lines that scroll off the top of the
+Display are not lost. They are recorded
+into an internal data structure called
+the 'scrollback buffer'
 
-The scrollback buffer stores a maximum
-of approximately 5000 lines. Once that
-limit is reached, the topmost lines will
-be deleted from the scrollback buffer
-until 5000 or fewer lines are left
+By PRINT'ing special Kid-SCII escape
+sequences, the Display can be scrolled
+up and down to recover saved lines from
+the scrollback buffer back onto the
+Display
+
+This help program uses the scrollback
+buffer in this way to display large
+documents which cannot fit onto one
+screen
+
+The scrollback buffer stores up to 5000
+lines. Once that limit is reached, the
+topmost lines will be deleted from the
+scrollback buffer until 5000 or fewer
+lines are left

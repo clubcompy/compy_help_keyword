@@ -1,0 +1,60 @@
+WAIT WHILE - wait on current line while
+boolean is true
+
+Grammar:
+ "WAIT" "WHILE" isTrue
+
+Arguments:
+ - isTrue: <boolean> when true, wait on
+   the current program line. When false
+   continue to the next line in the
+   Comfy program
+
+Notes:
+ - This is a one-line statement and not
+   related to the WHILE conditional loop
+ - May not be used in a LISTEN block
+
+  ------------------------------------
+
+WAIT - millisecond wait
+
+Grammar:
+ "WAIT" msec
+
+Evaluates to:
+ <number> msec
+
+Arguments:
+ - msec: <number> of milliseconds to
+   wait on the current program line
+
+Notes:
+ - May not be used in a LISTEN block
+
+  ------------------------------------
+
+WAIT - wait until record is signalled
+
+Grammar:
+ "WAIT" rec
+
+Arguments:
+ - rec: <record> that will be listened
+   to until it is signalled
+
+Evaluates to:
+ <record> rec
+
+Notes:
+ - May not be used in a LISTEN block
+
+  ------------------------------------
+
+WAIT - wait forever
+
+Grammar:
+ "WAIT"
+
+Notes:
+ - May not be used in a LISTEN block

@@ -1,0 +1,35 @@
+DELETE - delete a file or folder
+
+Grammar:
+ "DELETE" fileName
+
+Arguments:
+ - fileName: <string> name of file or
+   folder to delete
+
+Evaluates to:
+ <record<$Status>> See record definition
+ below
+
+Notes:
+ - DELETE removes the file or folder
+   permanently from the file system, use
+   caution with the DELETE keyword
+ - Folders cannot be deleted unless they
+   are empty
+
+Record<$Status> definition:
+ - Signals when: DELETE completes
+
+   field  \179        description
+ \196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+   name   \179 <string> full path of
+          \179 file or folder successfully
+          \179 deleted. Otherwise, blank
+          \179 string
+  status  \179 <number> result code (see
+          \179 codes)
+
+See also:
+ - %codes%
+

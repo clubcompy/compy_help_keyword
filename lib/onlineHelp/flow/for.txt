@@ -35,9 +35,9 @@ Arguments:
   \156 "UPTO": loop range exclusive of su
   \156 "INCL": loop range inclusive of su
  - su: <number> final/outer bound for v
- - st: <number> optional amount to
-       increment or decrement value for
-       each loop iteration (default 1)
+ - st: <number> amount to increment or
+       decrement value for each loop
+       iteration, default 1
  - stmt: a comfy statement to be
          executed each loop iteration
 

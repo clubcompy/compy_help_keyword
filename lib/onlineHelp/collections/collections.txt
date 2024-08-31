@@ -1,6 +1,5 @@
             About Collections
-            \006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006
-
+            \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
 The Comfy language supports grouping
 multiple items together into a single
 variable. Arrays are an ordered

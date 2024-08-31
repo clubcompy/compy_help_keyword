@@ -1,0 +1,18 @@
+CONTINUE - unconditional GOTO start of
+loop
+
+Grammar:
+ "CONTINUE" [ levels ]
+
+Arguments:
+ - levels: <number> of nested loops to
+   CONTINUE to, must be GTE 1. Default 1
+
+Notes:
+ - CONTINUE may only be used inside FOR
+   or WHILE loop blocks
+ - CONTINUE will GOTO the levels-nth END
+   statement that follows that
+   corresponds with FOR and WHILE loops
+   and then proceed to the start of that
+   loop for the next iteration

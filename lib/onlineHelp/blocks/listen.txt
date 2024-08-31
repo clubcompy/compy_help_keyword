@@ -23,10 +23,10 @@ Notes:
    differ from the current time's rec
  - All records in the Comfy language can
    be SIGNAL'led and LISTEN'ed
-   - Only the VCE system may SIGNAL
-     built-in records (e.g. Cursor)
-   - Only the user's Comfy code may
-     SIGNAL user-created records
+  \156 Only the VCE system may SIGNAL
+    built-in records (e.g. Cursor)
+  \156 Only the user's Comfy code may
+    SIGNAL user-created records
  - Pass the listener_key to CANCEL to
    stop the LISTEN block from being
    triggered by SIGNAL's

@@ -1,0 +1,21 @@
+LOAD - load executable file
+
+Grammar:
+ "LOAD" fileName
+
+Arguments:
+ - fileName: <string> name of file to
+   load, see notes
+
+Notes:
+ - File must exist for fileName and have
+   its executable flag set
+ - Any program already existing in
+   memory will be replaced with file
+   without warning. SAVE the existing
+   program before LOAD'ing a new program
+   if existing program shouldn't be lost
+
+See also:
+ - %SAVE%
+ - %RUN% (temporary program by filename)

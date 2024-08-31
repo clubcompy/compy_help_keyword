@@ -35,19 +35,19 @@ Notes:
  - Quick clearing display records
    will perform a partial reset of their
    part of the VCE display:
-   - Playfield: visible characters are
-     cleared of their codes and colors,
-     and its background color is reset
-     to its power-on color
-   - Cursor: Foreground/background
-     colors clear to power-on colors,
-     and flags and stashes are cleared.
-     Cursor position is NOT cleared
-   - Display: clear counters and timers.
-     Active playfields, SELECT'ions and
-     stashes are NOT cleared
-   - Turtle: turtle surface is cleared,
-     but the turtle's other states (vis,
-     pen, dir) are left unchanged
-   - Border: Border color, width and
-     height are reset to power-on states
+  \156 Playfield: visible characters are
+    cleared of their codes and colors,
+    and its background color is reset
+    to its power-on color
+  \156 Cursor: Foreground/background
+    colors clear to power-on colors,
+    and flags and stashes are cleared.
+    Cursor position is NOT cleared
+  \156 Display: clear counters and timers.
+    Active playfields, SELECT'ions and
+    stashes are NOT cleared
+  \156 Turtle: turtle surface is cleared,
+    but the turtle's other states (vis,
+    pen, dir) are left unchanged
+  \156 Border: Border color, width and
+    height are reset to power-on states

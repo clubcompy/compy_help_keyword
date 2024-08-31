@@ -22,15 +22,15 @@ Notes:
    will read from rec
  - How GETSTR behaves depends on the
    type of rec:
-   - Cursor (default): reads PRINT-able
-     characters typed on the keyboard
-     from the Cursor's start position up
-     to maxc characters typed and the
-     Enter key is pressed
-   - File: reads up to maxc characters
-     from the File's current position or
-     the end-of-file, whichever comes
-     first
+  \156 Cursor (default): reads PRINT-able
+    characters typed on the keyboard
+    from the Cursor's start position up
+    to maxc characters typed and the
+    Enter key is pressed
+  \156 File: reads up to maxc characters
+    from the File's current position or
+    the end-of-file, whichever comes
+    first
  - The current Comfy running task will
    pause at GETSTR until it completes
    evaluation. Other tasks like LISTEN

@@ -1,5 +1,5 @@
      How do I program a computer?
-     \006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006\006
+     \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
 ... and what are computers anyway?
 
 Would you believe the first computers
@@ -8,66 +8,76 @@ human beings who were renowned for their
 ability to perform long series of math
 or scientific calculations. The word
 'computer' is actually an old word that
-means "one who calculates".
+means "one who calculates"
 
 In the 1940's, electronic computers
 were invented that could automatically
 perform a list of instructions called a
 'program'. Human authors of these
 program instructions came to be known as
-'programmers'.
+'programmers'
 
-Electronic computers were such a
-civilizational advancement that, from
+Electronic computers were such an
+advancement for civilization that, from
 the 1940's onward, computing became less
-a human job and more frequently a
-machine's job.
+a human job and more often a machine job
 
 At their cores, computers are very
-simple-minded and lack any creative
-spark like humans have. They can do math
-and bookkeeping and graphics and sound
-at lightning speed, but they must have
-every instruction spelled out with
-absolute precision.
+simple-minded and lack the creative
+spark humans have. Computers can do
+maths, bookkeeping, graphics and make
+sounds at incredible speeds, but they
+still require every instruction to be
+spelled out with absolute precision
 
-Giving bad instructions to a computer
-(called 'bugs') usually leads to misery.
+Giving bad instructions to a computer,
+a.k.a. 'bugs', usually leads to misery.
 This is because computers are never
 smart enough to recover from human
-mistakes on their own. After hitting a
-bug, computers will often stop working.
+mistakes on their own
+
+When a human gets a bad instruction,
+maybe they can figure out what to do
+next. But when a computer receives a
+buggy instruction, they will often stop
+working entirely. So sad!
+
 As programmers, we must always strive
 to rid our programs of bugs to maximize
-the joy our users feel.
+our users' computer joy
 
 To simplify precise communication with
-computers, we humans have invented
-special languages we use to 'speak' with
+computers, humans have invented special
+languages we use to 'speak' with
 computers. These special-purpose
-languages are not ones you could speak
-to people. They are languages designed
-for the computer to easily comprehend
-and to aid humans in giving computers
-the exact information they need to get
-work done and with fewer bugs.
+languages are not ones you could easily
+speak to people
+
+These are 'computer languages' designed:
+a) to be easy for the computer to read,
+b) to aid humans in giving out clear
+   instructions to the computer, and
+c) to introduce limitations or automatic
+   checks on what the human can say to
+   reduce the chances of buggy code
 
 Your VCE has a custom, built-in computer
-language called %Comfy%. It was designed
+language called %Comfy% which was designed
 to be easy for new computer learners to
-pick up and be productive with.
+pick up and become productive with
 
 %Comfy% is a reimagining of the classic
-BASIC computer language. BASIC was
-created by professors and students at
-Dartmouth College and then adapted for
-home computers by companies you might
-recognize, like Microsoft and Apple.
+BASIC computer language
 
-Akin to BASIC, in %Comfy% you create
-programs by feeding in a list of
-instructions organized as numbered lines
-of text:
+BASIC was created by professors and
+students at Dartmouth College and then
+adapted for home computers by companies
+you might recognize, like Microsoft and
+Apple
+
+Like BASIC, in %Comfy% we create programs
+by feeding in a list of instructions
+organized as numbered lines of text:
 
 \uEB40\uE9BD
 1 PRINTLN 'My'
@@ -76,45 +86,47 @@ of text:
 4 PRINTLN 'fleas'
 
 \uEAFE\uE8FE
-
 This program does four things in the
 order of the numbers at the front of
 each line, going from smallest to
-largest.
+largest
 
 First, line #1 will display the word
 'My' on your screen. Next, line #2 will
 display the word 'dog'. Then, line #3
 will display the word 'has'. Finally,
-line #4 will display 'fleas'.
+line #4 will display 'fleas'
 
 We like to pretend computers are our
-busy workers who are on-the-go. So, we
-tell our VCE to perform our program
-instructions using the word %RUN%.
+busy workers who are on-the-go. To tell
+our VCE to perform our program's
+instructions, we use the word %RUN%.
 Important: when we type %RUN%, we leave
-off the line number.
+off the line number
 
-Leaving off the line number is called
-"immediate mode" programming which says
-to your VCE, "Hey bub, don't store this
-line as part of me program, just go do
-what it says right away!" Many %Comfy%
-words can work in immediate mode, and a
-few words like %RUN% will only work in
-immediate mode.
+Side note: leaving off the line number
+is called "immediate mode" programming.
+Leaving off the line number says to your
+VCE, "Hey bub, don't store this line as
+part of my program, just go do what it
+says right away!" Many %Comfy% words can
+work in immediate mode, and a few words
+like %RUN% will only work in immediate
+mode
 
 So, when we want our computers to get
 going, we simply type %RUN%\uF100\uF101\uF102 and
 then watch the fun! Run computer, run!
 Make my program go and do all the
-things on your program list! \216
+things on your program's list! \216
 
-Do you know what happens when you write
-a program at ClubCompy, type %RUN%, and
-the computer does what you expected it
-to do? YOU become a programmer! How cool
-is that?
+When we type-in programs, %RUN% them, and
+the computer does what we expect,
+something amazing happens:
+
+         We become programmers
+         \u203E\u203E
+How cool is that?
 
 Shall we try to make a program run right
 now? Okay! Grab a pencil and paper and
@@ -129,7 +141,7 @@ copy down this program:
   60 c = TONUM p * 16 + 15
   70 FGCOLOR c
   80 PRINTLN 'Hello programmer ' + n
-  90 FGCOLOR 255
+  90 FGCOLOR 189
   RUN
 
 \uEAFE\uE8FE
@@ -139,55 +151,56 @@ numbers and symbols, you must press the
 \uF100\uF101\uF102 key. \uF100\uF101\uF102 tells your VCE that you are
 done with that line and you want it to
 add that line to the list of lines that
-is your program.
+is your program
 
 If you type in a line wrong and it
 gives you an error, no problem! Type
 that same line in again and see if you
 can get it to take without errors.
 Ask for help from someone with typing
-experience if you are struggling with
-it.
+experience if you are struggling with it
 
 HINT: a few of the symbols in the
 program require you to hold down the
-\uF10D\uF10E key to make that symbol appear. For
-example, to make a + symbol, many
-keyboards require you to hold down the
-\uF10D\uF10E key and then press the =
-key. Let go of the \uF10D\uF10E key when
-you're done making 'shifted' symbols.
+\uF10D\uF10E key to make that symbol appear
 
-When you type %RUN% and press the
-\uF100\uF101\uF102 key, your Compy will perform
-the instructions in this program in the
-order of the numbers at the start of
-each line. Some of these instructions
-ask you questions and then wait for you
-to type on the keyboard; type in your
-answers and press the \uF100\uF101\uF102 key.
+For example, to make a + symbol, many
+keyboards require you to first hold down
+the \uF10D\uF10E key and then press the = key. Let
+go of the \uF10D\uF10E key when you're done making
+'shifted' symbols
+
+When you type %RUN% and press the \uF100\uF101\uF102 key,
+your Compy will perform the instructions
+in this program in the order of the
+numbers at the start of each line. Some
+of these instructions ask you questions
+and then wait for you to type on the
+keyboard; type in your answers and press
+the \uF100\uF101\uF102 key
 
 Here's the neat part: every program you
 write can be run as many times as you'd
 like! Just type %RUN%, and you can give
 your program different inputs every
-time. Can you make it say different
-things? The letters change colors at the
-end, how does that work? There are many
-mysteries like this that you will
-discover and solve over time as you
-master the system.
+time
+
+Can you make it say different things?
+%RUN% the program again. The letters
+change colors at the end, how does that
+work? There are many mysteries like this
+you will discover and solve as you
+become a master of the system
 
 Big programs like games work the same
 way - write them one time and %RUN% them
 as many times as you'd like. It is very
 satisfying to work hard writing useful
-programs to share with friends and
-family to enjoy.
+programs for friends and family to enjoy
 
 Hit \uF107\uF108 now to return to the Compy shell
-where you can type in your program.
+where you can type in your program
 
 When you are ready to learn more, return
 to this %HELP% program and check out the
-%comfy% and %shell% topics.
+%comfy% and %shell% topics

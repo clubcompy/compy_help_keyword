@@ -1,0 +1,26 @@
+SAVE - save current Comfy program as an
+executable file
+
+Grammar:
+ "SAVE" fileName
+
+Arguments:
+ - fileName: <string> name of file to
+   save, see notes
+
+Notes:
+ - This keyword copies all of the current
+   Comfy program's lines to a file named
+   fileName
+ - If a file already exists at fileName,
+   it will be overwritten without
+   warning. The previous contents of
+   fileName will be lost and replaced
+   with new contents. Use a different
+   fileName if existing file should be
+   preserved
+ - file will have its executable file
+   flag set
+
+See also:
+ - %LOAD%

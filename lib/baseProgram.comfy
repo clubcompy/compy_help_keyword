@@ -199,7 +199,7 @@ WHILE NOT bye
 
   REM ** Did the user start HELP and request a keyword?  Select it
   IF jumpTo THEN
-    tSel = jumpTo
+    tSel = FLIP jumpTo, false
     jumpTo = ''
   END
 

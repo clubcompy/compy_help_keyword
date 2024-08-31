@@ -14,17 +14,17 @@ Arguments:
 Notes:
  - Affected rec.x and rec.y will be set
  - Records that can be MOVE'd:
-   - Turtle: the coordinate system is
-     represented in playfield pixels
-     and the origin (0,0) of its
-     coordinate system is located in the
-     center of the display. x and y
-     may be fractional numbers.
-     Turtle.spd controls how many
-     pixels it will move across the
-     screen for every frame drawn
-   - Cursor: the coordinate system is
-     based on character positions in
-     the Playfield.chr two-dimensional
-     array. (0,0) is Playfield.chr's
-     top-left character
+  \156 Turtle: the coordinate system is
+    represented in playfield pixels and
+    the origin (0,0) of its coordinate
+    system is located in the center of
+    the display. x and y may be
+    fractional numbers. Turtle.spd
+    controls how many pixels Turtle will
+    move across the screen for every
+    animation frame drawn
+  \156 Cursor: the coordinate system is
+    based on character positions in the
+    Playfield.chr two-dimensional array.
+    (0,0) is Playfield.chr's top-left
+    character

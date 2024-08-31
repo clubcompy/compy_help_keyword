@@ -11,11 +11,11 @@ Arguments:
 
 Notes:
  - Records that can be FLIP'ped:
-   - Cursor
-   - Char, found in Playfield.chr arrays
-     - Changes made to Char with FLIP
-       are NOT recorded in the VCE
-       shell's scrollback buffer
+  \156 Cursor
+  \156 Char, found in Playfield.chr arrays
+   - Changes made to Char with FLIP
+     are NOT recorded in the VCE
+     shell's scrollback buffer
  - force's values cause the following
    changes to rec.inv:
 
@@ -54,13 +54,13 @@ Notes:
  - When toupper is falsy, evaluated
    value is made all lowercase
  - When toupper is omitted and value is
-   - all lowercase: evaluated value is
-     made all uppercase
-   - all uppercase: evaluated value is
-     made all lowercase
-   - a mix of lowercase and uppercase:
-     evaluated value is made all
-     uppercase
+  \156 all lowercase: evaluated value is
+    made all uppercase
+  \156 all uppercase: evaluated value is
+    made all lowercase
+  \156 a mix of lowercase and uppercase:
+    evaluated value is made all
+    uppercase
  - Only Kid-SCII characters a-z and A-Z,
    the basic latin alphabet characters,
    are evaluated by FLIP. All other

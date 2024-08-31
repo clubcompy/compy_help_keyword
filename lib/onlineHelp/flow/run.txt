@@ -1,0 +1,49 @@
+RUN - perform program lines
+
+Grammar:
+ "RUN" [ start ]
+
+Arguments:
+ - start: <number> line in program that
+   should be performed first. Defaults
+   to the lowest numbered line in the
+   program
+
+Notes:
+ - While a program is running, the \uF107\uF108
+   key on your keyboard can be pressed
+   to stop the program and get a shell
+   prompt
+ - RUN is an immediate mode keyword and
+   cannot appear on a numbered program
+   line
+
+  ------------------------------------
+
+RUN - run temporary program by filename
+
+Grammar:
+ "RUN" fileName
+
+Arguments:
+ - fileName: <string> Compy FS path to
+   an executable file
+
+Notes:
+ - Before the temporary program loads,
+   any program currently in memory is
+   stashed
+ - After the temporary program quits,
+   the stashed program is unstashed and
+   returned to memory
+ - File must exist for fileName and have
+   its executable flag set
+ - RUN is an immediate mode keyword and
+   cannot appear on a numbered program
+   line
+
+See also:
+ - %program%
+ - %flow%
+ - %shell%
+ - %LOAD%

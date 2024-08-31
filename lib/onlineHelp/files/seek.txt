@@ -1,0 +1,58 @@
+SEEK - move file pointer and retrieve
+new file pointer position
+
+Grammar:
+ "SEEK" handle "," offset [ "," whence ]
+
+Arguments:
+ - handle: <record<*Handle>> any handle-
+   type record that is SEEK'able (eg.
+   $FileHandle)
+ - offset: <number> positive or negative
+   count of bytes to move the file
+   pointer relative to whence
+ - whence: <number> code indicating
+   which byte in the file to start
+   SEEK'ing from (see allowed whence
+   codes below) Default is SEEK_SET (0)
+
+Evaluates to:
+ <record<$Status>> See record definition
+ below
+
+Notes:
+ - The 'file pointer' is a number that
+   the file system manages internally
+   for a SEEK'able handle. The file
+   pointer tracks the position in the
+   file of the next byte that may be
+   read from or written to next
+ - SEEK can be used to discover the
+   current file pointer for a handle by
+   using 0 for offset and SEEK_CUR (1)
+   for whence
+
+Allowed whence codes:
+
+  code \179   name   \179     description
+ \196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+    0  \179 SEEK_SET \179 seek from start of
+       \179          \179 file, use positive
+       \179          \179 values for offset
+    1  \179 SEEK_CUR \179 seek from current
+       \179          \179 file pointer, use
+       \179          \179 positive or negative
+       \179          \179 values for offset
+    2  \179 SEEK_END \179 seek from end of
+       \179          \179 file, use negative
+       \179          \179 values for offset
+
+Record<$Status> definition:
+ - Signals when: SEEK completes
+
+   field \179        description
+ \196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+   name  \179 <string> unused, blank
+  status \179 <number> LT 0 value indicates
+         \179 error result code (see codes)
+         \179 GTE 0 value is file pointer

@@ -1,6 +1,5 @@
               About Blocks
-              \006\006\006\006\006\006\006\006\006\006\006\006
-
+              \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
 Comfy statements are usually a single
 line of text, with keywords or operators
 telling the VCE how to interpret the

@@ -1,0 +1,140 @@
+IF - Conditional (block statement)
+
+Grammar:
+   "IF" isTrue1 "THEN"
+      .
+      . 0-or-more Comfy lines
+      .
+ [
+   "ELSEIF" isTrue2 "THEN"
+      .
+      . 0-or-more Comfy lines
+      .
+ ]
+   .
+   .
+   .
+ [
+   "ELSEIF" isTrueN "THEN"
+      .
+      . 0-or-more Comfy lines
+      .
+ ]
+ [
+   "ELSE"
+      .
+      . 0-or-more Comfy lines
+      .
+ ]
+   "END"
+
+Arguments:
+ - isTrue1..isTrueN: <boolean> first
+   truthy value decides which IF/IFELSE
+   block of Comfy lines get executed.
+   See notes
+
+Notes:
+ - IF blocks may be followed by
+   0-or-more ELSEIF blocks and capped
+   off by one optional ELSE block. The
+   series of blocks are terminated with
+   an END line
+ - IF/ELSEIF blocks' isTrue boolean
+   expressions are evaluated in top-to-
+   bottom order and the first truthy
+   block of Comfy lines is then executed
+ - When none of the IF/ELSEIF blocks'
+   isTrue expressions are truthy, the
+   optional ELSE block of Comfy lines is
+   then executed
+ - At the completion of any block of
+   Comfy lines following IF/ELSEIF/ELSE,
+   GOTO the END line
+
+  ------------------------------------
+
+IF - Conditional statement (one-line)
+
+Grammar:
+ "IF" isTrue "DO" stmt
+
+Arguments:
+ - isTrue: <boolean> truthy value
+   decides whether stmt is executed
+ - stmt: <comfy statement> a single
+   comfy statement
+
+Notes:
+ - when isTrue is falsy, nothing happens
+
+  ------------------------------------
+
+IF GOTO - Conditional GOTO
+
+Grammar:
+ "IF" isTrue "GOTO" line
+
+Arguments:
+ - isTrue: <boolean> truthy value
+   decides whether to GOTO line
+ - line: <number> program line number
+
+Notes:
+ - when isTrue is falsy, nothing happens
+
+  ------------------------------------
+
+IF RETURN - Conditional RETURN
+
+Grammar:
+ "IF" isTrue "RETURN"
+
+Arguments:
+ - isTrue: <boolean> truthy value
+   decides whether to RETURN from
+   subroutine
+
+Notes:
+ - when isTrue is falsy, nothing happens
+
+  ------------------------------------
+
+IF CONTINUE - Conditional CONTINUE
+
+Grammar:
+ "IF" isTrue "CONTINUE" [ levels ]
+
+Arguments:
+ - isTrue: <boolean> truthy value
+   decides whether to RETURN from
+   subroutine
+ - levels: <number> of nested loops to
+   CONTINUE to, must be GTE 1. Default 1
+
+Notes:
+ - when isTrue is falsy, nothing happens
+
+  ------------------------------------
+
+IF BREAK - Conditional BREAK
+
+Grammar:
+ "IF" isTrue "BREAK" [ levels ]
+
+Arguments:
+ - isTrue: <boolean> truthy value
+   decides whether to RETURN from
+   subroutine
+ - levels: <number> of nested loops to
+   BREAK out of, must be GTE 1.
+   Default 1
+
+Notes:
+ - when isTrue is falsy, nothing happens
+
+See also:
+ - %GOTO%
+ - %RETURN%
+ - %CONTINUE%
+ - %BREAK%

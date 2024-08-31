@@ -1,0 +1,25 @@
+CLOSE - close a handle
+
+Grammar:
+ "CLOSE" handle
+
+Arguments:
+ - handle: <record<*Handle> any handle-
+   type record (eg. $FileHandle)
+
+Evaluates to:
+ <record<$Status>> See record definition
+ below
+
+Record<$Status> definition:
+ - Signals when: CLOSE completes
+
+   field  \179        description
+ \196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+   name   \179 <string> if success, name
+          \179 of file closed
+  status  \179 <number> result code (see
+          \179 codes)
+
+See also:
+ - %codes%

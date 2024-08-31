@@ -1,6 +1,5 @@
             About Strings
-            \006\006\006\006\006\006\006\006\006\006\006\006\006
-
+            \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
 A string is a variable that contains
 zero-or-more characters. A character is
 a coded letter, number or symbol. In the

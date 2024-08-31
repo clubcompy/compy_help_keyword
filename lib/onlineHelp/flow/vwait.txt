@@ -1,0 +1,50 @@
+VWAIT - wait for next display frame
+
+Grammar:
+ "VWAIT"
+
+Notes:
+ - Whenever the VCE paints the Display,
+   this is called a 'frame'. This
+   concept is similar to 'frames' of
+   animation in a film or cartoon
+ - VWAIT makes a program wait for the
+   next frame to complete, allowing the
+   program to synchronize with the
+   speed of the Display
+
+  ------------------------------------
+
+VWAIT - control automatic waiting for
+display frames at end of loops
+
+Grammar:
+ "VWAIT" auto
+
+Arguments:
+ - auto: <boolean> when true, enable
+   automatic waiting for display frames,
+   otherwise disable. See notes
+
+Notes:
+ - This is an advanced programming topic
+ - In order to ensure that Comfy will
+   regularly generate Display frames,
+   programs will automatically VWAIT
+   every time FOR, WHILE or GOTO causes
+   the program's current line number to
+   go lower
+ - Automatic VWAIT'ing is enabled by
+   default when a Comfy program starts
+ - Automatic VWAIT'ing can be disabled
+   with VWAIT false; this gives Comfy
+   quite a performance boost, but the
+   VCE Display will not paint a frame
+   unless the Comfy program does a VWAIT
+ - When Automatic VWAIT'ing is disabled,
+   be sure to sprinkle VWAIT keywords
+   throughout your program or else the
+   Comfy Display may appear to freeze
+
+See also:
+ - %Display%

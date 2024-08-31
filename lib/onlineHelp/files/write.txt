@@ -1,0 +1,58 @@
+WRITE - write into handle
+
+Grammar:
+ "WRITE" hd "," ar [ "," lm [ "," st ] ]
+
+Arguments:
+ - hd: <record<*Handle>> any handle-
+   type record (eg. $FileHandle)
+ - ar: <array> array that contains items
+   that will be written to handle hd
+ - lm: <number> limit of number of items
+   to write; must be GTE 1. Default
+   LENGTH ar - st
+ - st: <number> start index in array ar
+   of items to write to handle hd.
+   Default 0
+
+Evaluates To:
+ <record<$Status>> See record definition
+ below
+
+Notes:
+ - WRITE's behavior changes depending on
+   what type of Handle record hd is:
+  \156 $FileRecord
+   - writing items moves a file pointer
+     which keeps track of where in the
+     file will be written to next. Use
+     SEEK with hd to move or get the
+     current file pointer
+   - if file is text, each 'item' in
+     array ar must be a string. Each
+     string will be written to the file
+     followed by a new line character
+     (0x0a) that is automatically added
+   - if file is binary, each 'item' in
+     array ar may be a record, array, or
+     other built-in type. Items are
+     converted to bytes and stored into
+     the file
+
+Record<$Status> definition:
+ - Signals when: WRITE completes
+
+   field  \179        description
+ \196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+   name   \179 <string> empty, unused
+  status  \179 <number> Positive value
+          \179 indicates count of items
+          \179 written successfully to the
+          \179 file. Negative value
+          \179 indicates error result code
+          \179 (see codes)
+
+See also:
+ - %codes%
+ - %OPEN%
+ - %SEEK%

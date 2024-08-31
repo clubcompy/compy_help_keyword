@@ -14,12 +14,12 @@ Notes:
  - All affected rec.fgc will be set with
    color
  - Records usable with FGCOLOR:
-   - Cursor
-   - Border
-   - Char, found in Playfield.chr arrays
-     - Changes made to a Char with
-       FGCOLOR are NOT recorded in the
-       VCE shell's scrollback buffer
+  \156 Cursor
+  \156 Border
+  \156 Char, found in Playfield.chr arrays
+   - Changes made to a Char with FGCOLOR
+     are NOT recorded in the VCE shell's
+     scrollback buffer
 
 See also:
  - 'scrollback buffer' section of the
