@@ -1,0 +1,38 @@
+LIST - List the current program
+
+Grammar:
+ "LIST" [ [ sline ] [ "-" [ eline ] ] ]
+
+Arguments:
+ - sline: <integer> starting line number
+   to list. Default 0
+ - eline: <integer> ending line number
+   to list. Default infinity
+
+Evaluates to:
+ <record<$ProgramListing>> See record
+ definition below
+
+Notes:
+ - Using LIST by itself in immediate
+   mode will print out the lines of the
+   program. Use the \uF107\uF108 key to cancel the
+   listing at any time
+ - Assigning LIST to a variable will
+   produce a $ProgramListing record
+ - It is an error to provide sline or
+   eline when assigning LIST to a
+   variable
+
+Record<$ProgramListing> definition:
+ - Signals when: LIST completes
+
+   field  \179        description
+ \196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+   lines  \179 <array<string>> program
+          \179 lines
+  status  \179 <number> error result code
+          \179 (see codes)
+
+See also:
+ - %codes%

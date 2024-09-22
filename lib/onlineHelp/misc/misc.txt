@@ -1,0 +1,9 @@
+          About Miscellany
+          \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
+The Comfy language has a few keywords
+that do odd jobs and that don't fit into
+any other category:
+
+  %ADVICE%   %GOODBYE%  %HELP%     %LIST%
+  %PROOF%    %REM%      %RESET%    %SET%
+  %SYSCALL%  %TITLE%    %TYPEOF%

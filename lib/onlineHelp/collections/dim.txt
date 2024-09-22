@@ -2,7 +2,7 @@ DIM - create a multi-dimensional array
 filled with zeroes
 
 Grammar:
- "DIM" "(" len_1 [ ... "," len_n ] ")"
+ "DIM" "(" len_1 [ \u2026 "," len_n ] ")"
 
 Arguments:
  - len_1 - len_n: <numbers> 1 or more

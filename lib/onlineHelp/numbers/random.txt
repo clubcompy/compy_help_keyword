@@ -4,7 +4,7 @@ Grammar:
  "RANDOM"
 
 Evaluates to:
- random <number> GTE 0 and LT 1
+ <number> fraction GTE 0 and LT 1
 
-Synonyms:
+Aliases:
  - "RND"

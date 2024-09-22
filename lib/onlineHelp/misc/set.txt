@@ -1,0 +1,14 @@
+SET - Set a variable
+
+Grammar:
+ "SET" lvalue "," rvalue
+
+Arguments:
+ - lvalue: <symbol|record field|
+   subscript> variable assignee
+ - rvalue: <comfy expression> evaluates
+   to a comfy value to be assigned to
+   lvalue
+
+Same as:
+ - %assign%

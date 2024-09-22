@@ -9,6 +9,9 @@ Arguments:
 Evaluates to:
  <number> GTE 0 item count in arr
 
+Aliases:
+ - "LEN"
+
   ------------------------------------
 
 LENGTH - Count characters in a string
@@ -21,3 +24,6 @@ Arguments:
 
 Evaluates to:
  <number> GTE 0 character count in str
+
+Aliases:
+ - "LEN"

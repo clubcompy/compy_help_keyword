@@ -12,5 +12,5 @@ Evaluates to:
  <string> string of length 1 containing
  character with code of value
 
-Synonyms:
+Aliases:
  - "TOCH"

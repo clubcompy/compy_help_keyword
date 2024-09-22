@@ -1,0 +1,22 @@
+REM - make a code comment or 'remark'
+
+Grammar:
+ "REM"
+
+Notes:
+ - REM is short for 'remark'. Remarks
+   are notes the developer leaves as
+   documentation about their code
+ - All characters found after the "REM"
+   until the end of line are consumed
+   by the keyword and are assumed to be
+   part of the remark. Do not attempt to
+   add any other Comfy keywords or
+   punctuation on a line after a REM
+ - REM is used to facilitate the PROOF
+   automatic proofreader system provided
+   by the VCE. See PROOF for more
+   information
+
+See also:
+ - %PROOF%

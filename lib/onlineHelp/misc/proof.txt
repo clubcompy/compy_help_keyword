@@ -1,0 +1,41 @@
+PROOF - work with automatic proofreading
+codes in the program
+
+Grammar:
+ "PROOF" [ mode ]
+
+Arguments:
+ - mode: <number> PROOF mode. Allowed
+   modes are discussed in notes.
+   Default 2
+
+Notes:
+ - Each Comfy language program line
+   entered into the VCE automatically
+   computes a PROOF code that can be
+   used to check whether the line was
+   typed-in correctly
+ - PROOF codes are case-insensitive,
+   2 digit hexadecimal numbers
+ - If program line ends with ";REM xx"
+   where xx is a PROOF code, the VCE
+   will automatically compare its
+   computed PROOF code with xx. When
+   codes do not match, the VCE will
+   display a warning and recommend
+   checking the program line for typos
+ - mode controls what work the PROOF
+   keyword performs:
+
+    mode  \179        description
+ \196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+     0    \179 Removes any PROOF codes
+          \179 from all program lines
+     1    \179 Computes and adds PROOF
+          \179 codes to all program lines
+     2    \179 Checks PROOF codes on all
+          \179 lines of the program and
+          \179 displays a report
+
+See also:
+ - %REM%

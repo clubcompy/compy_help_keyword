@@ -48,8 +48,9 @@ Files and folders have names that can
 be used to address them when doing file
 system operations
 
-Every drive has a built-in 'root folder'
-where files and folders can go
+Every drive that supports storing files
+has a built-in 'root folder' where files
+and folders can go
 
 Every drive has a number identifier. The
 drive for 'local storage' is always
@@ -58,8 +59,9 @@ drive #0
 So that every ClubCompy user has a place
 to save their files, a folder named
 after their screen name is created on
-drive #0. This folder becomes the
-default folder the user sees after login
+drive '0:'. This folder becomes the
+default folder the user sees when they
+first login and begin working with files
 
 The Comfy language has keywords whose
 primary purpose is to work with files,

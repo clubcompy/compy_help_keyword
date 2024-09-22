@@ -1,0 +1,26 @@
+RESET - Reboot the VCE
+
+Grammar:
+ "RESET" [ showBanner ]
+
+Arguments:
+ - showBanner: <boolean> when true, show
+   the startup banner after RESET.
+   Otherwise, only CLEAR the display.
+   Default true
+
+Notes:
+ - RESET attempts to CLEAR the display,
+   remove any current Comfy language
+   program lines from memory, and reset
+   the shell to the power-on state
+ - RESET does not ask for confirmation
+   if program lines are un-SAVE'd. Take
+   care to SAVE any programs in memory
+   before using the RESET keyword
+
+See also:
+ - %CLEAR%
+ - %SAVE%
+ - %program%
+ - %shell%

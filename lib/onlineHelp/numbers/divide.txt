@@ -17,6 +17,6 @@ Notes:
    the divide. true will be 1. false
    will be 0
 
-Synonyms:
+Aliases:
  - "\247" division sign, commonly seen
    on mobile device virtual keyboards

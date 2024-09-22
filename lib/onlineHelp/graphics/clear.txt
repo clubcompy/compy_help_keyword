@@ -18,7 +18,7 @@ Notes:
 CLEAR - quick clear parts of VCE display
 
 Grammar:
- "CLEAR" rec1 [ "," rec2 ... "," recn ]
+ "CLEAR" rec1 [ "," rec2 \u2026 "," recn ]
 
 Arguments:
  - rec1-n: <record|number|array<record>>

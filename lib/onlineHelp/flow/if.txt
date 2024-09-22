@@ -52,6 +52,9 @@ Notes:
    Comfy lines following IF/ELSEIF/ELSE,
    GOTO the END line
 
+ELSEIF Aliases:
+ - "ELIF"
+
   ------------------------------------
 
 IF - Conditional statement (one-line)

@@ -13,3 +13,6 @@ Notes:
    LISTEN'er internal task when PRINT'd
  - after being CANCEL'd, a listener_key
    will display \174defunct\175 when PRINT'd
+
+Aliases:
+ - "CANC"

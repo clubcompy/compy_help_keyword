@@ -14,7 +14,7 @@ Notes:
    line. RETURN unconditionally jumps
    back to the line GOSUB was on
 
-Synonyms:
+Aliases:
  - "CALL"
 
 See Also:

@@ -67,6 +67,6 @@ screen
 
 The scrollback buffer stores up to 5000
 lines. Once that limit is reached, the
-topmost lines will be deleted from the
+topmost lines will be removed from the
 scrollback buffer until 5000 or fewer
 lines are left

@@ -13,5 +13,5 @@ Notes:
  - Affected rec.pc will be set with
    color
 
-Synonyms:
+Aliases:
  - "PENC"

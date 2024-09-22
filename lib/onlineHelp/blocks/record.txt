@@ -4,7 +4,7 @@ record, known as a record_def
 Grammar:
  "DECLARE" "RECORD" sym
     .
-    . variable assignment lines
+    . field assignment lines
     .
  "END"
 
@@ -13,15 +13,35 @@ Arguments:
    name of the record_def
 
 Notes:
+ - A record is a fixed set of named data
+   values called fields. Records are
+   convenient for grouping related data
  - A record_def is a set of field names
    with default values declared on the
-   variable assignment lines
- - record_def's are used as templates
+   field assignment lines
+ - Record_def's are used as templates
    for the creation of new records
- - The assignment operator can be used
-   to create new records based on a
-   record_def. See that topic for more
-   information
+ - The assignment operator is used to
+   create a new record from a record_def
+ - When assigning record_def sym to a
+   variable, the VCE will create a new
+   record instance and set all of its
+   fields to the defaults sym's field
+   assignment lines. See the assign
+   topic for more information
+ - Records can notify the Comfy program
+   about events happening in the
+   computer. See the LISTEN, SIGNAL and
+   CANCEL topics for more information
+ - Built-in records supplied by the VCE
+   can notify the Comfy program about
+   events happening on VCE-managed
+   systems. See the builtins topic for
+   more information
 
 See also:
  - %assign%
+ - %LISTEN%
+ - %SIGNAL%
+ - %CANCEL%
+ - %builtins%

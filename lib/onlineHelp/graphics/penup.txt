@@ -7,5 +7,5 @@ Arguments:
  - <record> that has a drawing pen.
    Default is the Turtle record
 
-Synonyms:
+Aliases:
  - "PENU"

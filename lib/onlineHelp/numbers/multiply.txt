@@ -17,7 +17,7 @@ Notes:
    the multiply. true will be 1. false
    will be 0
 
-Synonyms:
+Aliases:
  - "\215" multiplication sign, commonly
    seen on mobile device virtual
    keyboards

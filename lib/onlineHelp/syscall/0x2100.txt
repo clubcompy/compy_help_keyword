@@ -1,0 +1,336 @@
+          File system syscalls
+          \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
+0x21-family syscalls implement the VCE
+file system programming interface
+
+0x21 syscalls are modeled after and a
+homage to classic MSDOS INT 21h routines
+that provided file system functionality
+to early home computers
+
+Notes:
+ - 0x21 syscalls require all file/folder
+   name string arguments to be "fully-
+   qualified paths"
+
+See also:
+ - %paths%
+
+  ------------------------------------
+
+0x2113: Truncate file descriptor
+\u203E\u203E\u203E\u203E\u203E\u203E
+Description for SYSCALL 0x2113:
+ Shrink the size of a file descriptor
+ (truncate) to its current file pointer
+ position
+
+SYSCALL arguments:
+ - <number> 0x2113
+ - <number> file descriptor
+
+SYSCALL evaluates to array containing:
+ - <number> result code (see codes)
+ - <number> file size after truncation
+
+Notes:
+ - Syscall 0x2113 has no effect if the
+   file pointer is at the end of file
+
+See also:
+ - %codes%
+
+  ------------------------------------
+
+0x2115: Write character to descriptor
+\u203E\u203E\u203E\u203E\u203E\u203E
+Description for SYSCALL 0x2115:
+ Write a single character to descriptor
+
+SYSCALL arguments:
+ - <number> 0x2115
+ - <number> file descriptor
+ - <string> string containing character
+   to write
+
+SYSCALL evaluates to array containing:
+ - <number> result code (see codes)
+
+Notes:
+ - Only the first character found in
+   string will be written to
+ - Characters are written as 16-bit,
+   little endian values
+ - If string is empty, syscall 0x2115
+   has no effect
+
+See also:
+ - %codes%
+
+  ------------------------------------
+
+0x211C: Get volume label
+\u203E\u203E\u203E\u203E\u203E\u203E
+Description for SYSCALL 0x211C:
+ Gets the label on a storage volume for
+ a given device number
+
+SYSCALL arguments:
+ - <number> 0x211C
+ - <number> a device number from 0-9
+
+SYSCALL evaluates to array containing:
+ - <number> result code (see codes)
+ - <string> volume label
+
+Notes:
+ - Using LIST FOLDER on the root of a
+   drive will display the volume label
+   on the header line if one is set
+
+See also:
+ - %FOLDER%
+ - %codes%
+
+  ------------------------------------
+
+0x211D: Set volume label
+\u203E\u203E\u203E\u203E\u203E\u203E
+Description for SYSCALL 0x211D:
+ Sets the label on a storage volume for
+ a given device number
+
+SYSCALL arguments:
+ - <number> 0x211D
+ - <number> a device number from 0-9
+ - <string> volume label to set
+
+SYSCALL evaluates to array containing:
+ - <number> result code (see codes)
+
+Notes:
+ - Volume labels have different string
+   formatting rules than file and folder
+   names:
+  \156 Must have LTE 11 character length
+  \156 May have upper/lower case letters
+  \156 May have numeric digits
+  \156 May have spaces, but not at the end
+  \156 May have these special characters:
+
+       !#$%%&'()@^_`{}~-
+
+See also:
+ - %codes%
+
+  ------------------------------------
+
+0x2121: Read line from descriptor
+\u203E\u203E\u203E\u203E\u203E\u203E
+Description for SYSCALL 0x2121:
+ Read a string of 0-or-more characters
+ from a descriptor until a newline
+ (0x000A) character is read from the
+ descriptor
+
+SYSCALL arguments:
+ - <number> 0x2121
+ - <number> file descriptor
+ - <number> character read limit, must
+   be GTE 0
+
+SYSCALL evaluates to array containing:
+ - <number> result code (see codes)
+ - <string> line of characters read
+
+Notes:
+ - Syscall 0x2121 will read characters
+   until:
+  \156 a newline character is read
+  \156 limit number of characters have
+    been read, (max 65536)
+  \156 the end of the file is reached
+ - When a line ends with a newline
+   character, the newline character is
+   read from the descriptor and included
+   in the string syscall evaluates to
+ - Characters are read as 16-bit,
+   little endian values
+
+See also:
+ - %codes%
+
+  ------------------------------------
+
+0x2122: Write string to descriptor
+\u203E\u203E\u203E\u203E\u203E\u203E
+Description for SYSCALL 0x2122:
+ Writes a string to the descriptor
+
+SYSCALL arguments:
+ - <number> 0x2122
+ - <number> file descriptor
+ - <string> string to write
+
+SYSCALL evaluates to array containing:
+ - <number> result code (see codes)
+ - <number> number of characters written
+   to descriptor
+
+Notes:
+ - String may not contain any null (0x0)
+   characters
+
+See also:
+ - %codes%
+
+  ------------------------------------
+
+0x2123: Get descriptor file size
+\u203E\u203E\u203E\u203E\u203E\u203E
+Description for SYSCALL 0x2123:
+ Get the file size of a file according
+ to the descriptor
+
+SYSCALL arguments:
+ - <number> 0x2123
+ - <number> file descriptor
+
+SYSCALL evaluates to array containing:
+ - <number> file size according to the
+   descriptor, or -1 if descriptor was
+   invalid or another error occurred
+
+Notes:
+ - Descriptors keep track of the current
+   size of the file in memory, and this
+   value is usually accurate
+ - To retrieve the file size of the file
+   from storage (a slower, more costly
+   operation than syscall 0x2123), use
+   syscall 0x2143 - get file or folder
+   metadata
+
+  ------------------------------------
+
+0x2124: Close all open descriptors
+\u203E\u203E\u203E\u203E\u203E\u203E
+Description for SYSCALL 0x2124:
+ Closes all descriptors currently open
+ on a volume for a given device number
+
+SYSCALL arguments:
+ - <number> 0x2124
+ - <number> a device number from 0-9
+
+SYSCALL evaluates to array containing:
+ - <number> result code (see codes)
+
+Notes:
+ - see notes for syscall 0x213E - close
+   descriptor
+
+See also:
+ - %codes%
+
+  ------------------------------------
+
+0x2125: Flush all open descriptors
+\u203E\u203E\u203E\u203E\u203E\u203E
+Description for SYSCALL 0x2125:
+ Flushes all descriptors currently open
+ on a volume for a given device number
+
+SYSCALL arguments:
+ - <number> 0x2125
+ - <number> a device number from 0-9
+
+SYSCALL evaluates to array containing:
+ - <number> result code (see codes)
+
+Notes:
+ - see notes for syscall 0x2126 - flush
+   descriptor
+
+See also:
+ - %codes%
+
+  ------------------------------------
+
+0x2126: Flush descriptor
+\u203E\u203E\u203E\u203E\u203E\u203E
+
+  ------------------------------------
+
+0x2136: Get free space on volume
+\u203E\u203E\u203E\u203E\u203E\u203E
+
+  ------------------------------------
+
+0x2139: Create folder
+\u203E\u203E\u203E\u203E\u203E\u203E
+
+  ------------------------------------
+
+0x213D: Open file as descriptor
+\u203E\u203E\u203E\u203E\u203E\u203E
+
+  ------------------------------------
+
+0x213E: Close descriptor
+\u203E\u203E\u203E\u203E\u203E\u203E
+
+  ------------------------------------
+
+0x213F: Read bytes from descriptor
+\u203E\u203E\u203E\u203E\u203E\u203E
+
+  ------------------------------------
+
+0x2140: Write bytes to descriptor
+\u203E\u203E\u203E\u203E\u203E\u203E
+
+  ------------------------------------
+
+0x2141: Delete file or folder
+\u203E\u203E\u203E\u203E\u203E\u203E
+
+  ------------------------------------
+
+0x2142: Seek file descriptor
+\u203E\u203E\u203E\u203E\u203E\u203E
+
+  ------------------------------------
+
+0x2143: Get file or folder metadata
+\u203E\u203E\u203E\u203E\u203E\u203E
+
+  ------------------------------------
+
+0x2145: Tell descriptor file pointer
+\u203E\u203E\u203E\u203E\u203E\u203E
+
+  ------------------------------------
+
+0x2146: Un/set flags on file or folder
+\u203E\u203E\u203E\u203E\u203E\u203E
+
+  ------------------------------------
+
+0x214E: Folder children search
+\u203E\u203E\u203E\u203E\u203E\u203E
+
+  ------------------------------------
+
+0x2156: Move file or folder to another
+\u203E\u203E\u203E\u203E\u203E\u203E  folder
+
+  ------------------------------------
+
+0x2157: Set the last modified timestamp
+\u203E\u203E\u203E\u203E\u203E\u203E  on file or folder (epoch time)
+
+  ------------------------------------
+
+0x215A: Get open disposition flags from
+\u203E\u203E\u203E\u203E\u203E\u203E  descriptor

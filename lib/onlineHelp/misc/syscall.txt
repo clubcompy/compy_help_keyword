@@ -1,0 +1,62 @@
+SYSCALL - perform a system call
+
+Grammar:
+ "SYSCALL" which [ "," p1 \u2026 "," p6 ]
+
+Arguments:
+ - which: <uint16> syscall code number
+ - p1 \u2026 p6: <*> comma-delimited
+   arguments whose count and types are
+   dependent on syscall code used
+
+Evaluates to:
+ <array<*>> syscall results. Contents
+ are dependent on syscall code used
+
+Notes:
+ - A system call (or 'syscall' for
+   short) is a rudimentary procedure
+   provided by the VCE to do work
+ - Syscall code numbers are 16-bit,
+   unsigned integers (0x0000-0xFFFF)
+ - Each syscall code number expects
+   between 0 and 6 arguments
+ - Some syscalls' functionality overlaps
+   with Comfy keywords. Syscalls often
+   give an expert-level of functionality
+   as compared with the similar keywords
+ - WARNING: expert-level control comes
+   with risk! Improper use of syscalls
+   can crash the VCE or result in data
+   loss. Refresh your browser page in
+   the event of a crash and take regular
+   backups of your data
+ - Many types of errors can occur in
+   syscalls, but those errors DO NOT
+   cause the Comfy programs to quit when
+   they occur. Instead, syscalls will
+   include a status code as part of the
+   evaluated array. Any status code LT 0
+   indicates an error occurred. It is
+   the responsibility of the Comfy
+   program to detect and handle when
+   errors that occur in SYSCALL (or not)
+ - Syscalls are broken up into families
+   where each member of a family shares
+   the same high byte on their syscall
+   code numbers. For example, all "shell
+   manipulation" syscall code numbers
+   start with a 0x60 high byte
+
+     family    \179      description
+ \196\196\196\196\196\196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+ 0x2100-0x21FF \179 File system syscalls
+ 0x6000-0x60FF \179 Shell manipulation
+               \179 syscalls
+
+Aliases:
+ - "SYS"
+
+See also:
+ - %0x2100%
+ - %0x6000%

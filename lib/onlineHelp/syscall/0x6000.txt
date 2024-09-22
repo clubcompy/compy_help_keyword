@@ -1,0 +1,205 @@
+       Shell manipulation syscalls
+       \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
+0x60-family syscalls are used to manage
+internal states of the Shell, its
+scrollback buffer, and its control over
+the Display, Keyboard, and Cursor
+
+  ------------------------------------
+
+0x6000: Shell captures Esc keypress
+\u203E\u203E\u203E\u203E\u203E\u203E
+Description for SYSCALL 0x6000:
+ Controls whether Esc is processed by
+ the Shell or is sent to the running
+ program as a Keyboard event
+
+ When the Shell has captured Esc and a
+ program is running, the Shell will stop
+ program and return to immediate mode
+
+SYSCALL arguments:
+ - <number> 0x6000
+ - <number> 0 = program captures Esc key
+   1 = shell captures Esc key (this is
+   the default setting)
+
+SYSCALL evaluates to array containing:
+ - <number> previous value (0 or 1) of
+   enable before the syscall
+
+Notes:
+ - When a program terminates or RESET
+   occurs, the Shell automatically
+   recaptures the Esc key
+
+See also:
+ - %Keyboard%
+ - 'scrollback buffer' section of the
+   %shell% topic
+
+  ------------------------------------
+
+0x6001: Stash Cursor, create new Cursor
+\u203E\u203E\u203E\u203E\u203E\u203E
+Description for SYSCALL 0x6001:
+ The Cursor, scrollback buffer and
+ SELECT'ed Playfields are stashed in
+ memory and a new Cursor and scrollback
+ buffer are created to replace the
+ stashed ones
+
+SYSCALL arguments:
+ - <number> 0x6001
+
+SYSCALL evaluates to array containing:
+ - <number> result code (see codes)
+
+Notes:
+ - Multiple Cursors can be stashed and
+   unstashed in LIFO order
+ - Stashed Cursors can consume a lot of
+   system memory, be careful not to
+   stash too many in your program
+   without later unstashing them
+
+See also:
+ - %Cursor%
+ - %SELECT%
+ - 'scrollback buffer' section of the
+   %shell% topic
+ - %codes%
+
+  ------------------------------------
+
+0x6002: Unstash Cursor
+\u203E\u203E\u203E\u203E\u203E\u203E
+Description for SYSCALL 0x6002:
+ Unstashes the Cursor and restores the
+ scrollback buffer and SELECT'ed
+ Playfields from the stash
+
+SYSCALL arguments:
+ - <number> 0x6002
+
+SYSCALL evaluates to array containing:
+ - <number> result code (see codes)
+
+Notes:
+ - System memory used for stashed Cursor
+   is released after unstash completes
+
+See also:
+ - %Cursor%
+ - %SELECT%
+ - 'scrollback buffer' section of the
+   %shell% topic
+ - %codes%
+
+  ------------------------------------
+
+0x6003: Stash program and run HELP
+\u203E\u203E\u203E\u203E\u203E\u203E  program for a topic
+
+Description for SYSCALL 0x6003:
+ Loads the HELP Comfy program from
+ clubcompy.com and runs it. Any program
+ in memory is stashed, and when the HELP
+ program quits, the stashed program is
+ unstashed
+
+SYSCALL arguments:
+ - <number> 0x6003
+ - <string> help topic (e.g. 'home')
+
+SYSCALL evaluates to array containing:
+ - <number> result code (see codes)
+
+Notes:
+ - May not be used in a running program
+
+See also:
+ - %HELP%
+ - %codes%
+
+  ------------------------------------
+
+0x6004: Stash program and run file
+\u203E\u203E\u203E\u203E\u203E\u203E
+Description for SYSCALL 0x6004:
+ Stashes the current program, LOAD's the
+ file as a new program, RUN's it, and
+ when the new program quits, unstashes
+ the stashed program
+
+SYSCALL arguments:
+ - <number> 0x6004
+ - <string> name of a file to LOAD. File
+   must have the executable flag set
+
+SYSCALL evaluates to array containing:
+ - <number> result code (see codes)
+
+Notes:
+ - May not be used in a running program
+
+See also:
+ - %LOAD%
+ - %RUN%
+ - %program%
+
+  ------------------------------------
+
+0x6005: Compute fully-qualified path
+\u203E\u203E\u203E\u203E\u203E\u203E
+Description for SYSCALL 0x6005:
+ Converts a relative path to a fully-
+ qualified path. The VCE shell combines
+ its knowledge about the current user
+ and their current working folder to
+ construct a fully-qualified path from a
+ partial, "relative" path
+
+SYSCALL arguments:
+ - <number> 0x6005
+ - <string> name of a file or folder.
+   May be a partial path which will be
+   combined with the current working
+   folder's path
+
+SYSCALL evaluates to array containing:
+ - <number> result code (see codes)
+ - <string> a fully-qualified path that
+   incorporates the name argument
+
+Notes:
+ - "Relative paths" refers to file or
+   folder locations that are not fully-
+   qualified. That is, some parts of the
+   file or folder path are ambiguous
+ - Syscall 0x6005 is able to fill in the
+   ambiguities and form fully-qualified
+   paths from relative paths by
+   incorporating information from the
+   current VCE user's session. Here are
+   types of relative paths allowed on
+   the name argument:
+  \156 current working drive root-relative
+    (e.g. '/myFile')
+  \156 drive current folder-relative
+    (e.g. '0:myFile')
+  \156 current working folder-relative
+    (e.g. 'myFile')
+ - Syscall 0x6005 does validation on the
+   name argument's string format only,
+   and not on whether the name points to
+   an existing file or folder. Thus,
+   syscall 0x6005 will produce fully-
+   qualified paths pointing to files or
+   folders that do not exist (yet)
+
+See also:
+ - %FOLDER%
+ - %files%
+ - %paths%
+ - %codes%

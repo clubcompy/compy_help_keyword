@@ -1,0 +1,9 @@
+HELP - load and run the help program
+
+Grammar:
+ "HELP" [ topic ]
+
+Arguments:
+ - topic: <symbol> topic to jump to when
+   the help program starts. Defaults to
+   home

@@ -22,5 +22,5 @@ Notes:
        true       \179       true
         -1        \179    NOT rec.pen
 
-Synonyms:
+Aliases:
  - "PEND"

@@ -34,5 +34,5 @@ Notes:
    from the Display is by doing a full
    CLEAR or RESET
 
-Synonyms:
+Aliases:
  - "SELC"

@@ -23,5 +23,5 @@ Notes:
    empty <array>  \179  <boolean> false
    anything else  \179  <boolean> true
 
-Synonyms:
+Aliases:
  - "TOBO"

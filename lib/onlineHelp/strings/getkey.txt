@@ -21,3 +21,6 @@ Notes:
    associated with a PRINT-able Kid-SCII
    character's code will flow out of
    GETKEY
+
+Aliases:
+ - "GETK"

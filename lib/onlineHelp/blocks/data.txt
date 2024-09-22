@@ -1,10 +1,10 @@
 DATA - one or more values
 
 Grammar:
- "DATA" v_1 [ "," v_2 [ ... "," v_n ] ]
+ "DATA" v_1 [ "," v_2 [ \u2026 "," v_n ] ]
 
 Arguments:
- - v_1 ... v_n: <*> one or more values
+ - v_1 \u2026 v_n: <*> one or more values
 
 Notes:
  - DATA usually gets its own line and

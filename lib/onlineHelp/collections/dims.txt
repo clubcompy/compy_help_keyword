@@ -2,7 +2,7 @@ DIMS - create a multi-dimensional array
 filled with empty strings
 
 Grammar:
- "DIMS" "(" len_1 [ ... "," len_n ] ")"
+ "DIMS" "(" len_1 [ \u2026 "," len_n ] ")"
 
 Arguments:
  - len_1 - len_n: <numbers> 1 or more

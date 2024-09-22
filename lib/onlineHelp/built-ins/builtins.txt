@@ -11,9 +11,9 @@ the built-ins in the Comfy language:
   %Joystick% %Keyboard% %Math%     %Mouse%
   %Turtle%   %Playfield%
 
-  There are a built-ins reserved for future
-  use that do not do anything yet. Those
-  reserved built-in's are:
+There are built-ins reserved for future
+use and do not do anything yet. Those
+reserved built-in's are:
 
   Sprite   Voice    Device   Touch
   Award

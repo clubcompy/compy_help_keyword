@@ -21,3 +21,6 @@ Notes:
  - Only keyboard keys that are
    associated with a PRINT-able Kid-SCII
    character will flow out of GETCHAR
+
+Aliases:
+ - "GETC"

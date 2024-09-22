@@ -16,5 +16,5 @@ Notes:
   \156 Border, width and height may be
     GTE 0 and LTE 8
 
-Synonyms:
+Aliases:
  - "RESZ"

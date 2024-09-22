@@ -16,5 +16,5 @@ Notes:
   \156 Math.INFINITY when a program is RUN
   \156 4 at power-on and at program QUIT
 
-Synonyms:
+Aliases:
  - "PENS"

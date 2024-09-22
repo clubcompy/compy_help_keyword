@@ -1,0 +1,76 @@
+      About paths in 0x21 syscalls
+      \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
+0x21 syscalls require all file/folder
+name parameters to be expressed using
+"fully-qualified path" strings. This
+topic discusses how to format these
+strings
+
+A fully-qualifed path, or simply 'path'
+for short, is a string that contains a
+device number with complete folder and
+file hierarchy. For this help topic, we
+will use the string '0:/A/B/C' as an
+example path
+
+In this example, the device number is 0
+which, on the VCE, is always the number
+assigned to the local storage drive
+
+Other devices may be attached, or
+'mounted', to the VCE. Devices get the
+numbers 0-9 assigned to them at the time
+they are mounted. Device numbers are
+always followed by a colon ':' character
+in path strings
+
+Literature that talks about device
+numbers in paths may also refer to them
+simply as 'drives', like "0: drive". In
+paths, drives are always followed by a
+single slash '/' character, known as the
+'root folder'. Every drive that stores
+files will have a starting root folder.
+In the example above, the root is
+expressed as the beginning part of the
+string, '0:/'
+
+Names that proceed off the root folder
+are separated by slash '/' characters
+and are always assumed to be folder
+names when they are not last in the
+string. All folders, including the root
+folder, can hold files and folders. In
+the example above, A and B are folder
+names. Folder A lives in the root, and
+folder B lives in folder A
+
+The last name in a path may be a file
+name or a folder name. In the example
+above, C refers to a file that lives in
+folder B. The last name in a path is
+always the target of whatever syscall
+is receiving a path string
+
+If we pass our example '0:/A/B/C' as a
+parameter to the 0x213D "Open file as
+descriptor" syscall, the file named 'C'
+in folder '0:/A/B' would be the target
+of the syscall
+
+The files HELP topic discusses Comfy
+language keywords that work with files,
+but also talks more about folders that
+the VCE shell creates for users
+
+The VCE shell keeps track of a "current
+working folder" (see FOLDER topic) and
+provides syscalls that use the current
+working folder as a basis for fully-
+qualified paths. (See syscall 0x6005)
+
+
+See also:
+ - %files%
+ - %FOLDER%
+ - %0x6000%

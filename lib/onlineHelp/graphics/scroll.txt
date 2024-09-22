@@ -20,5 +20,5 @@ Notes:
    buffer. See the 'scrollback buffer'
    section of the %shell% help topic
 
-Synonyms:
+Aliases:
  - "SCRL"

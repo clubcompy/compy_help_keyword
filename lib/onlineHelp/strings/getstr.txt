@@ -38,3 +38,6 @@ Notes:
  - GETSTR is only allowed in the main
    Comfy task and not in LISTEN or other
    secondary tasks
+
+Aliases:
+ - "GETS"
