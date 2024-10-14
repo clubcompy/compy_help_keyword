@@ -6,9 +6,11 @@ name parameters to be expressed using
 topic discusses how to format these
 strings
 
-A fully-qualifed path, or simply 'path'
+0x21 "fully-qualified" paths
+\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
+A fully-qualified path, or simply 'path'
 for short, is a string that contains a
-device number with complete folder and
+device number and complete folder and
 file hierarchy. For this help topic, we
 will use the string '0:/A/B/C' as an
 example path
@@ -58,17 +60,31 @@ descriptor" syscall, the file named 'C'
 in folder '0:/A/B' would be the target
 of the syscall
 
-The files HELP topic discusses Comfy
-language keywords that work with files,
-but also talks more about folders that
-the VCE shell creates for users
+Paths are "case insensitive"
+\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
+The file system is case insensitive.
+This means that when opening files for
+reading or when searching folders, the
+file system will treat uppercase and
+lowercase characters as the same
+
+The following paths are the same:
+
+ - 0:/a/b/c
+ - 0:/a/B/c
+ - 0:/A/B/C
+
+Comfy and VCE shell paths
+\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
+The files topic discusses Comfy language
+keywords for working with files and
+folders
 
 The VCE shell keeps track of a "current
 working folder" (see FOLDER topic) and
 provides syscalls that use the current
 working folder as a basis for fully-
 qualified paths. (See syscall 0x6005)
-
 
 See also:
  - %files%

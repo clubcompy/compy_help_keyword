@@ -22,14 +22,15 @@ Record<$FileHandle> definition:
 
    field \179        description
  \196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
-    id   \179 <number> file handle ID
+    id   \179 <number> descriptor
   status \179 <number> result code (see
          \179 codes)
     fld  \179 <string> folder that OPEN'ed
          \179 FILE is in
    name  \179 <string> filename of OPEN'ed
          \179 FILE
-   bits  \179 <number> Handle disposition
+   bits  \179 <number> descriptor flags
+         \179 (see syscall 0x215A)
          \179 bit flags (see codes)
     evt  \179 <number> input event code
          \179 (see codes)
@@ -89,3 +90,4 @@ Allowed file creation flags:
 
 See also:
  - %codes%
+ - %0x2100%

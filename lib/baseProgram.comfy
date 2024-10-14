@@ -73,8 +73,8 @@ LISTEN Keyboard
  IF (kc EQ 37 AND ev EQ 1) DO lArr = lArr + 1
  IF (kc EQ 39 AND ev EQ 1) DO rArr = rArr + 1
  IF (kc EQ 40 AND ev EQ 1) DO dArr = dArr + 1
- IF (kc EQ 33 AND ev EQ 1) DO pgUp = pgUp + 1
- IF (kc EQ 34 AND ev EQ 1) DO pgDn = pgDn + 1
+ IF (kc EQ 33 AND ev EQ 1) DO pgUp = 1
+ IF (kc EQ 34 AND ev EQ 1) DO pgDn = 1
  IF (kc EQ 13 AND ev EQ 1 AND cPos GT 0) THEN
   tSel = ''
   FOR j = 0 UPTO cPos DO tSel = tSel + cTyped[j]
@@ -88,6 +88,15 @@ LISTEN Keyboard
    cTyped[cPos] = cs
    cPos = cPos + 1
   END
+ END
+END
+
+LISTEN Mouse
+ ev = Mouse.evt
+ dy = Mouse.wheeldy
+ IF (ev EQ 10) THEN
+  IF (dy LT 0) DO dArr = dArr - dy
+  IF (dy GT 0) DO uArr = uArr + dy
  END
 END
 

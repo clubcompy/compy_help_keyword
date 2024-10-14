@@ -3,15 +3,15 @@
 0x21-family syscalls implement the VCE
 file system programming interface
 
-0x21 syscalls are modeled after and a
-homage to classic MSDOS INT 21h routines
-that provided file system functionality
-to early home computers
+0x21 syscalls are a homage to classic
+MSDOS INT 21h routines that provided
+file system functionality to early home
+computers
 
 Notes:
- - 0x21 syscalls require all file/folder
-   name string arguments to be "fully-
-   qualified paths"
+ - All 0x21 syscalls with file/folder
+   name string arguments must be
+   fully-qualified paths
 
 See also:
  - %paths%
@@ -202,18 +202,18 @@ SYSCALL evaluates to array containing:
    invalid or another error occurred
 
 Notes:
- - Descriptors keep track of the current
-   size of the file in memory, and this
-   value is usually accurate
+ - Descriptors keep a copy of the
+   current size of the file in memory,
+   and this value is usually accurate
  - To retrieve the file size of the file
-   from storage (a slower, more costly
-   operation than syscall 0x2123), use
-   syscall 0x2143 - get file or folder
-   metadata
+   from storage - a slower, more costly
+   operation than this syscall, but also
+   guaranteed accurate - use syscall
+   0x2143, get file or folder metadata
 
   ------------------------------------
 
-0x2124: Close all open descriptors
+0x2124: Close all descriptors on device
 \u203E\u203E\u203E\u203E\u203E\u203E
 Description for SYSCALL 0x2124:
  Closes all descriptors currently open
@@ -235,7 +235,7 @@ See also:
 
   ------------------------------------
 
-0x2125: Flush all open descriptors
+0x2125: Flush all descriptors
 \u203E\u203E\u203E\u203E\u203E\u203E
 Description for SYSCALL 0x2125:
  Flushes all descriptors currently open
@@ -249,8 +249,8 @@ SYSCALL evaluates to array containing:
  - <number> result code (see codes)
 
 Notes:
- - see notes for syscall 0x2126 - flush
-   descriptor
+ - see description for syscall 0x2126 -
+   flush descriptor
 
 See also:
  - %codes%
@@ -259,78 +259,614 @@ See also:
 
 0x2126: Flush descriptor
 \u203E\u203E\u203E\u203E\u203E\u203E
+Description for SYSCALL 0x2126:
+ Writing to a storage device can be a
+ time consuming process. To make the
+ device write process more efficient,
+ the VCE The VCE will not immediately
+ update the volume for a device after
+ writes to files occur but instead, it
+ collects those changes in memory
+
+ The filesystem holds onto those changes
+ in memory and does not write them until
+ one of the following events happen:
+
+ 1) The file system decides it needs to
+    free up memory for itself and
+    flushes writes done to descriptors
+    to all affected volumes and devices
+ 2) A descriptor is flushed via this
+    syscall where all pending changes
+    are written out to the volume/device
+ 3) A descriptor is closed (syscall
+    0x213E) that automatically flushes
+    as part of the close process
+
+ If the power goes out or the battery
+ dies on your device and a descriptor
+ not been flushed or closed, then any
+ changes made to files may be lost!
+
+ It is the programmer's responsibility
+ to flush and/or close descriptors when
+ they are finished writing to them to
+ keep their users' data safe
+
+SYSCALL arguments:
+ - <number> 0x2126
+ - <number> file descriptor
+
+SYSCALL evaluates to array containing:
+ - <number> result code (see codes)
+
+See also:
+ - %codes%
 
   ------------------------------------
 
-0x2136: Get free space on volume
+0x2136: Get space statistics on volume
 \u203E\u203E\u203E\u203E\u203E\u203E
+Description for SYSCALL 0x2136:
+ Retrieves the amount of free space and
+ total space on the volume for a device
+
+SYSCALL arguments:
+ - <number> 0x2136
+ - <number> a device number from 0-9
+
+SYSCALL evaluates to array containing:
+ - <number> result code (see codes)
+ - <number> count of bytes free for
+   use on the volume
+ - <number> total count of bytes on the
+   volume that includes bytes used and
+   bytes free
+
+See also:
+ - %codes%
 
   ------------------------------------
 
 0x2139: Create folder
 \u203E\u203E\u203E\u203E\u203E\u203E
+Description for SYSCALL 0x2139:
+ Create a folder
+
+SYSCALL arguments:
+ - <number> 0x2139
+ - <string> fully-qualified path to
+   folder to be created
+
+SYSCALL evaluates to array containing:
+ - <number> result code (see codes)
+ - <string> name of folder created if
+   successful, otherwise empty string
+ - <string> path of parent folder of
+   newly created folder if successful,
+   otherwise empty string
+ - <number> creation time of the new
+   folder if successful, otherwise 0
+
+Notes:
+ - See notes on syscall 0x213D, open
+   file as descriptor, for rules about
+   folder name formatting rules
+
+See also:
+ - %FOLDER%
+ - %codes%
 
   ------------------------------------
 
 0x213D: Open file as descriptor
 \u203E\u203E\u203E\u203E\u203E\u203E
+Description for SYSCALL 0x213D:
+ Open a file for reading and/or writing,
+ with options to create it if it does
+ not exist, truncate the file if it does
+ already exist, or create the file only
+ if it does not already exist
+
+SYSCALL arguments:
+ - <number> 0x213D
+ - <string> fully-qualified path to
+   file to be opened
+ - <number> bit flags controlling how
+   the file should be opened (see codes)
+
+SYSCALL evaluates to array containing:
+ - <number> If GTE 0, syscall succeeded
+   and number is the descriptor of the
+   open file, otherwise LT 0 result code
+   (see codes)
+ - <string> name of file opened/created
+   if successful, otherwise empty string
+ - <string> path of parent folder of
+   opened/created file if successful,
+   otherwise empty string
+ - <number> descriptor flags (see
+   syscall 0x215A)
+ - <number> current file size in bytes,
+   will be 0 if file is newly created
+ - <number> last modified datetime of
+   epoch time of the file
+ - <number> current file pointer
+   location in file
+
+Notes:
+ - File and folder names have these
+   string formatting rules:
+  \156 Must have LTE 255 character length
+  \156 May have upper/lower case letters
+  \156 May have numeric digits
+  \156 May contain spaces and dots, but not
+    at the end
+  \156 May have these special characters:
+
+       !#$%%&'()@^_`{}~+-,;=[]
+
+  \156 May have characters with codes
+    GTE 0x0080 and LTE 0xD7FF
+  \156 May have characters with codes
+    GTE 0xF900 and LTE 0xFFFF
+ - Please see the section titled,
+   "Paths are case insensitive" in the
+   paths topic
+
+See also:
+ - %OPEN%
+ - %codes%
+ - %paths%
 
   ------------------------------------
 
 0x213E: Close descriptor
 \u203E\u203E\u203E\u203E\u203E\u203E
+Description for SYSCALL 0x213E:
+ Close a descriptor. Any memory bound to
+ the descriptor internally is released
+ back to the file system
+
+ If the descriptor is for a file, before
+ closing, pending writes are flushed to
+ the volume the file belongs to
+
+SYSCALL arguments:
+ - <number> 0x213E
+ - <number> descriptor
+
+SYSCALL evaluates to array containing:
+ - <number> result code (see codes)
+
+Notes:
+ - Once a descriptor is closed, it is
+   invalid and may not be used in any
+   syscall that takes a descriptor as
+   argument
+
+See also:
+ - %CLOSE%
+ - %codes%
 
   ------------------------------------
 
 0x213F: Read bytes from descriptor
 \u203E\u203E\u203E\u203E\u203E\u203E
+Description for SYSCALL 0x213F:
+ Read bytes from the descriptor into
+ a buffer in memory. If the descriptor
+ has a file pointer, the pointer will
+ increment by the number of bytes read
+
+SYSCALL arguments:
+ - <number> 0x213F
+ - <number> descriptor
+ - <array<uint8>> receive bytes buffer
+ - <number> starting offset into receive
+   bytes buffer where bytes read from
+   descriptor are stored
+ - <number> maximum number of bytes to
+   read from descriptor
+
+SYSCALL evaluates to array containing:
+ - <number> result code (see codes)
+ - <number> number of bytes GTE 0 read
+   if result code was OK, otherwise 0
+ - <number> read result flags
+
+Notes:
+ - If the descriptor is a file, syscall
+   will read up to maximum number of
+   bytes or up to the end of the file,
+   whichever comes first
+ - If LENGTH receive bytes buffer array
+   is not large enough to fit all of the
+   bytes read from descriptor, the
+   LENGTH will automatically expand
+
+See also:
+ - %codes%
 
   ------------------------------------
 
 0x2140: Write bytes to descriptor
 \u203E\u203E\u203E\u203E\u203E\u203E
+Description for SYSCALL 0x2140:
+ Writes bytes from a buffer in memory to
+ the descriptor. If the descriptor has a
+ file pointer, the pointer increments by
+ the number of bytes written
+
+SYSCALL arguments:
+ - <number> 0x2140
+ - <number> descriptor
+ - <array<uint8>> source bytes buffer
+ - <number> starting offset into source
+   bytes buffer where bytes to be
+   written to descriptor are stored
+ - <number> count of bytes to write to
+   descriptor
+
+SYSCALL evaluates to array containing:
+ - <number> result code (see codes)
+ - <number> number of bytes GTE 0
+   written if result code was OK,
+   otherwise 0
+
+Notes:
+ - If the descriptor is a file, syscall
+   will write up to count of bytes, or
+   all free bytes are used up on the
+   volume, whichever comes first
+ - Starting offset plus the count of
+   bytes arguments must be LTE LENGTH
+   of source bytes buffer
+
+See also:
+ - %codes%
 
   ------------------------------------
 
 0x2141: Delete file or folder
 \u203E\u203E\u203E\u203E\u203E\u203E
+Description for SYSCALL 0x2141:
+ Deletes a file or folder
+
+SYSCALL arguments:
+ - <number> 0x2141
+ - <string> fully-qualified path to
+   file or folder to be deleted
+
+SYSCALL evaluates to array containing:
+ - <number> result code (see codes)
+
+Notes:
+ - If path points to a folder, it is an
+   error when folder is not empty
+
+See also:
+ - %codes%
+ - %paths%
 
   ------------------------------------
 
 0x2142: Seek file descriptor
 \u203E\u203E\u203E\u203E\u203E\u203E
+Description for SYSCALL 0x2142:
+ If the descriptor has a file pointer,
+ move the file pointer and report its
+ new position
+
+SYSCALL arguments:
+ - <number> 0x2142
+ - <number> file descriptor
+ - <number> offset from whence
+ - <number> whence code (see notes)
+
+SYSCALL evaluates to array containing:
+ - <number> result code (see codes)
+ - <number> new file pointer on success,
+   otherwise 0
+
+Notes:
+ - Offset may be a positive, negative or
+   0 number as its value is relative to
+   the location indicated by whence code
+ - Offset is a value relative to the
+   whence code:
+
+  code \179   name   \179    description
+ \196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+   0   \179 SEEK_SET \179 File start (file
+       \179          \179 pointer 0)
+   1   \179 SEEK_CUR \179 Current file
+       \179          \179 pointer position
+   2   \179 SEEK_END \179 End of file
+
+See also:
+ - %codes%
 
   ------------------------------------
 
 0x2143: Get file or folder metadata
 \u203E\u203E\u203E\u203E\u203E\u203E
+Description for SYSCALL 0x2143:
+ Retrieves all of the file metadata,
+ which is all the information the file
+ system keeps about a file other than
+ its contents
+
+SYSCALL arguments:
+ - <number> 0x2143
+ - <string> fully-qualified path to
+   file or folder to be queried
+
+SYSCALL evaluates to array containing:
+ - <number> result code (see codes)
+ - <string> name of file or folder
+   without the parent folder path on
+   success, otherwise empty string
+ - <string> short name form of the file
+   or folder without the parent folder
+   path (see notes) on success,
+   otherwise empty string
+ - <string> parent folder path of the
+   file or folder on success, otherwise
+   empty string
+ - <number> file attribute flags on
+   success (see codes), otherwise 0
+ - <number> file size (in bytes) or 0
+   if a path is to a folder on success,
+   otherwise 0
+ - <number> last modified epoch time of
+   the file or folder on success,
+   otherwise 0
+
+Notes:
+ - The file system saves file and folder
+   names with the default (long) form
+   and an autogenerated "short" form
+ - Files can be addressed by their short
+   names, which are formatted as an 8
+   character string and optional dot and
+   3 character extension, uppercased
+ - Short file names may be used to open
+   files, but do not rely on short names
+   to identify files in your programs.
+   Each computer may generate different
+   short file names for a long file name
+
+See also:
+ - %codes%
+ - %paths%
 
   ------------------------------------
 
 0x2145: Tell descriptor file pointer
 \u203E\u203E\u203E\u203E\u203E\u203E
+Description for SYSCALL 0x2145:
+ Get the file pointer location into a
+ file according to a descriptor
+
+SYSCALL arguments:
+ - <number> 0x2145
+ - <number> file descriptor
+
+SYSCALL evaluates to array containing:
+ - <number> file pointer location
+   according to the descriptor, or -1
+   if descriptor was invalid or another
+   error occurred
+
+Notes:
+ - Descriptors keep a copy of the
+   current size of the file in memory,
+   and this value is usually accurate,
+   and thus can keep an file pointer to
+   somewhere within the allowed range
+   of that cached file size
+ - To get a verified file pointer
+   location based on the retrieved file
+   size of the file in storage - a
+   slower, more costly operation than
+   this syscall, but also guaranteed
+   safe - would be to use syscall
+   0x2142, seek file descriptor, with 0
+   for offset and SEEK_CUR for whence
 
   ------------------------------------
 
-0x2146: Un/set flags on file or folder
-\u203E\u203E\u203E\u203E\u203E\u203E
+0x2146: Set/clear file attribute flags
+\u203E\u203E\u203E\u203E\u203E\u203E  on file or folder
+Description for SYSCALL 0x2146:
+ Change (set or clear) individual
+ attribute flags on a file or folder
+
+SYSCALL arguments:
+ - <number> 0x2146
+ - <string> fully-qualified path to
+   file or folder to be queried
+ - <number> file attribute flag bits
+   set to 1 to set flags and 0 to clear
+   flags (see codes)
+ - <number> mask bits (see notes)
+
+SYSCALL evaluates to array containing:
+ - <number> result code (see codes)
+
+Notes:
+ - This syscall allows file attribute
+   metadata to be changed at a bit level
+ - Only file attribute flag bits with
+   corresponding mask bits set to 1 will
+   be changed on the file or folder
+   pointed to by path. File attribute
+   bits with mask bits set to 0 will
+   remain unchanged on the volume
+
+See also:
+ - %codes%
+ - %paths%
 
   ------------------------------------
 
 0x214E: Folder children search
 \u203E\u203E\u203E\u203E\u203E\u203E
+Description for SYSCALL 0x214E:
+ Query for a listing of folder children
+
+SYSCALL arguments:
+ - <number> 0x2146
+ - <string> fully-qualified path of
+   folder to be queried
+
+SYSCALL evaluates to array containing:
+ - <record<$FolderListing>> folder
+   listing (see below)
+
+Record<$FolderListing> definition:
+ - Signals when:
+  \156 On success, once per folder child
+    encountered by the file system
+    under path and one final time to
+    indicate search is complete
+    (found = false)
+  \156 On failure, report the error that
+    occurred (status NEQ 0)
+
+  field  \179         description
+ \196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+  status \179 <number> result code (see
+         \179 codes)
+  found  \179 <boolean> when true, child
+         \179 found under folder at path,
+         \179 otherwise false
+ modtime \179 <number> last modified epoch
+         \179 time of file or folder on
+         \179 found EQ true, otherwise 0
+  attrib \179 <number> file attribute flags
+         \179 on success (see codes),
+         \179 otherwise 0
+   size  \179 <number> file size (in bytes)
+         \179 or 0 if a path is to a folder
+         \179 on success, otherwise 0
+   name  \179 <string> name of file or
+         \179 folder without the parent
+         \179 folder path on success,
+         \179 otherwise empty string
+  short  \179 short name form of the child
+         \179 file or folder on success,
+         \179 otherwise empty string
+
+Notes:
+ - Use LISTEN keyword with the folder
+   listing record to read out all of
+   the folder children found by the
+   search
+
+See also:
+ - %LISTEN%
+ - %codes%
+ - %paths%
 
   ------------------------------------
 
-0x2156: Move file or folder to another
-\u203E\u203E\u203E\u203E\u203E\u203E  folder
+0x2156: Move file or folder
+\u203E\u203E\u203E\u203E\u203E\u203E
+Description for SYSCALL 0x2156:
+ Move a file or folder within a volume.
+ The source and target of a file or
+ folder being moved may be to the same
+ parent folder and differ in name only.
+ This has the effect of renaming the
+ file or folder.
+
+SYSCALL arguments:
+ - <number> 0x2156
+ - <string> fully-qualified path of
+   source file or folder to be moved
+ - <string> fully-qualified path of
+   file or folder move target
+
+SYSCALL evaluates to array containing:
+ - <number> result code (see codes)
+
+Notes:
+ - It is an error for source or target
+   paths to be in use during the move
+   (e.g. a descriptor exists of the
+   open file)
+ - It is an error for source and target
+   to have different volume id's
+
+See also:
+ - %codes%
+ - %paths%
 
   ------------------------------------
 
 0x2157: Set the last modified timestamp
-\u203E\u203E\u203E\u203E\u203E\u203E  on file or folder (epoch time)
+\u203E\u203E\u203E\u203E\u203E\u203E  on file or folder
+Description for SYSCALL 0x2157:
+ Change the last modified timestamp on
+ a file or folder
+
+SYSCALL arguments:
+ - <number> 0x2157
+ - <string> fully-qualified path of
+   file or folder to have date changed
+ - <number> last modified datetime
+   (epoch time) to set on the file or
+   folder at path
+
+SYSCALL evaluates to array containing:
+ - <number> result code (see codes)
+
+Notes:
+ - The earliest allowed timestamp is
+   1980-01-01 00:00:00 UTC
+ - The latest allowed timestamp is
+   2107-12-31 23:59:59 UTC
+
+See also:
+ - %codes%
+ - %paths%
 
   ------------------------------------
 
 0x215A: Get open disposition flags from
 \u203E\u203E\u203E\u203E\u203E\u203E  descriptor
+Description for SYSCALL 0x215A:
+ Gets flags describing how a descriptor
+ was opened
+
+SYSCALL arguments:
+ - <number> 0x215A
+ - <number> descriptor
+
+SYSCALL evaluates to array containing:
+ - <number> open disposition bit flags
+   (see below) on success, otherwise -1
+
+Notes:
+ - Open disposition bit flags:
+
+   bit  \179         description
+ \196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+   0x01 \179 Descriptor opened for reading
+   0x02 \179 Descriptor opened for writing
+   0x08 \179 File opened was truncated to
+        \179 0 size or created if it
+        \179 didn't exist
+   0x20 \179 File was opened for appending
+        \179 and file pointer was
+        \179 positioned at the end of file
+   0x40 \179 Immediately after opening
+        \179 file, this bit is set if the
+        \179 file was created/truncated.
+        \179 Later, after writing changes
+        \179 to the file and if the file
+        \179 system has not yet flushed
+        \179 those changes to the volume,
+        \179 bit is set
