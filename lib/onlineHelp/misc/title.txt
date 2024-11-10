@@ -1,0 +1,34 @@
+TITLE - Display title bar above the VCE
+
+Grammar:
+ "TITLE" s [ "," c [ "," b [ "," t ] ] ]
+
+Arguments:
+ - s: <string> title to be displayed. If
+   empty, then title is removed
+ - c: <number> text color code, 0 \029 255
+   default 0
+ - b: <number> bar color code, 0 \029 255,
+   default 255
+ - t: <number> milliseconds to display
+   the title, default 4000
+
+Notes:
+ - Title formatting rules:
+  \156 May have upper/lower case letters
+  \156 May have numeric digits
+  \156 May have spaces, but not at the ends
+  \156 May have multiple lines, separated
+    by '\n' newline characters
+  \156 May have these special characters:
+
+     ~`!@#$%%^&*_-+=[]{};:<>,.|\/"'()?
+
+ - A title that has multiple lines uses
+   the time value t twice. The first
+   line displays for t msec, and all
+   subsequent lines scroll into view for
+   another t msec.
+
+See also:
+ - %codes%

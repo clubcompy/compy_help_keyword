@@ -1,0 +1,37 @@
+            About Codes
+            \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
+Inside the computer, everything is
+stored as numbers. Graphics, sounds,
+words on the screen - it's ALL numbers
+
+And, since it's all numbers, when we
+programmers want to represent something
+in the real world, we need to 'encode'
+that real world thing into numbers. Some
+programmers love working with codes so
+much, they call themselves 'coders'!
+
+To 'codify' something in the real world
+in the computer is to make 'codes' out
+of that thing in a way that everyone can
+agree on and understand. For example, in
+most computers, there are standard
+numeric codes for PRINT'ed symbols
+
+Everyone agrees that code number 97 is
+the lowercase letter 'a'. When you press
+the \uF112 button on your keyboard, that
+gets input to the system as the code
+number 97. Learn more about PRINT'ed
+symbol codes in the %kidscii% topic and
+see what codes do what
+
+The following topics document the tables
+of standard codes supported by the VCE:
+
+   topic  \179        description
+ \196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+  %colors%  \179 VCE color codes
+  %kidscii% \179 VCE PRINT'ed symbol codes
+  %results% \179 VCE result codes used in
+          \179 syscall and keyword statuses

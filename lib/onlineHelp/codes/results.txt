@@ -1,0 +1,119 @@
+          About Result Codes
+          \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
+Syscalls and keywords may do processing
+in the background while other things are
+going on. These background jobs usually
+evaluate to a record that has a status
+field. When this status field changes,
+the background job will SIGNAL the
+record. Use a LISTEN block on the
+record, and check the status field on
+the record. It should contain one of the
+result codes in the table below.
+
+  code  \179         description
+\196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+    0   \179 OK: ok, success
+   -1   \179 UNSUPPORTED_OP: request not
+        \179 permitted or invalid
+   -2   \179 NOT_FOUND: file not found
+   -3   \179 INVALID_PATH: path to file or
+        \179 folder badly formatted
+   -4   \179 OPERATION_INTERRUPTED: an
+        \179 unexpected job interruption
+   -6   \179 NO_SUCH_DEVICE: invalid drive
+        \179 number
+   -9   \179 BAD_DESCRIPTOR: an invalid or
+        \179 closed descriptor used
+  -12   \179 MEMORY_ALLOCATION_FAILED: out
+        \179 of memory
+  -13   \179 ACCESS_DENIED: caller lacks
+        \179 permission or file flags block
+        \179 an action (eg. executable flag
+        \179 not set, cannot LOAD)
+  -16   \179 NOT_READY: the volume is not
+        \179 ready for reading or writing
+  -17   \179 ALREADY_EXISTS: a file or
+        \179 folder already exists
+  -18   \179 ALREADY_RUNNING: a program is
+        \179 already running
+  -20   \179 NOT_FOLDER: a file path was
+        \179 used in a folder operation
+  -21   \179 NOT_FILE: a folder path was
+        \179 used in a file operation
+  -23   \179 INVALID_ARGUMENT: an argument
+        \179 to a syscall or keyword failed
+        \179 validation or type check
+  -24   \179 TOO_MANY_OPEN: too many open
+        \179 file descriptors, cannot open
+        \179 more. Close descriptors and
+        \179 try again
+  -27   \179 FILE_TOO_LARGE: submitted file
+        \179 was too large (10MB limit)
+  -28   \179 OUT_OF_SPACE: not enough free
+        \179 space to complete action
+  -30   \179 WRITE_PROTECTED: a volume or
+        \179 file could not be written to,
+        \179 it was marked read only
+  -39   \179 NOT_EMPTY: a delete operation
+        \179 on a folder was blocked, the
+        \179 folder was not empty
+  -41   \179 NOT_FORMATTED: drive number
+        \179 was valid, but a file system
+        \179 was not found. The volume must
+        \179 be formatted before it can be
+        \179 used
+  -58   \179 VOLUME_LOCKED: volume or file
+        \179 is locked or there was a file
+        \179 sharing violation (a file was
+        \179 open already)
+  -61   \179 MISSING_EXTENTS: the contents
+        \179 of a file were missing. This
+        \179 is a serious error and may
+        \179 indicate the volume has been
+        \179 damaged and needs repair or
+        \179 reformatting
+  -62   \179 TIMED_OUT: an action timed out
+  -105  \179 INSUFFICIENT_BUFFER: a buffer
+        \179 is too small or could not be
+        \179 automatically resized
+  -129  \179 BAD_SESSION: clubcompy.com
+        \179 session expired, refresh web
+        \179 browser, login, and try again
+  -132  \179 FAILED: generic failure or
+        \179 reason unknown and may be an
+        \179 internal clubcompy.com bug
+  -133  \179 ASSERTION_FAILED: an internal
+        \179 consistency check failed, this
+        \179 is a serious error and may be
+        \179 an internal clubcompy.com bug
+  -134  \179 USER_CANCELLED: action was
+        \179 cancelled by the user
+mxi - 2 \179 READ_PARTIAL: read completed
+        \179 partially
+mxi - 1 \179 WRITE_PARTIAL: write completed
+        \179 partially
+  mxi   \179 IN_PROGRESS: job in-progress,
+        \179 check back later
+
+Notes:
+ - 'mxi' in the table above is short
+   hand for Math.mxi32
+ - Negative result codes are errors. A
+   Comfy program can test for LT 0 as a
+   quick check of a result code to see
+   if an error occurred
+ - Result code of zero indicates success
+ - In scenarios where a syscall or
+   keyword does not error, but is only
+   able to partially perform its job,
+   READ_PARTIAL or WRITE_PARTIAL are
+   the result code
+
+See also:
+ - %SIGNAL%
+ - %LISTEN%
+ - %RECORD%
+ - %SYSCALL%
+ - %LOAD%
+ - %keywords%

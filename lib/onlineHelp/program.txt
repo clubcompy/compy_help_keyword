@@ -53,11 +53,11 @@ computers. These special-purpose
 languages are not ones you could easily
 speak to people
 
-These are 'computer languages' designed:
-a) to be easy for the computer to read,
-b) to aid humans in giving out clear
+'Computer languages' are designed to:
+a) be easy for the computer to read,
+b) aid humans in giving out clear
    instructions to the computer, and
-c) to introduce limitations or automatic
+c) introduce limitations or automatic
    checks on what the human can say to
    reduce the chances of buggy code
 
@@ -124,7 +124,7 @@ When we type-in programs, %RUN% them, and
 the computer does what we expect,
 something amazing happens:
 
-         We become programmers
+         WE become programmers
          \u203E\u203E
 How cool is that?
 
@@ -176,8 +176,8 @@ in this program in the order of the
 numbers at the start of each line. Some
 of these instructions ask you questions
 and then wait for you to type on the
-keyboard; type in your answers and press
-the \uF100\uF101\uF102 key
+keyboard; after typing in your answers,
+press the \uF100\uF101\uF102 key
 
 Here's the neat part: every program you
 write can be run as many times as you'd
@@ -190,7 +190,7 @@ Can you make it say different things?
 change colors at the end, how does that
 work? There are many mysteries like this
 you will discover and solve as you
-become a master of the system
+become a master of this system
 
 Big programs like games work the same
 way - write them one time and %RUN% them

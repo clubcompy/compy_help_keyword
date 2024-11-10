@@ -1,17 +1,33 @@
 SYSCALL - perform a system call
 
 Grammar:
- "SYSCALL" which [ "," p1 \u2026 "," p6 ]
+ "SYSCALL" which [ "," a1 \u2026 "," a6 ]
 
 Arguments:
  - which: <uint16> syscall code number
- - p1 \u2026 p6: <*> comma-delimited
+ - a1 \u2026 a6: <*> comma-delimited
    arguments whose count and types are
-   dependent on syscall code used
+   dependent on which syscall code used
 
 Evaluates to:
- <array<*>> syscall results. Contents
- are dependent on syscall code used
+ <record<$SyscallResults>> syscall
+ results (see record definition below)
+
+Record<$SyscallResults> definition:
+ - Signals when: SYSCALL completes
+
+   field  \179        description
+ \196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+   which  \179 <number> Positive value EQ
+          \179 argument which indicates a
+          \179 successful syscall start.
+          \179 Negative value indicates
+          \179 error result code (see
+          \179 codes) usually caused by a
+          \179 problem with arguments
+  results \179 <array<*>> syscall results.
+          \179 Contents are dependent on
+          \179 which syscall code used
 
 Notes:
  - A system call (or 'syscall' for
@@ -46,7 +62,7 @@ Notes:
    the same high byte on their syscall
    code numbers. For example, all "shell
    manipulation" syscall code numbers
-   start with a 0x60 high byte
+   start with a 0x60 high byte:
 
      family    \179      description
  \196\196\196\196\196\196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196

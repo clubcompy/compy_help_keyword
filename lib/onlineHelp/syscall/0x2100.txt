@@ -118,7 +118,7 @@ Notes:
   \156 May have spaces, but not at the end
   \156 May have these special characters:
 
-       !#$%%&'()@^_`{}~-
+     !#$%%&'()@^_`{}~-
 
 See also:
  - %codes%
@@ -404,7 +404,7 @@ Notes:
     at the end
   \156 May have these special characters:
 
-       !#$%%&'()@^_`{}~+-,;=[]
+     !#$%%&'()@^_`{}~+-,;=[]
 
   \156 May have characters with codes
     GTE 0x0080 and LTE 0xD7FF
@@ -717,9 +717,13 @@ Description for SYSCALL 0x214E:
  Query for a listing of folder children
 
 SYSCALL arguments:
- - <number> 0x2146
+ - <number> 0x214E
  - <string> fully-qualified path of
-   folder to be queried
+   parent folder to be queried
+ - <string> search pattern, may include
+   wildcard characters:
+  \156 ? match 1 wildcard character
+  \156 * 0-or-more wildcard match
 
 SYSCALL evaluates to array containing:
  - <record<$FolderListing>> folder
@@ -760,6 +764,10 @@ Record<$FolderListing> definition:
          \179 otherwise empty string
 
 Notes:
+ - The search pattern is used to filter
+   the files returned by folder children
+   search. To return all children in
+   parent folder, pass '*' for pattern
  - Use LISTEN keyword with the folder
    listing record to read out all of
    the folder children found by the

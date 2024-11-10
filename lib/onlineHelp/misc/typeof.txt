@@ -1,0 +1,34 @@
+TYPEOF - Get the type of something
+
+Grammar:
+ - "TYPEOF" value
+
+Arguments:
+ - value: <*> any Comfy value/variable
+
+Evaluates to:
+ <string> indicates what type value is,
+ see table below
+
+Notes:
+ - These are the possible strings that
+   TYPEOF evaluates to based on value:
+
+    evaluates to  \179    description
+ \196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+     'string'     \179 value is a string
+     'number'     \179 value is a number
+   'not_a_number' \179 value is a NaN
+     'boolean'    \179 value is a boolean
+      'array'     \179 value is an array
+   'listener_key' \179 value is a listener
+                  \179 key (can be used
+                  \179 with CANCEL keyword)
+     'record'     \179 value is a record
+    'record_def'  \179 value is a record
+                  \179 definition (made
+                  \179 with DEFINE RECORD)
+
+See also:
+ - %CANCEL%
+ - %RECORD%

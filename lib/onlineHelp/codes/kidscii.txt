@@ -1,0 +1,72 @@
+          About Kid-SCII
+          \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
+Every printed character on the VCE
+display has a numeric code associated
+with it. We assign standard codes for
+characters so that when we form words,
+sentences and paragraphs with those
+codes, everyone can agree on their
+meanings.
+
+Your VCE uses the Kid-SCII codeset to
+encode characters: Kid-Standard Code
+for Information Interchange.
+
+Kid-SCII borrows codes from successful
+historical codesets like ASCII (1963),
+PETSCII (1977), IBM's Code Page 437
+(Extended ASCII, 1980), and Unicode.
+
+Kid-SCII uses 16-bit codes. This means
+that each character gets one of 65536
+possible codes. Most Kid-SCII codes are
+not assigned and are left open for users
+to assign to whatever they please.
+
+The PRINT keyword treats some Kid-SCII
+character codes as "control codes".
+These are codes that perform an action
+or otherwise 'control' the VCE rather
+than paint a character on the display.
+Control codes can do things like
+configure the Cursor or move it around.
+
+Many control codes 'stash', or save a
+copy of, the configuration they are
+about to change. This makes it easy, for
+example, to make temporary changes to
+how the Cursor behaves and then unstash
+later with another control code to put
+the Cursor back to the way it was.
+
+#include "kidsciiTable.include"
+
+Notes:
+ - There are three ways to use the codes
+   listed in the table above:
+  \156 Decimal codes 0 \029 999 can be
+    expressed in string literals using
+    escape sequences like \\ue510### where
+    ### is the decimal code of the
+    character
+
+      'I \\ue510002 u' \240 I \002 u
+
+  \156 Hexadecimal codes 0x0000 \029 0xffff
+    can be expressed in string literals
+    using escape sequences like \\ue510u####
+    where #### is the hexadecimal code
+    of the character
+
+      'ClubCompy\\ue510u2122' \240 ClubCompy\u2122
+
+  \156 The TOCHAR keyword can be used to
+    convert a code number into a one
+    character string
+
+      TOCHAR(42) \240 \042
+      TOCHAR(0x20ac) \240 \u20ac
+
+See also:
+ - %PRINT%
+ - %TOCHAR%

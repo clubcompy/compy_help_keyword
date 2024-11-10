@@ -160,6 +160,7 @@ WHILE NOT bye
     FOR j = 0 UPTO LENGTH ctnt
      PRINT dAlb + ctnt[j]
      FOR k = Cursor.x UPTO 39 DO PRINT ' '
+     IF Cursor.OVER[0].CCODE EQ 32 DO PRINT ' '
      PRINTLN
      PRINT eAlb
      lns = lns + 1
