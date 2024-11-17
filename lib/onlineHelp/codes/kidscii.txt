@@ -1,27 +1,25 @@
-          About Kid-SCII
-          \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
+            About Kid-SCII
+            \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
 Every printed character on the VCE
 display has a numeric code associated
 with it. We assign standard codes for
-characters so that when we form words,
-sentences and paragraphs with those
-codes, everyone can agree on their
-meanings.
+characters so everyone can agree on
+their meanings
 
 Your VCE uses the Kid-SCII codeset to
 encode characters: Kid-Standard Code
-for Information Interchange.
+for Information Interchange
 
 Kid-SCII borrows codes from successful
-historical codesets like ASCII (1963),
+codesets in history like ASCII (1963),
 PETSCII (1977), IBM's Code Page 437
-(Extended ASCII, 1980), and Unicode.
+(Extended ASCII, 1980), and Unicode
 
 Kid-SCII uses 16-bit codes. This means
 that each character gets one of 65536
 possible codes. Most Kid-SCII codes are
-not assigned and are left open for users
-to assign to whatever they please.
+left unassigned and open for users to
+assign whatever they please
 
 The PRINT keyword treats some Kid-SCII
 character codes as "control codes".
@@ -64,8 +62,8 @@ Notes:
     convert a code number into a one
     character string
 
-      TOCHAR(42) \240 \042
-      TOCHAR(0x20ac) \240 \u20ac
+      TOCHAR 42 \240 '\042'
+      TOCHAR 0x20ac \240 '\u20ac'
 
 See also:
  - %PRINT%

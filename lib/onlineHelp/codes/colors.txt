@@ -1,5 +1,5 @@
-          About Color Codes
-          \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
+           About Color Codes
+           \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
 Your VCE's graphics hardware can display
 256 different colors. Each color is
 represented by a numeric code 0 \029 255
