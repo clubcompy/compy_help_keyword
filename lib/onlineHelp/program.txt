@@ -77,7 +77,7 @@ Apple
 
 Like BASIC, in %Comfy% we create programs
 by feeding in a list of instructions
-organized as numbered lines of text:
+organized as numbered lines of text
 
 \uEB40\uE9BD
 1 PRINTLN 'My'
@@ -122,7 +122,7 @@ things on your program's list! \216
 
 When we type-in programs, %RUN% them, and
 the computer does what we expect,
-something amazing happens:
+something amazing happens!
 
          WE become programmers
          \u203E\u203E
@@ -133,42 +133,47 @@ now? Okay! Grab a pencil and paper and
 copy down this program:
 
 \uEB40\uE9BD
-  10 SHOW Cursor
-  20 PRINT 'What is your name? '
-  30 n = GETSTR
-  40 PRINT 'Pick number from 0 to 15? '
-  50 p = GETSTR
-  60 c = TONUM p * 16 + 15
-  70 FGCOLOR c
-  80 PRINTLN 'Hello programmer ' + n
-  90 FGCOLOR 189
-  RUN
+10 SHOW Cursor
+20 PRINT 'What is your name? '
+30 n = GETSTR
+40 PRINT 'Pick number from 0 to 15? '
+50 p = GETSTR
+60 c = TONUM p * 16 + 15
+70 FGCOLOR c
+80 PRINTLN 'Hello programmer ' + n
+90 FGCOLOR 189
+RUN
 
 \uEAFE\uE8FE
-Soon, you will type in this program.
-At the end of each line of letters,
-numbers and symbols, you must press the
-\uF100\uF101\uF102 key. \uF100\uF101\uF102 tells your VCE that you are
-done with that line and you want it to
-add that line to the list of lines that
-is your program
+Soon, you will type in this program. At
+the end of each line of letters, numbers
+and symbols, you must press the \uF100\uF101\uF102 key.
+\uF100\uF101\uF102 tells your VCE that you are done
+with that line and you want it to add
+that line to the list of lines that is
+your program
 
-If you type in a line wrong and it
-gives you an error, no problem! Type
-that same line in again and see if you
-can get it to take without errors.
-Ask for help from someone with typing
-experience if you are struggling with it
+If you type in a line wrong and it gives
+you an error, no problem! Type that same
+line in again and see if you can get it
+to take without errors. Ask for help
+from someone with typing experience if
+you are struggling with it
 
 HINT: a few of the symbols in the
-program require you to hold down the
-\uF10D\uF10E key to make that symbol appear
+program require you to hold down the \uF10D\uF10E
+key to make that symbol appear
 
 For example, to make a + symbol, many
 keyboards require you to first hold down
 the \uF10D\uF10E key and then press the = key. Let
 go of the \uF10D\uF10E key when you're done making
-'shifted' symbols
+'shifted' symbols. On mobile device
+keyboards, sometimes these symbols are
+only available on alternate keyboard
+screens. Again, ask for help from others
+if you can't figure it out. You can do
+it!
 
 When you type %RUN% and press the \uF100\uF101\uF102 key,
 your Compy will perform the instructions
@@ -182,8 +187,7 @@ press the \uF100\uF101\uF102 key
 Here's the neat part: every program you
 write can be run as many times as you'd
 like! Just type %RUN%, and you can give
-your program different inputs every
-time
+your program different inputs every time
 
 Can you make it say different things?
 %RUN% the program again. The letters

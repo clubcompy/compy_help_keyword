@@ -38,7 +38,7 @@ Notes:
    a string concatenation
 
 Similar to:
- %MERGE%
+ - %MERGE%
 
   ------------------------------------
 

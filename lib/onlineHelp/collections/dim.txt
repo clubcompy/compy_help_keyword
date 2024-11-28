@@ -15,4 +15,4 @@ Evaluates to:
  dimension of multi-dimensional array
 
 See also:
- %DIMS%
+ - %DIMS%

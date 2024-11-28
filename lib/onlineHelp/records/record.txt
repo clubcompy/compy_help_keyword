@@ -26,9 +26,9 @@ Notes:
  - When assigning record_def sym to a
    variable, the VCE will create a new
    record instance and set all of its
-   fields to the defaults sym's field
-   assignment lines. See the assign
-   topic for more information
+   fields to the defaults from sym's
+   field assignment lines. See the
+   assign topic for more information
  - Records can notify the Comfy program
    about events happening in the
    computer. See the LISTEN, SIGNAL and

@@ -35,4 +35,4 @@ Notes:
    index may be LT LENGTH arr
 
 See also:
-%INSERT%
+ - %INSERT%

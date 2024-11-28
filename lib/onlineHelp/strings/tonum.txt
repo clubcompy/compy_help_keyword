@@ -30,7 +30,6 @@ Evaluates to:
  <number> 1 when value is true, 0 when
  value is false
 
-
   ------------------------------------
 
 TONUM - Convert number to itself

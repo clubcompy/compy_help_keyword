@@ -4,9 +4,11 @@ A string is a variable that contains
 zero-or-more characters. A character is
 a coded letter, number or symbol. In the
 Comfy language, there are up to 65536
-possible character codes. Strings are
-useful for representing written words in
-the computer.
+possible Kid-SCII character codes
+
+Strings are useful for representing
+written words and visual symbols with a
+computer
 
 The Comfy language has keywords whose
 purpose is to work with strings:
@@ -22,3 +24,75 @@ performing operations with strings:
  +  %plus%
  =  %assign%
  () %parenthesis%
+
+String Literals
+\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
+A string can be declared as part of a
+program. These types of strings are
+called string literals
+
+String literals are surrounded by single
+quotes and can be assigned to variables.
+And, string literals can be used
+directly by keywords that accept strings
+as arguments (without using variables)
+
+\uEB40\uE9BD
+x = 'A hole in one!'
+PRINTLN x
+PRINTLN 'You won the game!'
+
+\uEAFE\uE8FE
+Escape Sequences
+\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
+There are special "escape sequences"
+that can be added to string literals
+which stand for characters or control
+codes that cannot otherwise be typed
+out via the keyboard:
+
+  escape \179         description
+ \196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+    \n   \179 Adds a newline character
+         \179 (Kid-SCII code 0x0a)
+    \t   \179 Adds a tab character
+         \179 (Kid-SCII code 0x08)
+    \'   \179 Adds a single quote character
+    \\   \179 Adds a backslash character
+   \###  \179 adds any Kid-SCII code where
+         \179 ### is replaced by a decimal
+         \179 code number 000 \029 999
+  \u#### \179 adds any Kid-SCII code where
+         \179 #### is a hexadecimal number
+         \179 0000 \029 ffff
+
+Empty String
+\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
+Just as the number zero is very special
+and has a lot of usefulness in maths and
+programming with numbers, so too is the
+empty string a special and useful value
+
+An empty string is represented by two
+single quotes with nothing in-between:
+
+\uEB40\uE9BD
+x = ''
+PRINTLN LENGTH x
+PRINTLN TOBOOL x
+
+\uEAFE\uE8FE
+The LENGTH of x above is 0. If we
+convert x to a boolean, it returns
+false. Strings make it easy to check for
+emptiness and make decisions in programs
+based on whether they are empty or not
+
+String variables often start as empty
+strings and then get built up through
+concatenation into larger strings in
+your programs. (see the plus operator)
+
+See also:
+ - %kidscii%
+ - %plus%

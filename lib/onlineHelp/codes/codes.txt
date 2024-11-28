@@ -9,8 +9,12 @@ programmers want to represent something
 from the real world, we need to 'encode'
 those real world things into numbers.
 Codes are so important to the world.
+
 Some programmers love working with codes
 so much, they call themselves 'coders'!
+And you may hear those people call their
+programs 'code'; that sounds so cool...
+"I'm a coder and I write code!" \216
 
 To 'codify' something in the real world
 in the computer is to make 'codes' that

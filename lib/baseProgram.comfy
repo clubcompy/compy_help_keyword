@@ -53,6 +53,7 @@ lArr = 0
 rArr = 0
 pgUp = 0
 pgDn = 0
+ent = false
 
 lu = 0
 ld = 0
@@ -69,19 +70,22 @@ LISTEN Keyboard
   cPos = cPos - 1
   IF cPos LT 0 DO cPos = 0
  END
- IF (kc EQ 38 AND ev EQ 1) DO uArr = uArr + 1
- IF (kc EQ 37 AND ev EQ 1) DO lArr = lArr + 1
- IF (kc EQ 39 AND ev EQ 1) DO rArr = rArr + 1
- IF (kc EQ 40 AND ev EQ 1) DO dArr = dArr + 1
- IF (kc EQ 33 AND ev EQ 1) DO pgUp = 1
- IF (kc EQ 34 AND ev EQ 1) DO pgDn = 1
- IF (kc EQ 13 AND ev EQ 1 AND cPos GT 0) THEN
-  tSel = ''
-  FOR j = 0 UPTO cPos DO tSel = tSel + cTyped[j]
-  cPos = 0
-  IF LENGTH tSel DO ps = ARRAY
+ IF kc EQ 38 AND ev EQ 1 DO uArr = uArr + 1
+ IF kc EQ 37 AND ev EQ 1 DO lArr = lArr + 1
+ IF kc EQ 39 AND ev EQ 1 DO rArr = rArr + 1
+ IF kc EQ 40 AND ev EQ 1 DO dArr = dArr + 1
+ IF kc EQ 33 AND ev EQ 1 DO pgUp = 1
+ IF kc EQ 34 AND ev EQ 1 DO pgDn = 1
+ IF kc EQ 13 AND ev EQ 1 THEN
+  ent = true
+  IF cPos GT 0 THEN
+   tSel = ''
+   FOR j = 0 UPTO cPos DO tSel = tSel + cTyped[j]
+   cPos = 0
+   IF LENGTH tSel DO ps = ARRAY
+  END
  END
- IF (Keyboard.kchar AND cPos LT 19) THEN
+ IF (Keyboard.kchar AND cPos LT 18) THEN
   cs = FLIP Keyboard.kchar, false
   cc = TOCODE cs
   IF ((cc GTE 97 AND cc LTE 122) OR (cc GTE 48 AND cc LTE 57)) THEN
@@ -187,26 +191,27 @@ WHILE NOT bye
  TAG '\u00AF', 0, 29, dFg, dBg
  FOR i = 0 UPTO cPos DO TAG cTyped[i], i + 1, 29, tFg, tBg, false
  TAG ' ', cPos + 1, 29, tFg, tBg, cursor.blink
- FOR i = cPos + 1 UPTO 20 DO TAG ' ', i + 1, 29, tFg, tBg, false
- TAG ' ', 21, 29, dFg, dBg
- TAG 'K', 22, 29, dFg, dBg
- TAG 'e', 23, 29, dFg, dBg
- TAG 'y', 24, 29, dFg, dBg
- TAG 's', 25, 29, dFg, dBg
- TAG ':', 26, 29, dFg, dBg
- TAG ' ', 27, 29, dFg, dBg
- TAG '\uF103', 28, 29, dGreyFg, dBg, (lu GT 0)
- TAG '\uF105', 29, 29, dGreyFg, dBg, (ld GT 0)
- TAG '\uF106', 30, 29, dGreyFg, dBg, (ll GT 0)
- TAG '\uF104', 31, 29, dGreyFg, dBg, (lr GT 0)
- TAG '\uF109', 32, 29, dGreyFg, dBg, (lpu GT 0)
- TAG '\uF10A', 33, 29, dGreyFg, dBg, (lpu GT 0)
- TAG '\uF10B', 34, 29, dGreyFg, dBg, (lpd GT 0)
- TAG '\uF10C', 35, 29, dGreyFg, dBg, (lpd GT 0)
- TAG '\uF107', 36, 29, dGreyFg, dBg, bye
- TAG '\uF108', 37, 29, dGreyFg, dBg, bye
- TAG ' ', 38, 29, dGreyFg, dBg
- TAG ' ', 39, 29, dGreyFg, dBg
+ FOR i = cPos + 1 UPTO 19 DO TAG ' ', i + 1, 29, tFg, tBg, false
+ TAG ' ', 20, 29, dFg, dBg
+ TAG 'K', 21, 29, dFg, dBg
+ TAG 'e', 22, 29, dFg, dBg
+ TAG 'y', 23, 29, dFg, dBg
+ TAG 's', 24, 29, dFg, dBg
+ TAG ':', 25, 29, dFg, dBg
+ TAG ' ', 26, 29, dFg, dBg
+ TAG '\uF103', 27, 29, dGreyFg, dBg, (lu GT 0)
+ TAG '\uF105', 28, 29, dGreyFg, dBg, (ld GT 0)
+ TAG '\uF106', 29, 29, dGreyFg, dBg, (ll GT 0)
+ TAG '\uF104', 30, 29, dGreyFg, dBg, (lr GT 0)
+ TAG '\uF109', 31, 29, dGreyFg, dBg, (lpu GT 0)
+ TAG '\uF10A', 32, 29, dGreyFg, dBg, (lpu GT 0)
+ TAG '\uF10B', 33, 29, dGreyFg, dBg, (lpd GT 0)
+ TAG '\uF10C', 34, 29, dGreyFg, dBg, (lpd GT 0)
+ TAG '\uF100', 35, 29, dGreyFg, dBg, ent
+ TAG '\uF101', 36, 29, dGreyFg, dBg, ent
+ TAG '\uF102', 37, 29, dGreyFg, dBg, ent
+ TAG '\uF107', 38, 29, dGreyFg, dBg, bye
+ TAG '\uF108', 39, 29, dGreyFg, dBg, bye
  WAIT SYSCALL 0x6002
 
  lu = lu - 1
@@ -215,6 +220,7 @@ WHILE NOT bye
  lr = 0
  lpu = lpu - 1
  lpd = lpd - 1
+ ent = false
 
  VWAIT
 END
@@ -226,3 +232,4 @@ WAIT SYSCALL 0x6002
 
 REM *** Quit silently
 QUIT false
+println 'SHOULD NOT GET HERE!'

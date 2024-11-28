@@ -1,0 +1,12 @@
+. (member) - record field at name
+
+Grammar:
+ rec "." mbr
+
+Arguments:
+ - rec: <record> record to be accessed
+ - mbr: <symbol> name of field on record
+   to be accessed
+
+Evaluates to:
+ <*> mbr field from record

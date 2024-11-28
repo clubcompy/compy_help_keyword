@@ -1,0 +1,20 @@
+        About the Border Record
+        \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
+
+Border record describes the resizeable
+border that surrounds the Comfy
+
+Record<$Border> definition:
+ - Signals when: never
+
+   field  \179        description
+ \196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+     w    \179 <number> border width GTE 0,
+          \179 defaults to 0
+     h    \179 <number> border height
+          \179 GTE 0, defaults to 0
+    fgc   \179 <number> border color code
+          \179 0  255,  defaults to 0
+
+See also:
+ - %codes%

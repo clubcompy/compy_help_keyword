@@ -1,14 +1,14 @@
          Welcome to ClubCompy
          \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
-Congratulations! You are now the proud
-owner of a ClubCompy Virtual Computer
-Environment (VCE)
+Congratulations! Your computing device
+has been transformed into the ClubCompy
+Virtual Computer Environment (VCE)
 
 With your VCE, you will learn to write
 computer programs, make and play games,
 solve real-world problems, and over
 time, understand how computers apply to
-every facet of your life
+every facet of life
 
 This help program will give you only an
 overview of your VCE's capabilities. For
@@ -16,25 +16,29 @@ full details, please purchase a copy of
 the ClubCompy Programmer's Reference
 Guide book (when it becomes available)
 
-Okay, let's get started!
+Okay, let's get started with learning!
 
-First, learn how to control this %HELP%
-screen.  Press the down and up arrow
-buttons on your keyboard now: \uF105 \uF103
+First, learn how to control this %HELP%.
+Press the down and up arrow buttons on
+your keyboard now: \uF105 \uF103
 
 When there is more to read on these help
 topics, you can slide the additional
 text into view using the arrow buttons
 on your keyboard. Other buttons that
-work are \uF10B\uF10C and \uF109\uF10A
+work are \uF10B\uF10C and \uF109\uF10A which let you slide
+a page at a time
 
 You have probably noticed by now that
 most things in ClubCompy use your
 keyboard for controls and not a touch
-screen or mouse. Computer keyboarding
-is a valuable life skill, and that's
-why we've designed your VCE to give you
-daily typing practice
+screen, pad or mouse
+
+Keyboarding is a valuable life skill we
+want you to excel at. That's why we've
+designed your VCE to give you daily
+typing practice (even though the VCE can
+do mouse and touch when we tell it to)
 
 This help program has many topics for
 you to read. The names of these topics
@@ -43,17 +47,16 @@ color: %\uE500 \uE503%
 
 If a topic word is interesting to you,
 type the letters of its name on your
-keyboard in the box at the bottom of the
-screen and then press the \uF100\uF101\uF102 key to
-switch to that topic
+keyboard into the box at the bottom of
+the screen and then press the \uF100\uF101\uF102 key
+to switch to that topic
 
 If you want to go back to a topic you
 were looking at earlier, press the left
 arrow \uF106 button
 
 You can exit help at any time by
-pressing the \uF107\uF108 key on your
-keyboard
+pressing the \uF107\uF108 key on your keyboard
 
 Here are some introductory topics you
 can switch to now:
@@ -64,3 +67,11 @@ can switch to now:
 
 Welcome to ClubCompy, and thanks for
 being such a great user!
+
+             \205\205\205\205\205\205\205\205\205\205\205\205\205
+
+ClubCompy and KidCompy are trademarks of
+             Woldrich, Inc.
+
+       Copyright \u24b8 Woldrich, Inc.
+          All rights reserved

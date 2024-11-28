@@ -30,7 +30,7 @@ Grammar:
 
 Arguments:
  - isTrue1..isTrueN: <boolean> first
-   truthy value decides which IF/IFELSE
+   truthy value decides which IF/ELSEIF
    block of Comfy lines get executed.
    See notes
 

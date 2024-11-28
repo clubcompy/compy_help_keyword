@@ -27,3 +27,4 @@ Aliases:
 See also:
  - 'scrollback buffer' section of the
    %shell% topic
+ - %codes%

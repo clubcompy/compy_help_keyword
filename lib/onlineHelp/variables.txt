@@ -1,0 +1,137 @@
+          About Variables
+          \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
+Your computer has a memory just like you
+do. It is much simpler than your memory,
+but the computer is able to recall basic
+facts like %numbers%, %booleans%, %strings%,
+%collections% (in the form of %array%s), and
+groups of facts (in the form of %record%s)
+
+We call computer memory items variables
+because they vary (can be changed).
+Variables always start with a name, and
+that name is how we address (find) them
+in the computer's memory
+
+Assigning Variables
+\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
+When you want to make a new variable or
+change one an already existing one in
+memory, use the assignment operator like
+this:
+
+\uEB40\uE9BD
+gg = 'memories!'
+
+\uEAFE\uE8FE
+This variable name is 'gg', which the
+programmer who wrote that line said
+stands for "good game"
+
+You can name variables anything that is
+meaningful to you, but the names are
+usually very short in Comfy to make them
+easy to type in, usually 1-3 characters
+long
+
+Variable names are case-insensitive. So,
+this means that GG is the same variable
+as Gg, which is the same as gg. This
+can help to reduce mistakes made while
+typing ('typos')
+
+Using Values in Variables
+\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
+Anywhere you need to recall a value, use
+its name with a keyword or operator.
+We can use the gg variable set earlier
+and make more variables in the process:
+
+\uEB40\uE9BD
+SAY gg
+gd = 'good'
+cc = gt + ' ' + gg
+SAY cc
+
+\uEAFE\uE8FE
+The first SAY keyword will print
+'memories!' on the display. The
+second SAY keyword will print
+'good memories!' on the display. Do
+you see how it all works?
+
+Spaces Are Optional
+\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
+Comfy allows keywords and variable names
+to bump up against each other. eg.:
+
+\uEB40\uE9BDSAY gg\uEAFE\uE8FE is the same as \uEB40\uE9BDSAYgg\uEAFE\uE8FE
+
+Making spaces optional can really cut
+down on typing. But, it also makes your
+code harder for others to read
+
+Also, this rule makes it easy to confuse
+Comfy when variable names contain the
+same letters as a keyword. Imagine this
+line of code:
+
+\uEB40\uE9BD
+iffy = 'are you sure?'
+
+\uEAFE\uE8FE
+Comfy sees the first two letters as the
+keyword IF, followed by the variable
+name 'fy'. That doesn't make sense in
+the Comfy language and may cause an
+error message to generate like this:
+
+\uEB40\uE9BD
+Error: syntax error near column
+
+\uEAFE\uE8FE
+So confusing. Everyone is confused!
+When names and keywords that run into
+each other cause errors like this, just
+add spaces between the words to
+'disambiguate', or make clear what you
+mean to say, at that spot in the program
+
+Interestingly, Comfy only gets confused
+if a word starts with a keyword. We can
+put a j in-front of iffy from the above
+example, and that will work just fine:
+
+\uEB40\uE9BD
+jiffy = 'are you sure?'
+SAY jiffy
+
+\uEAFE\uE8FE
+Those lines will set a variable named
+jiffy and print "are you sure?"
+
+Variable Name Rules
+\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
+Comfy variable and symbol naming rules:
+ - First character must be alphabetic
+   (a-z), or an underscore (_)
+ - Subsequent characters may be
+   alphabetic (a-z), numeric (0-9), or
+   an underscore (_)
+ - Symbol must not be longer than 64
+   characters
+
+These naming rules also apply to field
+names on records
+
+See also:
+ - %numbers%
+ - %booleans%
+ - %strings%
+ - %collections%
+ - %array%
+ - %record%
+ - %builtins%
+ - %subscript%
+ - %member%
+ - %PRINT%
