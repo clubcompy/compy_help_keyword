@@ -1,0 +1,121 @@
+        About the Keyboard Record
+        \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
+The Keyboard record provides information
+about events happening on your device's
+physical or virtual keyboard's keys. The
+buttons on your keyboard are referred to
+as 'keys' which are akin to keys on
+pianos, hence the name 'keyboard'
+
+Your keyboard is one of the best tools
+to communicate and be productive with
+the computer. Mouse slow, keyboard fast!
+
+Record<$Keyboard> definition:
+ - Signals when: a button state changes
+   on the keyboard
+
+   field  \179        description
+ \196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+    evt   \179 <number> keyboard event
+          \179 code, see notes for details
+          \179 on how to interpret evt
+   kcode  \179 <number> this is a key code
+          \179 for the key that had the
+          \179 event, see codes for details
+    mod   \179 <number> modifier bits, see
+          \179 modifier key notes below
+   kchar  \179 <string> if the user pressed
+          \179 a key that would cause a
+          \179 character to be printed to
+          \179 compy display, then this
+          \179 string will contain a single
+          \179 Kid-SCII character (only for
+          \179 evt EQ 2). Otherwise, empty
+          \179 string
+    kloc  \179 <string> a string
+          \179 identifying which keyboard
+          \179 key was pressed
+
+Notes:
+ - The evt field on record<$Keyboard>
+   indicates what interesting event has
+   occurred and what data has recently
+   changed on the keyboard. Use the
+   LISTEN keyword to be notified of
+   every evt that occurs
+
+   Here is a description of the possible
+   evt values and their meanings:
+
+  evt \179         description
+ \196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+   1  \179 key down event
+   2  \179 key press event, some keys will
+      \179 repeat if held down. For each
+      \179 repeat, one key press event will
+      \179 be generated
+   3  \179 key up event
+
+ - Your keyboard will have modifier keys
+   that can be pressed and held down to
+   be used in combination with the rest
+   of your keyboard keys
+
+   Multiple modifier keys can be held
+   down at the same time. The state of
+   the modifier keys at any given time
+   is represented in the mod field as
+   bit flags which are bitwise-OR'd
+   together. If a bit flag is 1, that
+   modifier key is currently pressed and
+   held down
+
+  bit flag \179      modifier key
+ \196\196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+    0x01   \179 Shift
+    0x02   \179 Control (labeled Ctrl on
+           \179 most keyboards)
+    0x04   \179 Alternate (labeled Alt on
+           \179 most keyboards)
+    0x08   \179 Meta (Windows logo key or
+           \179 Command icon key on Mac)
+
+ - Most operating systems share the use
+   of many keys on your keyboard which
+   can lead to key presses not reaching
+   your Comfy programs at all or cause
+   other unwanted effects
+
+   Some of the keys to avoid are:
+  \156 Alt modifier
+  \156 Meta modifier
+  \156 F1 \029 F12, the 'function' keys
+  \156 Prt Scr, the Print Screen key
+  \156 In addition, some key combos with
+    the Ctrl key (like Ctrl+R) are taken
+    by the web browser and should not be
+    used in your Comfy programs
+
+ - Some keyboards have many keys that do
+   the same thing. For example, many
+   keyboards feature two Ctrl keys: one
+   to the left of the space bar and one
+   to the right
+
+   Use the kloc field if you care to
+   differentiate which of these keys was
+   pressed in your Comfy programs. The
+   left Ctrl key events will have kloc
+   set to 'ControlLeft', and the right
+   will have kloc set to 'ControlRight'
+
+   If you don't care which Ctrl key is
+   pressed, then look to the kcode field
+   which will contain the number 17 for
+   both the left and right Ctrl key
+   events
+
+See also:
+ - %LISTEN%
+ - %codes%

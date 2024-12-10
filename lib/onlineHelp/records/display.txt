@@ -1,0 +1,70 @@
+       About the Display Record
+       \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
+Your VCE has a graphics display tied to
+the physical device you interact with
+
+The Display record provides settings
+information that describes the graphics
+display
+
+Record<$Display> definition:
+ - Signals when: the VCE paints a frame
+   to the VCE display, up to 60 frames
+   per second
+
+   field  \179        description
+ \196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+     w    \179 <number> pixel width of the
+          \179 VCE graphics display (320)
+     h    \179 <number> pixel height of the
+          \179 VCE graphics display (240)
+    chrw  \179 <number> character width of
+          \179 of the VCE graphics display
+          \179 (40)
+    chrh  \179 <number> character height of
+          \179 of the VCE graphics display
+          \179 (30)
+    clcd  \179 <array<record<$ColorInfo>>>
+          \179 information about VCE color
+          \179 codes
+    sel   \179 <array<number>> playfield
+          \179 ids that VCE graphics
+          \179 keywords have been SELECT'ed
+          \179 to be interacted with
+    vw    \179 <boolean> is automatic VWAIT
+          \179 enabled?
+   frame  \179 <number> count of number of
+          \179 frames painted on the VCE
+          \179 Display since the last time
+          \179 a full CLEAR or RESET was
+          \179 performed
+    time  \179 <number> millisecond of the
+          \179 time that the last frame
+          \179 was painted relative to when
+          \179 the VCE started
+
+Record<$ColorInfo> definition:
+ - Signals when: never
+
+   field  \179        description
+ \196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+    code  \179 <number> color code 0 \029 255
+    name  \179 <string> color name
+    spon  \179 <string> subscriber sponsor
+          \179 message
+     r    \179 <number> red component
+     g    \179 <number> green component
+     b    \179 <number> blue component
+
+Display-manipulating keywords:
+ - %SELECT%
+ - %VWAIT%
+ - %CLEAR%
+ - %RESET%
+
+See also:
+ - %SELECT%
+ - %VWAIT%
+ - %CLEAR%
+ - %RESET%
+ - %codes%

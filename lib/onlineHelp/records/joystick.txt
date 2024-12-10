@@ -1,0 +1,106 @@
+        About the Joystick Array
+        \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
+In addition to mouse and keyboard input
+device support, your VCE supports
+reading from optional joysticks and
+gamepads attached to your physical
+device
+
+The Joystick built-in array contains the
+list of record<$Joystick>'s that have
+been registered with your physical
+computer. See notes below about how to
+register joysticks and gamepads on your
+device to fill up your Joystick array
+
+Record<$Joystick> definition:
+ - Signals when: an axis or button state
+   changes on the joystick, or a
+   joystick is connected or disconnected
+   from your physical device
+
+   field  \179        description
+ \196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+    id    \179 <number> joystick identifier
+    evt   \179 <number> joystick event
+          \179 code, see notes for details
+          \179 on how to interpret evt
+   which  \179 <number> varies by evt
+   sysid  \179 <string> joystick product
+          \179 name according to host OS
+   sysdv  \179 <number> joystick product
+          \179 ID according to host OS
+   sysvn  \179 <number> joystick vendor
+          \179 ID according to host OS
+    conn  \179 <boolean> true = joystick
+          \179 is connected to the device.
+          \179 false = joystick is
+          \179 disconnected
+    btn   \179 <array<boolean>> array of
+          \179 of button pressed states on
+          \179 the joystick. true = button
+          \179 pressed/down. false = button
+          \179 released/up
+    bp    \179 <array<number>> array of
+          \179 button pressure values that
+          \179 measure how hard a button
+          \179 is pressed (if the gamepad
+          \179 of joystick supports that
+          \179 feature.) The numeric values
+          \179 are fractional and range
+          \179 from 0.0 \029 1.0
+    axis  \179 <array<number>> array of
+          \179 control stick or lever
+          \179 axes on the joystick or
+          \179 gamepad. The numeric values
+          \179 are fractional and range
+          \179 from -1.0 \029 1.0
+
+Notes:
+ - How to register a joystick or gamepad
+   with the VCE:
+
+  1) Connect your joystick or gamepad to
+     your device (either by wired cable
+     or wireless pairing and connection)
+  2) Press any button on your joystick
+     or gamepad. This will cause a
+     record<$Joystick> to be added to
+     the Joystick array that you can
+     read from and LISTEN to in your
+     Comfy programs
+
+ - Make sure to instruct the users of
+   your Comfy programs to press a button
+   on their unregistered joysticks to
+   get them to appear in the Joystick
+   array
+
+ - The evt field on record<$Joystick>
+   indicates what interesting event has
+   occurred and what data has recently
+   changed on a joystick. Use the LISTEN
+   keyword to be notified of every evt
+   that occurs
+
+   Here is a description of the possible
+   evt values and their meanings:
+
+  evt \179         description
+ \196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+   11 \179 an axis has changed. Use the
+      \179 where field as an index into
+      \179 the axis array to see the
+      \179 changed value
+   12 \179 a button has changed. Use the
+      \179 where field as an index into
+      \179 the btn and bp arrays, either
+      \179 or both may have changed
+      \179 values
+   13 \179 Joystick was connected or
+      \179 disconnected. conn field has
+      \179 changed
+
+See also:
+ - %LISTEN%
+

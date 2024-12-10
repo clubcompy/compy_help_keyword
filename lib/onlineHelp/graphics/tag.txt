@@ -9,16 +9,15 @@ Arguments:
  - x: <number> x pos, default Cursor.x
  - y: <number> y pos, default Cursor.y
  - f: <number> foreground color, default
-   playfield.chr[y][x].fgc; can
-   be any color code number GTE 0 and
-   LT 256
+   playfield.chr[y][x].fgc; can be any
+   color code number GTE 0 and LT 256
  - b: <number> background color, default
    playfield.chr[y][x].bgc; can be any
    color code number GTE 0 and LT 256,
    or -1 for transparent
- - i: <boolean> invert flag,  default
+ - i: <boolean> invert flag, default
    playfield.chr[y][x].inv
- - g: <boolean> ghost flag,  default
+ - g: <boolean> ghost flag, default
    playfield.chr[y][x].gho
 
 Notes:
@@ -31,3 +30,4 @@ Notes:
 See also:
  - 'scrollback buffer' section of the
    %shell% topic
+ - %codes%

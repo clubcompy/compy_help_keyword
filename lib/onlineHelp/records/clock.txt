@@ -1,0 +1,56 @@
+        About the Clock Record
+        \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
+The Clock record captures information
+about the current time and date of the
+VCE's computer
+
+Record<$Clock> definition:
+ - Signals when: approximately every 10
+   milliseconds
+
+   field  \179        description
+ \196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+    time  \179 <number> current epoch time,
+          \179 milliseconds elapsed since
+          \179 Jan 1, 1970 UTC
+    year  \179 <number> year of current
+          \179 date in Local Time
+   month  \179 <number> month code of
+          \179 current date 0 \029 11 in Local
+          \179 Time where 0 = January and
+          \179 11 = December
+    dofm  \179 <number> day of the month of
+          \179 current date 1 \029 31 in Local
+          \179 Time
+    dofw  \179 <number> day of the week
+          \179 code of the current date
+          \179 0 \029 6 in Local Time where
+          \179 0 = Sunday and 6 = Saturday
+     h    \179 <number> hour of the day for
+          \179 the current date in Local
+          \179 Time
+     m    \179 <number> minutes for the
+          \179 current date in Local Time
+     s    \179 <number> seconds for the
+          \179 current date in Local Time
+   tzoff  \179 <number> the difference in
+          \179 minutes between the current
+          \179 date in UTC and the current
+          \179 date in Local Time
+          \179
+          \179 Positive numbers represent
+          \179 time zones west of the
+          \179 United Kingdom and east of
+          \179 the International Date Line
+          \179 set in the pacific ocean.
+          \179 Negative numbers represent
+          \179 time zones east of the
+          \179 United Kingdom and west of
+          \179 the International Date line
+
+Notes:
+ - UTC = Coordinated Universal Time
+   (supercedes GMT, Greenwich Mean Time)
+ - Local Time = The VCE computer's time
+   and date set in the time zone of
+   where the computer is located

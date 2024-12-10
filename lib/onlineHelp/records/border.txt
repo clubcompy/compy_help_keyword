@@ -1,8 +1,8 @@
         About the Border Record
         \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
-
-Border record describes the resizeable
-border that surrounds the Comfy
+The Border record describes the
+resizeable border surrounding the VCE
+display
 
 Record<$Border> definition:
  - Signals when: never
@@ -14,7 +14,13 @@ Record<$Border> definition:
      h    \179 <number> border height
           \179 GTE 0, defaults to 0
     fgc   \179 <number> border color code
-          \179 0  255,  defaults to 0
+          \179 0 \029 255, defaults to 0
+
+Border-manipulating keywords:
+ - %RESIZE%
+ - %FGCOLOR%
+ - %CLEAR%
+ - %RESET%
 
 See also:
  - %codes%

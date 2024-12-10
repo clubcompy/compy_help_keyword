@@ -1,0 +1,87 @@
+       About the Cursor Record
+       \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
+The Cursor record tracks the information
+managed by the flashing cursor that
+indicates where the next printed
+character appear on the display and
+what display attributes (colors, invert,
+ghost) the next printed character will
+have
+
+Record<$Cursor> definition:
+ - Signals when: approximately every 10
+   milliseconds but only if a field on
+   the Cursor record has changed
+
+   field  \179        description
+ \196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+     x    \179 <number> x coordinate 0 \029 40
+     y    \179 <number> y coordinate 0 \029 30
+    vis   \179 <boolean> is visible?
+   blink  \179 <boolean> is blinking on?
+    mode  \179 <number> 0 = overwrite mode,
+          \179 1 = insert mode
+    over  \179 <array<record<$Char>>> one
+          \179 char record per SELECT'ed
+          \179 playfield representing the
+          \179 record<$Char> at x, y
+    fgc   \179 <number> foreground color
+          \179 code 0 \029 255, default 0
+    bgc   \179 <number> background color
+          \179 code 0 \029 255, or -1 for
+          \179 transparent, default -1
+    inv   \179 <boolean> is cursor
+          \179 inverted? default false
+    gho   \179 <boolean> is cursor
+          \179 ghosted? default false
+    alb   \179 <boolean> true = cursor
+          \179 does an automatic line
+          \179 break when passing the end
+          \179 of line, false = cursor
+          \179 remains at the end of line
+          \179 when cursor reaches the
+          \179 end of line
+    idle  \179 false = PRINT'ed lines
+          \179 are in the process of
+          \179 being painted onto the
+          \179 VCE display. true =
+          \179 there are no pending
+          \179 lines waiting to use the
+          \179 Cursor to print
+
+Notes:
+ - If Display.vw is true, Cursor will
+   cause PRINT keywords (incl. PRINTLN
+   and SAY) to pause whenever automatic
+   line break or newline control codes
+   are painted to the Display. Whenever
+   Cursor.idle field is true, no PRINT
+   keyword lines are waiting to paint
+
+   If Display.vw is false, PRINT
+   keywords will not pause for next
+   frame on new lines and paint as much
+   as possible within available time
+
+ - The TAG keyword does not paint to the
+   Display via Cursor (it makes direct
+   changes to the Display's Playfields)
+   and does not wait for new Display
+   frames like PRINT keywords do
+
+Cursor-manipulating keywords:
+ - %MOVE%
+ - %FGCOLOR%
+ - %BGCOLOR%
+ - %PRINT%
+ - %PRINTLN%
+ - %SAY%
+ - %FLIP%
+ - %CLEAR%
+ - %RESET%
+
+See also:
+ - %SELECT%
+ - %VWAIT%
+ - %Display%
+ - %codes%

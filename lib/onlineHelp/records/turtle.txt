@@ -1,0 +1,87 @@
+        About the Turtle Record
+        \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
+The Turtle record provides information
+about the turtle sprite which can move
+about its vector graphics plane drawing
+fine, colorful vectors that appear as
+lines on the Display
+
+Record<$Turtle> definition:
+ - Signals when: never
+
+   field  \179        description
+ \196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+     x    \179 <number> x screen coordinate
+          \179 of turtle, see notes
+     y    \179 <number> y screen coordinate
+          \179 of turtle, see notes
+    dir   \179 <number> direction turtle is
+          \179 facing (in degrees), used
+          \179 by TURN and WALK keywords
+     pc   \179 <number> pen color code that
+          \179 will be used to draw lines
+          \179 when the pen is down. See
+          \179 PENCOLOR keyword
+    spd   \179 <number> speed at which the
+          \179 turtle will move as it draws
+          \179 lines. See PENSPEED keyword
+    vis   \179 <boolean> when true, turtle
+          \179 sprite is visible. when
+          \179 false, invisible. See SHOW
+          \179 and HIDE keywords
+    pen   \179 <boolean> when true, turtle
+          \179 pen will draw lines as the
+          \179 turtle moves. when false,
+          \179 the turtle can move without
+          \179 lines being drawn. See
+          \179 PENDOWN and PENUP keywords
+
+Notes:
+ - Turtle x and y fields are measured in
+   VCE Display pixels as projected onto
+   the physical screen and describe the
+   precise point on the Display where
+   the Turtle is situated
+
+   The coordinate system has the origin
+   (x: 0, y: 0) set at the center of the
+   VCE Display. Positive x values are to
+   the right of center and negative x
+   values are to the left. Positive y
+   values are above the center and
+   negative y values are below
+
+ - The turtle's vector graphics plane is
+   always visible, but the turtle sprite
+   can be hidden and shown (using the
+   SHOW and HIDE keywords)
+
+ - The vector graphics plane is
+   sandwiched between Playfields 3 and
+   4. This allows vector and raster
+   graphics to coexist in the same
+   scene, with characters from
+   Playfields 0-3 appearing behind the
+   turtle graphics and characters from
+   Playfields 4-7 appearing in-front of
+   the turtle graphics. This allows for
+   some amazing artwork and fancy
+   diagrams!
+
+Turtle manipulating keywords:
+ - %WALK%
+ - %MOVE%
+ - %TURN%
+ - %FACE%
+ - %SHOW%
+ - %HIDE%
+ - %PENDOWN%
+ - %PENUP%
+ - %PENCOLOR%
+ - %PENSPEED%
+ - %CLEAR%
+ - %RESET%
+
+See also
+ - %playfield%
+ - %codes%

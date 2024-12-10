@@ -62,9 +62,28 @@ Notes:
     convert a code number into a one
     character string
 
-      TOCHAR 42 \240 '\042'
-      TOCHAR 0x20ac \240 '\u20ac'
+      TOCHAR 42 \240 \042
+      TOCHAR 0x20ac \240 \u20ac
+
+ - CREMAP can be used to redefine how
+   any Kid-SCII character will look when
+   displayed
+
+   Programmers should avoid CREMAP'ing
+   codes 0xE500 \029 0xF8FF and using those
+   characters with PRINT keywords. This
+   code range is where most of the
+   control codes in Kid-SCII live. This
+   code range is called the "private use
+   area"
+
+   Woldrich, Inc reserves the right to
+   add new escape codes in the private
+   use area in the future which could
+   alter or break the behavior of
+   existing programs who use those codes
 
 See also:
  - %PRINT%
  - %TOCHAR%
+ - %CREMAP%

@@ -1,0 +1,201 @@
+        About the Playfield Array
+        \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
+The VCE Display contains layered raster
+graphics planes called playfields
+
+The Playfield built-in array contains
+the list of 8 record<$PlayField>'s that
+are always available on the VCE
+
+Record<$PlayField> definition:
+ - Signals when: never
+
+  field  \179        description
+ \196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+    id   \179 <number> playfield ID 0 \029 7
+   bgc   \179 <number> background color
+         \179 code or -1 for transparent,
+         \179 see notes re: playfield #0
+   chr   \179 <array<array<record<$Char>>>>
+         \179 2D array describing the
+         \179 40x30 character graphics
+         \179 scene painted on the
+         \179 playfield, see notes
+   cmap  \179 <array<$CharBitmap>> array
+         \179 of redefinable character
+         \179 bitmaps. See notes
+   sel   \179 <boolean> is this playfield
+         \179 currently SELECT'ed?
+   offx  \179 <boolean> SHAKE x offset, can
+         \179 be -8 \029 8
+   offy  \179 <boolean> SHAKE y offset, can
+         \179 be -8 \029 8
+   att   \179 <boolean> is the playfield
+         \179 attached to the scene. See
+         \179 notes
+
+Record<$Char> definition:
+ - Signals when: never
+
+  field  \179        description
+ \196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+    x    \179 <number> x coordinate of
+         \179 of character on playfield
+         \179 0 \029 39
+    y    \179 <number> y coordinate of
+         \179 of character on playfield
+         \179 0 \029 29
+  plfid  \179 <number> ID of playfield
+         \179 this character belongs to
+    c    \179 <string> the character
+  ccode  \179 <number> kidscii code of
+         \179 the character, 0 \029 65535
+   fgc   \179 <number> foreground color
+         \179 code of the character 0 \029 255
+   bgc   \179 <number> background color
+         \179 code of the character 0 \029 255
+         \179 or -1 if transparent
+   inv   \179 <boolean> is the character
+         \179 bitmap drawn inverted?
+   gho   \179 <boolean> is the character in
+         \179 ghost mode?
+
+Record<$CharBitmap> definition:
+ - Signals when: never
+
+  field  \179        description
+ \196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+   mode  \179 <number> 0 = 8x8 1-bit pixel
+         \179 format, 1 = 16x16 1-bit
+         \179 hi-res pixel format
+   code  \179 <number> kidscii code this
+         \179 char bitmap defines 0 \029 65535
+  cdata  \179 <array<number>> byte array
+         \179 defining the character bitmap
+         \179 mode 0 will have 8 bytes in
+         \179 the array. mode 1 will have
+         \179 32 bytes
+   name  \179 <string> the kidscii name of
+         \179 the code, if one was set.
+         \179 Otherwise, empty string
+
+Notes:
+ - Playfields in the Playfield array
+   paint and move independently. Pixels
+   drawn on higher priority playfields
+   cover and obscure pixels on lower
+   priority playfields from your eyes'
+   perspective. Here is the Playfield
+   priority stacking order:
+
+               Your eyes
+                   \030
+       Playfield #7 raster plane
+                   \030
+       Playfield #6 raster plane
+                   \030
+       Playfield #5 raster plane
+                   \030
+       Playfield #4 raster plane
+                   \030
+          Turtle vector plane
+                   \030
+       Playfield #3 raster plane
+                   \030
+       Playfield #2 raster plane
+                   \030
+       Playfield #1 raster plane
+                   \030
+       Playfield #0 raster plane
+
+  \156 The turtle vector graphics plane is
+    sandwiched in-between playfield #3
+    and #4. See turtle topic for more
+    information about turtle graphics
+
+ - Each playfield is painted with small
+   pixelated graphics tiles called
+   characters. Each character is a
+   square that can hold either an 8x8,
+   1-bit pixel bitmap graphic or a 16x16
+   hi-res, 1-bit pixel bitmap graphic
+
+ - Playfields are not available for
+   painting character graphics unless
+   they have been attached by using them
+   with the SELECT keyword at least
+   once. (This is done for performance
+   reasons.) The att field indicates if
+   a playfield has been SELECT'ed at
+   least once and is available
+  \156 After doing a full CLEAR on the VCE
+    Display, only Playfield #0 will be
+    SELECT'ed. All other playfields
+    become detached
+  \156 Playfield #0 is special and will
+    always be painted because it owns
+    the solid background color for the
+    VCE Display as a whole. It is not
+    permitted to have -1 BGCOLOR on
+    Playfield #0, see BGCOLOR notes
+
+ - Character graphics can be customized
+   or 'redefined' by Comfy programs, and
+   all instances of a character on a
+   playfield will automatically repaint
+   whenever a program redefines that
+   character
+  \156 The cmap field represents the
+    current character graphics painted
+    on the playfield
+  \156 All playfields share a single cmap
+    array. This means that using CREMAP
+    on a character code will cause the
+    character bitmap to repaint that
+    character code everywhere it is used
+    across all attached playfields
+  \156 See the kidscii topic to view the
+    system's default character bitmaps
+
+ - The Playfield chr field is a
+   "two-dimensional" array. It is
+   structured as an array to represent
+   the rows of characters on the
+   Playfield, and then each row is
+   stored as a nested array of
+   record<$Char>
+
+   To access any character on the
+   playfield, use two subscript []
+   operators. For example, if I
+   wanted to print a report about the
+   character on playfield #2 in the
+   lower right-hand part of the display,
+   I would need to access the character
+   at y: 29, x: 39. For example:
+
+     PRINT Playfield[2].chr[29][39]
+
+Playfield-manipulating keywords:
+ - %CREMAP%
+ - %TAG%
+ - %PRINT%
+ - %PRINTLN%
+ - %SAY%
+ - %SHAKE%
+ - %SCROLL%
+ - %CLEAR%
+ - %RESET%
+ - %FGCOLOR%
+  \156 Applies only to: Record<$Char>
+ - %BGCOLOR%
+  \156 Applies to: Record<$Char> and
+    Record<$PlayField>
+ - %FLIP%
+  \156 Applies only to: Record<$Char>
+
+See also:
+ - %SELECT%
+ - %kidscii%
+ - %turtle%
+ - %codes%

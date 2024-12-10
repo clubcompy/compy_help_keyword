@@ -1,0 +1,54 @@
+          About the Math Record
+          \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
+The Math record contains famous numbers
+that are useful when doing mathematics
+and science on the computer
+
+Record<$Math> definition:
+ - Signals when: never
+
+  field  \179        description
+ \196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+    e    \179 <number> Euler's number
+    pi   \179 <number> ratio of a circle's
+         \179 circumference to its diameter
+   sq2   \179 <number> square root of 2
+  sq1_2  \179 <number> square root of \171
+   ln2   \179 <number> natural logarithm of
+         \179 2
+   ln10  \179 <number> natural logarithm of
+         \179 10
+  log2e  \179 <number> base-2 logarithm of
+         \179 e
+ log10e  \179 <number> base-10 logarithm of
+         \179 e
+   nan   \179 <not_a_number> special value
+         \179 meaning "not a number"
+infinity \179 <number> special number
+         \179 value signifying infinity
+  mxsi   \179 <number> largest positive
+         \179 integer that can be expressed
+         \179 with Comfy numbers
+  mxi32  \179 <number> largest positive
+         \179 32-bit integer
+  mnsi   \179 <number> smallest negative
+         \179 integer that can be expressed
+         \179 with Comfy numbers
+  mni32  \179 <number> smallest negative
+         \179 32-bit integer
+   mxn   \179 <number> largest positive
+         \179 floating point number that
+         \179 can be expressed with Comfy
+         \179 numbers
+   mnn   \179 <number> smallest negative
+         \179 floating point number that
+         \179 can be expressed with Comfy
+         \179 numbers
+ epsilon \179 <number> smallest possible
+         \179 difference between two
+         \179 representable floating point
+         \179 numbers expressed as Comfy
+         \179 numbers
+
+See also:
+ - %numbers%

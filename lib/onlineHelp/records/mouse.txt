@@ -1,0 +1,123 @@
+         About the Mouse Record
+         \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
+The Mouse record provides information
+about events happening on your device's
+mouse or tap events on your device's
+touch screen
+
+Record<$Mouse> definition:
+ - Signals when: a button or axis state
+   changes on the mouse
+
+   field  \179        description
+ \196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+    evt   \179 <number> mouse event code,
+          \179 see notes for details on how
+          \179 to interpret evt
+   which  \179 <number> varies by evt
+    btn   \179 <array<boolean>> mouse
+          \179 buttons: left, middle, right
+          \179 when true, button is pressed
+     x    \179 <number> x screen coordinate
+          \179 of mouse, see notes
+     y    \179 <number> y screen coordinate
+          \179 of mouse, see notes
+  wheeldx \179 <number> horizontal number
+          \179 of clicks of mouse wheel
+  wheeldy \179 <number> vertical number
+          \179 of clicks of mouse wheel
+
+Notes:
+ - The evt field on record<$Mouse>
+   indicates what interesting event has
+   occurred and what data has recently
+   changed on the mouse. Use the LISTEN
+   keyword to be notified of every evt
+   that occurs
+
+   Here is a description of the possible
+   evt values and their meanings:
+
+  evt \179         description
+ \196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+   4  \179 mouse has moved, x and/or y have
+      \179 changed, see notes
+   5  \179 mouse button has been pressed
+      \179 down. The which field indicates
+      \179 the index into btn array that
+      \179 has changed to true
+   6  \179 mouse button has been released.
+      \179 The which field indicates the
+      \179 index into btn array that has
+      \179 changed to false
+   7  \179 mouse button 'clicked'. The
+      \179 which field indicates the index
+      \179 into btn array that was clicked.
+      \179 A click event acknowledges one
+      \179 complete button down-up cycle
+      \179 has occurred on the button. This
+      \179 event usually occurs immediately
+      \179 after an event 6 has occurred
+   8  \179 mouse button 'double-clicked'.
+      \179 The which field indicates the
+      \179 index into btn array that was
+      \179 double-clicked. A double-click
+      \179 event acknowledges that two
+      \179 rapid down-up cycles have
+      \179 occurred on the button. This
+      \179 event usually occurs after
+      \179 multiple events 6 and 7 have
+      \179 occurred. See notes
+   9  \179 mouse wheel horizontal click.
+      \179 See notes
+  10  \179 mouse wheel vertical click.
+      \179 See notes
+
+Notes:
+ - Mouse x and y fields are measured in
+   VCE Display pixels as projected onto
+   the physical screen and describe the
+   precise point on the Display where
+   the mouse is pointing
+
+   The coordinate system has the origin
+   (x: 0, y: 0) set at the center of the
+   VCE Display. Positive x values are to
+   the right of center and negative x
+   values are to the left. Positive y
+   values are above the center and
+   negative y values are below
+
+ - The double-click mouse button event
+   is semi-unreliable. For it to work at
+   all, the user's double click rate has
+   to meet or exceed the operating
+   system's double-click speed setting.
+   Also, the web browser may not issue
+   double-click events on some mouse
+   buttons (right button) at all due to
+   competing events. Use with caution
+
+ - Mouse wheel events measure in wheel
+   'clicks', which is a unit of how far
+   the mouse wheel has rolled. Positive
+   clicks mean the wheel has rolled up,
+   and negative clicks mean the wheel
+   has rolled down
+
+ - Most mouse wheels do not have a
+   horizontal rocker and can only roll
+   up and down. Therefore, the wheeldx
+   field will always be 0 on those mice
+   and no event 9's will be generated
+
+   However, touchpads that can work as
+   mice have no such limitation and can
+   generate wheeldx 9 events as easily
+   as wheeldy 10 events. "Two-finger
+   scrolling" gestures generate wheeldx
+   and wheeldy events on touchpads
+
+See also:
+ - %LISTEN%
+ - %Display%

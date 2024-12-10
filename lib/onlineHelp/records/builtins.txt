@@ -7,9 +7,39 @@ available to you and tell you about the
 state of VCE subsystems. Here are all of
 the built-ins in the Comfy language:
 
-  %Border%   %Clock%    %Cursor%   %Display%
-  %Joystick% %Keyboard% %Math%     %Mouse%
-  %Turtle%   %Playfield%
+ variable \179        description
+ \196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+  %Border%  \179 <record<$Border>> horizontal
+          \179 and vertical borders
+          \179 surrounding the Display
+   %Clock%  \179 <record<$Clock>> date and
+          \179 time information
+  %Cursor%  \179 <record<$Cursor>> blinking
+          \179 cursor that controls where
+          \179 PRINT'ed characters are
+          \179 painted onto the Display's
+          \179 Playfields
+  %Display% \179 <record<$Display>> VCE's
+          \179 graphics display
+ %Joystick% \179 <array<record<$Joystick>>>
+          \179 list of joysticks and
+          \179 gamepads registered with the
+          \179 VCE that expose joystick
+          \179 input events
+ %Keyboard% \179 <record<$Keyboard>> exposes
+          \179 VCE keyboard input events
+   %Math%   \179 <record<$Math>> important
+          \179 numbers for use in math and
+          \179 science
+   %Mouse%  \179 <record<$Mouse>> exposes
+          \179 VCE mouse input events
+  %Turtle%  \179 <record<$Turtle>> Display's
+          \179 Turtle vector graphics plane
+          \179 and Turtle sprite
+%Playfield% \179 <array<record<$PlayField>>>
+          \179 list of 8 Playfield raster
+          \179 graphics planes with
+          \179 redefinable characters
 
 There are built-ins reserved for future
 use and do not do anything yet. Those
@@ -22,4 +52,4 @@ Notes:
  - Built-ins are special variables that
    may only be modified by the VCE.
    It is an error to modify built-ins
-   using the assignment operator "=".
+   using the assignment operator (=)
