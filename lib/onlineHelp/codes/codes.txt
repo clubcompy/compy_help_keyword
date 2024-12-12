@@ -42,3 +42,4 @@ of standard codes supported by your VCE:
   %kidscii% \179 VCE PRINT'ed symbol codes
   %results% \179 VCE result codes used in
           \179 syscall and keyword statuses
+  %kcodes%  \179 VCE Keyboard codes

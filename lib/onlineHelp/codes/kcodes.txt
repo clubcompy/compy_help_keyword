@@ -1,0 +1,143 @@
+        About Keyboard Codes
+        \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
+On the built-in Keyboard record, there
+is the kcode field. This field
+represents a unique numeric code for
+each key pressed on the keyboard
+
+When writing interactive programs like
+video games, doing a LISTEN Keyboard is
+needed to react immediately when your
+users press and release keys. You can
+use that information to make something
+happen in your game
+
+The following table lists common kcode,
+kloc and kchar Keyboard record fields
+values most keyboards generate whenever
+users press keys:
+
+  kcode  \179    possible    \179  possible
+ dec hex \179      kloc      \179   kchars
+ \196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196
+  8   08 \179 Backspace      \179
+  9   09 \179 Tab            \179
+ 12   0c \179 Numpad5        \179
+ 13   0d \179 Enter          \179 <newline>
+         \179 NumpadEnter    \179 <newline>
+ 16   10 \179 ShiftLeft      \179
+         \179 ShiftRight     \179
+ 17   11 \179 ControlLeft    \179
+         \179 ControlRight   \179
+ 18   12 \179 AltLeft        \179
+         \179 AltRight       \179
+ 20   14 \179 CapsLock       \179
+ 27   1b \179 Escape         \179
+ 32   20 \179 Space          \179
+ 33   21 \179 PageUp         \179
+         \179 Numpad9        \179
+ 34   22 \179 PageDown       \179
+         \179 Numpad3        \179
+ 35   23 \179 End            \179
+         \179 Numpad1        \179
+ 36   24 \179 Home           \179
+         \179 Numpad7        \179
+ 37   25 \179 ArrowLeft      \179
+         \179 Numpad4        \179
+ 38   26 \179 ArrowUp        \179
+         \179 Numpad8        \179
+ 39   27 \179 ArrowRight     \179
+         \179 Numpad6        \179
+ 40   28 \179 ArrowDown      \179
+         \179 Numpad2        \179
+ 45   2d \179 Insert         \179
+         \179 Numpad0        \179
+ 46   2e \179 Delete         \179
+         \179 NumpadDecimal  \179
+ 48   30 \179 Digit0         \179 0 )
+ 49   31 \179 Digit1         \179 1 !
+ 50   32 \179 Digit2         \179 2 @
+ 51   33 \179 Digit3         \179 3 #
+ 52   34 \179 Digit4         \179 4 $
+ 53   35 \179 Digit5         \179 5 %%
+ 54   36 \179 Digit6         \179 6 ^
+ 55   37 \179 Digit7         \179 7 &
+ 56   38 \179 Digit8         \179 8 *
+ 57   39 \179 Digit9         \179 9 (
+ 59   3b \179 Semicolon      \179 ; :
+ 61   3d \179 Equal          \179 = +
+ 65   41 \179 KeyA           \179 a A
+ 66   42 \179 KeyB           \179 b B
+ 67   43 \179 KeyC           \179 c C
+ 68   44 \179 KeyD           \179 d D
+ 69   45 \179 KeyE           \179 e E
+ 70   46 \179 KeyF           \179 f F
+ 71   47 \179 KeyG           \179 g G
+ 72   48 \179 KeyH           \179 h H
+ 73   49 \179 KeyI           \179 i I
+ 74   4a \179 KeyJ           \179 j J
+ 75   4b \179 KeyK           \179 k K
+ 76   4c \179 KeyL           \179 l L
+ 77   4d \179 KeyM           \179 m M
+ 78   4e \179 KeyN           \179 n N
+ 79   4f \179 KeyO           \179 o O
+ 80   50 \179 KeyP           \179 p P
+ 81   51 \179 KeyQ           \179 q Q
+ 82   52 \179 KeyR           \179 r R
+ 83   53 \179 KeyS           \179 s S
+ 84   54 \179 KeyT           \179 t T
+ 85   55 \179 KeyU           \179 u U
+ 86   56 \179 KeyV           \179 v V
+ 87   57 \179 KeyW           \179 w W
+ 88   58 \179 KeyX           \179 x X
+ 89   59 \179 KeyY           \179 y Y
+ 90   5a \179 KeyZ           \179 z Z
+ 91   5b \179 MetaLeft       \179
+         \179 MetaRight      \179
+ 96   60 \179 Numpad0        \179 (numlock) 0
+ 97   61 \179 Numpad1        \179 (numlock) 1
+ 98   62 \179 Numpad2        \179 (numlock) 2
+ 99   63 \179 Numpad3        \179 (numlock) 3
+ 100  64 \179 Numpad4        \179 (numlock) 4
+ 101  65 \179 Numpad5        \179 (numlock) 5
+ 102  66 \179 Numpad6        \179 (numlock) 6
+ 103  67 \179 Numpad7        \179 (numlock) 7
+ 104  68 \179 Numpad8        \179 (numlock) 8
+ 105  69 \179 Numpad9        \179 (numlock) 9
+ 106  6a \179 NumpadMultiply \179 *
+ 107  6b \179 NumpadAdd      \179 +
+ 109  6d \179 NumpadSubtract \179 -
+ 110  6e \179 NumpadDecimal  \179 (numlock) .
+ 111  64 \179 NumpadDivide   \179 /
+ 112  70 \179 F1             \179
+ 113  71 \179 F2             \179
+ 114  72 \179 F3             \179
+ 115  73 \179 F4             \179
+ 116  74 \179 F5             \179
+ 117  75 \179 F6             \179
+ 118  76 \179 F7             \179
+ 119  77 \179 F8             \179
+ 120  78 \179 F9             \179
+ 121  79 \179 F10            \179
+ 122  7a \179 F11            \179
+ 123  7b \179 F12            \179
+ 144  90 \179 NumLock        \179
+ 173  ad \179 Minus          \179 - _
+ 188  bc \179 Comma          \179 , <
+ 190  be \179 Period         \179 . >
+ 191  bf \179 Slash          \179 / ?
+ 192  c0 \179 Backquote      \179 ` ~
+ 219  db \179 BracketLeft    \179 [ {
+ 220  dc \179 Backslash      \179 \ |
+ 221  dd \179 BracketRight   \179 ] }
+ 222  de \179 Quote          \179 ' "
+
+Notes:
+ - There are many keys and key combos
+   that are 'taken' by the host OS and
+   web browser. See the keyboard topic's
+   notes about keys to avoid in programs
+
+See also:
+ - %builtins%
+ - %keyboard%
