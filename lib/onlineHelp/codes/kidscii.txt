@@ -27,7 +27,7 @@ These are codes that perform an action
 or otherwise 'control' the VCE rather
 than paint a character on the display.
 Control codes can do things like
-configure the Cursor or move it around.
+configure the Cursor or move it around
 
 Many control codes 'stash', or save a
 copy of, the configuration they are
@@ -35,7 +35,7 @@ about to change. This makes it easy, for
 example, to make temporary changes to
 how the Cursor behaves and then unstash
 later with another control code to put
-the Cursor back to the way it was.
+the Cursor back to the way it was
 
 #include "kidsciiTable.include"
 

@@ -2,10 +2,9 @@
                \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
 The VCE shell is a text editor that lets
 you type-in programs. This topic talks
-about how to enter in programs and use
-the shell's special key combos to
-manipulate the Cursor and how it moves
-around the Display
+about that and the shell's special key
+combos you can use to manipulate the
+Cursor as it moves about on the Display
 
 Cursor
 \u203E\u203E\u203E\u203E\u203E\u203E
@@ -13,12 +12,6 @@ The flashing block on your VCE Display
 is called the Cursor. When you press
 keys on the keyboard, the cursor will
 either move, print a symbol, or both
-
-There are keyboard keys and key combos
-you can use to control what the Cursor
-does:
-
-
 
 Prompt
 \u203E\u203E\u203E\u203E\u203E\u203E
@@ -33,21 +26,20 @@ example of a shell prompt:
 woldie \175 In folder: '0:/woldie' \175
 
 \uEAFE\uE8FE
-The prompt shows the logged-in user to
-clubcompy.com and what folder on the
-Compy File System (FS) they are looking
-at
+The prompt shows the name of the current
+user at clubcompy.com and what folder on
+the Compy File System (FS) if they have
+done any file operations
 
 Scrollback Buffer
 \u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
 The shell keeps track of lines it has
-PRINT'ed to the Display. New lines can
-be PRINT'ed one line below the Cursor's
-position, and when the Cursor reaches
-the bottom of the Display, it will
-scroll all lines of the Display up by
-one line. This all happens automatically
-as part of the way PRINT works
+PRINT'ed to the Display. When the Cursor
+reaches the bottom of the Display, it
+will scroll all rows of the Display up
+by one row to make room for the next
+line. This happens automatically as a
+part of how PRINT works
 
 Lines that scroll off the top of the
 Display are not lost. They are recorded
@@ -56,17 +48,73 @@ the 'scrollback buffer'
 
 By PRINT'ing special Kid-SCII escape
 sequences, the Display can be scrolled
-up and down to recover saved lines from
-the scrollback buffer back onto the
-Display
+up and down by moving the cursor around.
+Moving the cursor past the top or bottom
+row of the display will cause rows from
+the scrollback buffer to be 'scrolled'
+back onto the Display. See the kidscii
+topic for all of the cursor manipulation
+escape codes that are available
 
-This help program uses the scrollback
-buffer in this way to display large
-documents which cannot fit onto one
-screen
+This help program you are viewing uses
+the scrollback buffer in this way to
+display large documents which cannot
+fit onto the Display in their entirety
 
 The scrollback buffer stores up to 5000
 lines. Once that limit is reached, the
 topmost lines will be removed from the
 scrollback buffer until 5000 or fewer
 lines are left
+
+Key Combos
+\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E\u203E
+When operating in immediate mode, there
+are special keyboard keys and key combos
+available in the shell you can use to
+control what the Cursor does and where
+it goes on the VCE Display:
+
+  keys \179         description
+ \196\196\196\196\196\196\197\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196\196
+   \uf103   \179 Moves cursor up one row
+   \uf105   \179 Moves cursor down one row
+   \uf106   \179 Moves cursor left by one
+       \179 character
+   \uf104   \179 Moves cursor right by one
+       \179 character
+  \uF10F\uF110\uF111  \179 Moves cursor to the left by one
+       \179 character and deletes that
+       \179 character if possible
+  \uF100\uF101\uF102  \179 Interprets any Comfy code on
+       \179 the current line and moves
+       \179 cursor to start of next line
+   \uF107\uF108  \179 Cancels any running program and
+       \179 returns to immediate mode
+   \uF11B\uF11C  \179 Moves cursor to front of line
+   \uF11D\uF11E  \179 Moves cursor to end of line
+   \uF109\uF10A  \179 Moves cursor one page up by
+       \179 number of rows on the VCE
+       \179 display
+   \uF10B\uF10C  \179 Moves cursor one page down by
+       \179 number of rows on the VCE
+       \179 display
+ \uF113\uF114+\uF11B\uF11C \179 Moves cursor to start of
+       \179 scrollback buffer
+ \uF113\uF114+\uF11D\uF11E \179 Moves cursor to end of
+       \179 scrollback buffer
+  \uF115\uF116\uF117  \179 Toggles cursor insert mode
+       \179 (default, blinks slow) and
+       \179 overwrite mode (blinks fast)
+  \uF118\uF119\uF11A  \179 Deletes a character where
+       \179 the cursor is
+ \uF10D\uF10E+\uF115\uF116\uF117\179 Inserts a blank line where the
+       \179 cursor is
+ \uF10D\uF10E+\uF118\uF119\uF11A\179 Deletes an entire line where
+       \179 the cursor is
+
+See also:
+ - %kidscii%
+ - %files%
+ - %FOLDER%
+ - %PRINT%
