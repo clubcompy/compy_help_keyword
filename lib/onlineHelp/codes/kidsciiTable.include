@@ -1,0 +1,370 @@
+  dec hex glyph ³      description
+ÄÄÄÄÄÄÂÄÄÄÄÄÂÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+   000³0000 ³ @@TOCHAR_0000@@ ³ Big X
+   001³0001 ³ @@TOCHAR_0001@@ ³ Spade
+   002³0002 ³ @@TOCHAR_0002@@ ³ Heart
+   003³0003 ³ @@TOCHAR_0003@@ ³ Club
+   004³0004 ³ @@TOCHAR_0004@@ ³ Diamond
+   005³0005 ³ @@TOCHAR_0005@@ ³ NW Edge
+   006³0006 ³ @@TOCHAR_0006@@ ³ N Edge
+   007³0007 ³ @@TOCHAR_0007@@ ³ NE Edge
+   008³0008 ³ @@TOCHAR_0008@@ ³ E Edge, Tab
+   009³0009 ³ @@TOCHAR_0009@@ ³ SE Edge
+   010³000a ³ @@TOCHAR_000a@@ ³ S Edge, Newline
+   011³000b ³ @@TOCHAR_000b@@ ³ SW Edge
+   012³000c ³ @@TOCHAR_000c@@ ³ W Edge
+   013³000d ³ @@TOCHAR_000d@@ ³ NWSE Diagonal
+   014³000e ³ @@TOCHAR_000e@@ ³ NESW Diagonal
+   015³000f ³ @@TOCHAR_000f@@ ³ NW Rounded Corner
+   016³0010 ³ @@TOCHAR_0010@@ ³ NE Rounded Corner
+   017³0011 ³ @@TOCHAR_0011@@ ³ SE Rounded Corner
+   018³0012 ³ @@TOCHAR_0012@@ ³ SW Rounded Corner
+   019³0013 ³ @@TOCHAR_0013@@ ³ NE Filled
+   020³0014 ³ @@TOCHAR_0014@@ ³ NW Filled
+   021³0015 ³ @@TOCHAR_0015@@ ³ NW Corner
+   022³0016 ³ @@TOCHAR_0016@@ ³ NE Corner
+   023³0017 ³ @@TOCHAR_0017@@ ³ SE Corner
+   024³0018 ³ @@TOCHAR_0018@@ ³ SW Corner
+   025³0019 ³ @@TOCHAR_0019@@ ³ NWSE Corner
+   026³001a ³ @@TOCHAR_001a@@ ³ S Chunky Checkerboard
+   027³001b ³ @@TOCHAR_001b@@ ³ W Chunky Checkerboard
+   028³001c ³ @@TOCHAR_001c@@ ³ Arrow Up
+   029³001d ³ @@TOCHAR_001d@@ ³ Arrow Right
+   030³001e ³ @@TOCHAR_001e@@ ³ Arrow Down
+   031³001f ³ @@TOCHAR_001f@@ ³ Arrow Left
+   032³0020 ³ @@TOCHAR_0020@@ ³ Space
+   033³0021 ³ ! ³ Exclamation Mark
+   034³0022 ³ " ³ Double Quote
+   035³0023 ³ # ³ Hash
+   036³0024 ³ $ ³ Dollar Sign
+   037³0025 ³ % ³ Percent Sign
+   038³0026 ³ & ³ Ampersand
+   039³0027 ³ ' ³ Single Quote
+   040³0028 ³ ( ³ Left Parenthesis
+   041³0029 ³ ) ³ Right Parenthesis
+   042³002a ³ * ³ Asterisk
+   043³002b ³ + ³ Plus Sign
+   044³002c ³ , ³ Comma
+   045³002d ³ - ³ Minus Sign
+   046³002e ³ . ³ Period
+   047³002f ³ / ³ Slash
+   048³0030 ³ 0 ³ Zero
+   049³0031 ³ 1 ³ One
+   050³0032 ³ 2 ³ Two
+   051³0033 ³ 3 ³ Three
+   052³0034 ³ 4 ³ Four
+   053³0035 ³ 5 ³ Five
+   054³0036 ³ 6 ³ Six
+   055³0037 ³ 7 ³ Seven
+   056³0038 ³ 8 ³ Eight
+   057³0039 ³ 9 ³ Nine
+   058³003a ³ : ³ Colon
+   059³003b ³ ; ³ Semi-Colon
+   060³003c ³ < ³ Less Than
+   061³003d ³ = ³ Equals Sign
+   062³003e ³ > ³ Greater Than
+   063³003f ³ ? ³ Question Mark
+   064³0040 ³ @ ³ At-Sign
+   065³0041 ³ A ³ Uppercase A
+   066³0042 ³ B ³ Uppercase B
+   067³0043 ³ C ³ Uppercase C
+   068³0044 ³ D ³ Uppercase D
+   069³0045 ³ E ³ Uppercase E
+   070³0046 ³ F ³ Uppercase F
+   071³0047 ³ G ³ Uppercase G
+   072³0048 ³ H ³ Uppercase H
+   073³0049 ³ I ³ Uppercase I
+   074³004a ³ J ³ Uppercase J
+   075³004b ³ K ³ Uppercase K
+   076³004c ³ L ³ Uppercase L
+   077³004d ³ M ³ Uppercase M
+   078³004e ³ N ³ Uppercase N
+   079³004f ³ O ³ Uppercase O
+   080³0050 ³ P ³ Uppercase P
+   081³0051 ³ Q ³ Uppercase Q
+   082³0052 ³ R ³ Uppercase R
+   083³0053 ³ S ³ Uppercase S
+   084³0054 ³ T ³ Uppercase T
+   085³0055 ³ U ³ Uppercase U
+   086³0056 ³ V ³ Uppercase V
+   087³0057 ³ W ³ Uppercase W
+   088³0058 ³ X ³ Uppercase X
+   089³0059 ³ Y ³ Uppercase Y
+   090³005a ³ Z ³ Uppercase Z
+   091³005b ³ [ ³ Square Left Bracket
+   092³005c ³ \ ³ Backslash
+   093³005d ³ ] ³ Square Right Bracket
+   094³005e ³ ^ ³ Caret
+   095³005f ³ _ ³ Underscore
+   096³0060 ³ ` ³ Left Apostrophe
+   097³0061 ³ a ³ Lowercase A
+   098³0062 ³ b ³ Lowercase B
+   099³0063 ³ c ³ Lowercase C
+   100³0064 ³ d ³ Lowercase D
+   101³0065 ³ e ³ Lowercase E
+   102³0066 ³ f ³ Lowercase F
+   103³0067 ³ g ³ Lowercase G
+   104³0068 ³ h ³ Lowercase H
+   105³0069 ³ i ³ Lowercase I
+   106³006a ³ j ³ Lowercase J
+   107³006b ³ k ³ Lowercase K
+   108³006c ³ l ³ Lowercase L
+   109³006d ³ m ³ Lowercase M
+   110³006e ³ n ³ Lowercase N
+   111³006f ³ o ³ Lowercase O
+   112³0070 ³ p ³ Lowercase P
+   113³0071 ³ q ³ Lowercase Q
+   114³0072 ³ r ³ Lowercase R
+   115³0073 ³ s ³ Lowercase S
+   116³0074 ³ t ³ Lowercase T
+   117³0075 ³ u ³ Lowercase U
+   118³0076 ³ v ³ Lowercase V
+   119³0077 ³ w ³ Lowercase W
+   120³0078 ³ x ³ Lowercase X
+   121³0079 ³ y ³ Lowercase Y
+   122³007a ³ z ³ Lowercase Z
+   123³007b ³ { ³ Left Curly Brace
+   124³007c ³ | ³ Vertical Bar
+   125³007d ³ } ³ Right Curly Brace
+   126³007e ³ ~ ³ Tilde
+   127³007f ³  ³ Doughnut
+   128³0080 ³  ³ Uppercase C with 
+      ³     ³   ³ Cedilla
+   129³0081 ³  ³ Lowercase U with 
+      ³     ³   ³ Diaeresis
+   130³0082 ³  ³ Lowercase E with Acute
+   131³0083 ³  ³ Lowercase A with 
+      ³     ³   ³ Circumflex
+   132³0084 ³  ³ Lowercase A with 
+      ³     ³   ³ Diaeresis
+   133³0085 ³  ³ Lowercase A with Grave
+   134³0086 ³  ³ Lowercase A with Ring 
+      ³     ³   ³ Above
+   135³0087 ³  ³ Lowercase C with 
+      ³     ³   ³ Cedilla
+   136³0088 ³  ³ Lowercase E with 
+      ³     ³   ³ Circumflex
+   137³0089 ³  ³ Lowercase E with 
+      ³     ³   ³ Diaeresis
+   138³008a ³  ³ Lowercase E with Grave
+   139³008b ³  ³ Lowercase I with 
+      ³     ³   ³ Diaeresis
+   140³008c ³  ³ Lowercase I with 
+      ³     ³   ³ Circumflex
+   141³008d ³  ³ Lowercase I with Grave
+   142³008e ³  ³ Uppercase A with 
+      ³     ³   ³ Diaeresis
+   143³008f ³  ³ Uppercase A with Ring 
+      ³     ³   ³ Above
+   144³0090 ³  ³ Uppercase E with Acute
+   145³0091 ³  ³ Lowercase Ligature AE
+   146³0092 ³  ³ Uppercase Ligature AE
+   147³0093 ³  ³ Lowercase O with 
+      ³     ³   ³ Circumflex
+   148³0094 ³  ³ Lowercase O with 
+      ³     ³   ³ Diaeresis
+   149³0095 ³  ³ Lowercase O with Grave
+   150³0096 ³  ³ Lowercase U with 
+      ³     ³   ³ Circumflex
+   151³0097 ³  ³ Lowercase U with Grave
+   152³0098 ³  ³ Lowercase Y with 
+      ³     ³   ³ Diaeresis
+   153³0099 ³  ³ Uppercase O with 
+      ³     ³   ³ Diaeresis
+   154³009a ³  ³ Uppercase U with 
+      ³     ³   ³ Diaeresis
+   155³009b ³  ³ Lowercase O with Acute
+   156³009c ³  ³ Interpunct, Space Dot,
+      ³     ³   ³ Doughnut Hole
+   157³009d ³  ³ Uppercase N with Tilde
+   158³009e ³  ³ Peseta Sign
+   159³009f ³  ³ Lowercase F with Hook
+   160³00a0 ³   ³ Lowercase A with Acute
+   161³00a1 ³ ¡ ³ Lowercase I with Acute
+   162³00a2 ³ ¢ ³ Cent Sign
+   163³00a3 ³ £ ³ Pound Sign
+   164³00a4 ³ ¤ ³ Lowercase N with Tilde
+   165³00a5 ³ ¥ ³ Yen Sign
+   166³00a6 ³ ¦ ³ Feminine Ordinal 
+      ³     ³   ³ Indicator
+   167³00a7 ³ § ³ Masculine Ordinal 
+      ³     ³   ³ Indicator
+   168³00a8 ³ ¨ ³ Inverted Question Mark
+   169³00a9 ³ © ³ Reversed Not Sign
+   170³00aa ³ ª ³ Not Sign
+   171³00ab ³ « ³ Common Fraction One 
+      ³     ³   ³ Half
+   172³00ac ³ ¬ ³ Common Fraction One 
+      ³     ³   ³ Quarter
+   173³00ad ³ ­ ³ Inverted Exclamation 
+      ³     ³   ³ Mark
+   174³00ae ³ ® ³ Left angle quote
+   175³00af ³ ¯ ³ Right Angle Quote
+   176³00b0 ³ ° ³ Light Shade
+   177³00b1 ³ ± ³ Medium Shade
+   178³00b2 ³ ² ³ Dark Shade
+   179³00b3 ³ ³ ³ Box Vertical
+   180³00b4 ³ ´ ³ Box Vertical-Left
+   181³00b5 ³ µ ³ Box Vertical-Double 
+      ³     ³   ³ Left
+   182³00b6 ³ ¶ ³ Box Double Vertical-
+      ³     ³   ³ Left
+   183³00b7 ³ · ³ Box Double Down-Left
+   184³00b8 ³ ¸ ³ Box Down-Double Left
+   185³00b9 ³ ¹ ³ Box Double Vertical/
+      ³     ³   ³ Left
+   186³00ba ³ º ³ Box Double Vertical
+   187³00bb ³ » ³ Box Double Down/Left
+   188³00bc ³ ¼ ³ Box Double Up/Left
+   189³00bd ³ ½ ³ Box Double Up-Left
+   190³00be ³ ¾ ³ Box Up-Double Left
+   191³00bf ³ ¿ ³ Box Down-Left
+   192³00c0 ³ À ³ Box Up-Right
+   193³00c1 ³ Á ³ Box Up-Horizontal
+   194³00c2 ³ Â ³ Box Down-Horizontal
+   195³00c3 ³ Ã ³ Box Vertical-Right
+   196³00c4 ³ Ä ³ Box Horizontal
+   197³00c5 ³ Å ³ Box Vertical-
+      ³     ³   ³ Horizontal
+   198³00c6 ³ Æ ³ Box Vertical-Double 
+      ³     ³   ³ Right
+   199³00c7 ³ Ç ³ Box Double Vertical-
+      ³     ³   ³ Right
+   200³00c8 ³ È ³ Box Double Up/Right
+   201³00c9 ³ É ³ Box Double Down/Right
+   202³00ca ³ Ê ³ Box Double Up/
+      ³     ³   ³ Horizontal
+   203³00cb ³ Ë ³ Box Double Down/
+      ³     ³   ³ Horizontal
+   204³00cc ³ Ì ³ Box Double Vertical/
+      ³     ³   ³ Right
+   205³00cd ³ Í ³ Box Double Horizontal
+   206³00ce ³ Î ³ Box Double Vertical/
+      ³     ³   ³ Horizontal
+   207³00cf ³ Ï ³ Box Up-Double 
+      ³     ³   ³ Horizontal
+   208³00d0 ³ Ð ³ Box Double Up-
+      ³     ³   ³ Horizontal
+   209³00d1 ³ Ñ ³ Box Down-Double 
+      ³     ³   ³ Horizontal
+   210³00d2 ³ Ò ³ Box Double Down-
+      ³     ³   ³ Horizontal
+   211³00d3 ³ Ó ³ Box Double Up-Right
+   212³00d4 ³ Ô ³ Box Up-Double Right
+   213³00d5 ³ Õ ³ Box Down-Double Right
+   214³00d6 ³ Ö ³ Box Double Down-Right
+   215³00d7 ³ × ³ Multiplication Sign
+   216³00d8 ³ Ø ³ Smiley Face
+   217³00d9 ³ Ù ³ Box Up-Left
+   218³00da ³ Ú ³ Box Down-Right
+   219³00db ³ Û ³ Checkmark
+   220³00dc ³ Ü ³ S Solid Half
+   221³00dd ³ Ý ³ W Solid Half
+   222³00de ³ Þ ³ NWSE Stripes
+   223³00df ³ ß ³ NESW Stripes
+   224³00e0 ³ à ³ Lowercase Alpha
+   225³00e1 ³ á ³ Lowercase Sharp S, 
+      ³     ³   ³ Eszett
+   226³00e2 ³ â ³ Uppercase Gamma
+   227³00e3 ³ ã ³ Lowercase Pi
+   228³00e4 ³ ä ³ Uppercase Sigma
+   229³00e5 ³ å ³ Lowercase Sigma
+   230³00e6 ³ æ ³ Lowercase Mu
+   231³00e7 ³ ç ³ Lowercase Tau
+   232³00e8 ³ è ³ Uppercase Phi
+   233³00e9 ³ é ³ Uppercase Theta
+   234³00ea ³ ê ³ Uppercase Omega
+   235³00eb ³ ë ³ Lowercase Delta
+   236³00ec ³ ì ³ Infinity
+   237³00ed ³ í ³ Lowercase Phi
+   238³00ee ³ î ³ Lowercase Epsilon
+   239³00ef ³ ï ³ Intersection
+   240³00f0 ³ ð ³ Identical To Sign, 
+      ³     ³   ³ Hamburger
+   241³00f1 ³ ñ ³ Plus Minus Sign
+   242³00f2 ³ ò ³ Greater-Than or Equal 
+      ³     ³   ³ Sign
+   243³00f3 ³ ó ³ Less-Than or Equal 
+      ³     ³   ³ Sign
+   244³00f4 ³ ô ³ Top Half Integral
+   245³00f5 ³ õ ³ Bottom Half Integral
+   246³00f6 ³ ö ³ Almost Equal Sign
+   247³00f7 ³ ÷ ³ Division Sign
+   248³00f8 ³ ø ³ Degree Sign
+   249³00f9 ³ ù ³ Circle
+   250³00fa ³ ú ³ Lowercase U with Acute
+   251³00fb ³ û ³ Square Root
+   252³00fc ³ ü ³ Box Double Vertical-
+      ³     ³   ³ Horizontal
+   253³00fd ³ ý ³ Box Vertical-Double 
+      ³     ³   ³ Horizontal
+   254³00fe ³ þ ³ Square
+   255³00ff ³ ÿ ³ Chunky Checkerboard
+  8230³2026 ³ … ³ Ellipsis
+  8254³203e ³ ‾ ³ Overline
+  8364³20ac ³ € ³ Euro Sign
+  8482³2122 ³ ™ ³ Trademark symbol
+  9400³24b8 ³ Ⓒ ³ Copyright symbol
+  9415³24c7 ³ Ⓡ ³ Registered trademark 
+      ³     ³   ³ symbol
+ 58624³e500 ³  ³ Flip cursor invert 
+      ³     ³   ³ flag
+ 58625³e501 ³  ³ Set cursor invert flag
+      ³     ³   ³ to false
+ 58626³e502 ³  ³ Set cursor invert flag
+      ³     ³   ³ to true
+ 58627³e503 ³  ³ Set cursor invert flag
+      ³     ³   ³ to stashed
+ 58628³e504 ³  ³ Flip cursor ghost flag
+ 58629³e505 ³  ³ Set cursor ghost flag 
+      ³     ³   ³ to false
+ 58630³e506 ³  ³ Set cursor ghost flag 
+      ³     ³   ³ to true
+ 58631³e507 ³  ³ Set cursor ghost flag 
+      ³     ³   ³ to stashed
+ 58632³e508 ³  ³ Flip automated line 
+      ³     ³   ³ break flag
+ 58633³e509 ³  ³ Set automated line 
+      ³     ³   ³ break flag to false
+ 58634³e50a ³  ³ Set automated line 
+      ³     ³   ³ break flag to true
+ 58635³e50b ³  ³ Set automated line 
+      ³     ³   ³ break flag to stashed
+ 58636³e50c ³  ³ Flip cursor visible 
+      ³     ³   ³ flag
+ 58637³e50d ³  ³ Set cursor visible 
+      ³     ³   ³ flag to false
+ 58638³e50e ³  ³ Set cursor visible 
+      ³     ³   ³ flag to true
+ 58639³e50f ³  ³ Set cursor visible 
+      ³     ³   ³ flag to stashed
+ 58640³e510 ³  ³ Suppress control code 
+      ³     ³   ³ processing on next 
+      ³     ³   ³ character
+ 58641³e511 ³  ³ Return to line start, 
+      ³     ³   ³ line break if needed
+ 59134³e6fe ³  ³ Set selected 
+      ³     ³   ³ Playfields to stashed
+59137-³e701-³…³ Set selected 
+ 59391³ e7ff³   ³ Playfields to bitmask
+ 59392³e800 ³  ³ Move cursor up
+ 59393³e801 ³  ³ Move cursor down
+ 59394³e802 ³  ³ Move cursor left
+ 59395³e803 ³  ³ Move cursor right
+ 59396³e804 ³  ³ Page up
+ 59397³e805 ³  ³ Page down
+ 59398³e806 ³  ³ Home
+ 59399³e807 ³  ³ Scroll home
+ 59400³e808 ³  ³ End
+ 59401³e809 ³  ³ Scroll end
+ 59646³e8fe ³  ³ Set cursor foreground 
+      ³     ³   ³ color to stashed
+59648-³e900-³…³ Set cursor foreground 
+ 59903³ e9ff³   ³ color code
+ 60158³eafe ³  ³ Set cursor background 
+      ³     ³   ³ color to stashed
+ 60159³eaff ³  ³ Set cursor background 
+      ³     ³   ³ color to transparent
+60160-³eb00-³…³ Set cursor background 
+ 60415³ ebff³   ³ color code
+

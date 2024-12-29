@@ -131,7 +131,3 @@ dist
 
 .idea/
 dist/
-
-# ignore generated intermediate files
-colorTable.include
-kidsciiTable.include
