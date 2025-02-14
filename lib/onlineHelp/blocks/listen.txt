@@ -1,7 +1,7 @@
 LISTEN - react when record is SIGNAL'ed
 
 Grammar:
- "LISTEN" alias "," rec
+ "LISTEN" [ alias "," ] rec
     .
     . 0-or-more comfy statements/lines
     .
@@ -9,7 +9,9 @@ Grammar:
 
 Arguments:
  - alias: <symbol> variable name for rec
-   only valid inside the LISTEN block
+   only valid inside the LISTEN block.
+   If omitted, alias will be the name
+   of the record
  - rec: <record> a record to listen to
 
 Evaluates to:
